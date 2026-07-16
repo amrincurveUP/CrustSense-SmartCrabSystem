@@ -1,0 +1,20 @@
+{
+  "name": "smart-aquaculture-backend",
+  "version": "1.0.0",
+  "description": "MQTT ingest + REST API + SQLite for Smart Aquaculture IoT",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.8.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mqtt": "^5.10.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,4 +1,4 @@
-# ESP32-S3-N16R8 defaults — no menuconfig needed for basic sensor bring-up
+# ESP32-S3-N16R8 (Waveshare / DevKit compatible)
 CONFIG_IDF_TARGET="esp32s3"
 
 CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y

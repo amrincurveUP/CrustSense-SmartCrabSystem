@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Curve Up · Smart Aquaculture</title>
+<style>
+:root{--navy:#0A1F2B;--navy2:#112636;--orange:#FCB034;--white:#F8FAFC;--muted:#94A3B8;--blue:#38BDF8;--red:#EF4444;--green:#22C55E;--amber:#F59E0B;--card:#132A3A;--border:#1E3A4F}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--navy);color:var(--white);min-height:100vh;font-size:17px}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 0%,rgba(252,176,52,.08),transparent 50%),radial-gradient(ellipse at 80% 100%,rgba(56,189,248,.06),transparent 50%);pointer-events:none;z-index:0}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,31,43,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 24px;height:80px;display:flex;align-items:center;justify-content:space-between}
+.nav-tabs{display:flex;gap:6px;flex-wrap:wrap}
+.nav-tab{padding:12px 20px;border-radius:8px;cursor:pointer;font-size:1rem;font-weight:600;color:var(--muted);border:none;background:transparent;transition:.2s}
+.nav-tab:hover{color:var(--white);background:rgba(255,255,255,.05)}
+.nav-tab.active{color:var(--navy);background:var(--orange)}
+.nav-logo img{height:72px;width:auto}
+main{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:32px 20px 60px}
+.page{display:none;animation:fadeIn .35s ease}.page.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.hero{text-align:center;margin-bottom:36px}
+.hero-logo{margin-bottom:20px}
+.hero-logo img{height:clamp(100px,18vw,160px);width:auto}
+.hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:800}
+.hero h1 span{color:var(--orange)}
+.hero p{color:var(--muted);font-size:1.15rem;max-width:720px;margin:10px auto 0;line-height:1.5}
+.section-title{font-size:1.35rem;font-weight:700;color:var(--orange);margin:32px 0 18px;text-transform:uppercase;letter-spacing:.06em}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+.species-card{border-radius:18px;padding:28px;border:2px solid var(--border);background:var(--card);display:flex;flex-direction:column}
+.species-card.blue{border-top:4px solid var(--blue)}.species-card.red{border-top:4px solid var(--red)}
+.species-photo{width:100%;height:200px;border-radius:14px;object-fit:cover;margin-bottom:20px;background:var(--navy2);border:1px solid var(--border)}
+.species-card h2{font-size:clamp(1.7rem,3vw,2.1rem);margin-bottom:6px;font-weight:800}
+.species-card .latin{font-size:.95rem;color:var(--muted);font-style:italic;margin-bottom:16px}
+.species-card ul{flex:1;list-style:none}
+.species-card li{padding:10px 0;border-bottom:1px solid var(--border);color:var(--muted);font-size:1.08rem;display:flex;gap:10px}
+.species-card li::before{content:'▸';color:var(--orange)}
+.species-card .tag{display:inline-block;margin-top:18px;padding:8px 16px;border-radius:999px;font-size:.9rem;font-weight:700;align-self:flex-start}
+.species-card.blue .tag{background:rgba(56,189,248,.15);color:var(--blue)}
+.species-card.red .tag{background:rgba(239,68,68,.15);color:var(--red)}
+.iot-banner{background:linear-gradient(135deg,var(--navy2),var(--card));border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:32px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.iot-banner svg{flex-shrink:0;width:120px;height:90px}
+.iot-banner h3{font-size:1.25rem;margin-bottom:6px}
+.iot-banner p{color:var(--muted);font-size:1.05rem;line-height:1.5}
+.summary{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px}
+.pill{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:10px 18px;font-size:.95rem;color:var(--muted)}
+.tank-block{background:var(--card);border:1px solid var(--border);border-radius:20px;margin-bottom:16px;overflow:hidden}
+.tank-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;padding:20px 24px;cursor:pointer;user-select:none}
+.tank-head:hover{background:rgba(255,255,255,.03)}
+.tank-head h2{font-size:1.4rem;font-weight:800}
+.tank-head .species{font-size:1rem;color:var(--muted);font-style:italic}
+.tank-head-right{display:flex;align-items:center;gap:12px}
+.chevron{font-size:1.2rem;color:var(--orange);transition:transform .25s}
+.chevron.open{transform:rotate(180deg)}
+.live-badge{padding:6px 14px;border-radius:999px;font-size:.8rem;font-weight:700}
+.live-badge.on{background:rgba(34,197,94,.2);color:var(--green)}
+.live-badge.off{background:rgba(100,116,139,.2);color:var(--muted)}
+.tank-body{padding:0 24px 24px;display:none}.tank-body.open{display:block}
+.sensor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.sensor-card{background:var(--navy2);border-radius:16px;padding:22px;border:3px solid var(--border);transition:border-color .3s}
+.sensor-card h3{font-size:1rem;color:var(--muted);margin-bottom:8px}
+.sensor-card .val{font-size:clamp(2rem,4vw,2.6rem);font-weight:800;margin:10px 0}
+.sensor-card .meta{color:var(--muted);font-size:.95rem;margin-bottom:10px}
+.badge{display:inline-block;padding:8px 16px;border-radius:999px;font-weight:700;font-size:.85rem;color:var(--navy)}
+.level-bar{height:10px;background:var(--border);border-radius:5px;margin-top:12px;overflow:hidden}
+.level-bar div{height:100%;transition:width .4s}
+.check-toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center}
+.check-section{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:24px}
+.check-section-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px}
+.check-section h3{font-size:1.35rem;display:flex;align-items:center;gap:10px}
+.check-section h3 .dot{width:12px;height:12px;border-radius:50%;background:var(--orange)}
+.task-card{background:var(--navy2);border:1px solid var(--border);border-radius:12px;padding:0;margin-bottom:14px;overflow:hidden}
+.task-card.done{opacity:.65}
+.task-main{border-left:5px solid var(--orange);padding:18px}
+.task-top{display:flex;align-items:flex-start;gap:12px}
+.task-top input{width:22px;height:22px;accent-color:var(--orange);margin-top:4px;flex-shrink:0}
+.task-body{flex:1}.task-body strong{font-size:1.12rem;display:flex;align-items:center;gap:10px;margin-bottom:4px}
+.task-color{width:12px;height:12px;border-radius:50%;flex-shrink:0}
+.task-body span{color:var(--muted);font-size:1.02rem;line-height:1.45;display:block}
+.custom-type-row{display:none;margin-top:6px}.custom-type-row.show{display:block}
+.task-actions,.subtask-actions{display:none;gap:8px;margin-top:12px;flex-wrap:wrap}
+body.edit-mode .task-actions,body.edit-mode .subtask-actions{display:flex}
+.subtask-actions{margin-left:auto;margin-top:0}
+.subtask{margin:0;padding:12px 18px 12px 46px;border-top:1px dashed var(--border);display:flex;align-items:flex-start;gap:10px;background:rgba(0,0,0,.12)}
+.subtask input{width:18px;height:18px;accent-color:var(--muted);margin-top:3px}
+.subtask label{flex:1;font-size:1rem;color:var(--muted)}
+.date-banner{text-align:center;margin-bottom:24px;padding:18px 24px;background:var(--card);border:1px solid var(--border);border-radius:16px}
+.date-banner .day{font-size:clamp(1.5rem,4vw,2rem);font-weight:800;color:var(--orange)}
+.date-banner .full{font-size:1.1rem;color:var(--muted);margin-top:4px}
+.check-layout{display:grid;grid-template-columns:1fr;gap:24px}
+@media(min-width:900px){.check-layout{grid-template-columns:1fr 380px}}
+.calendar-panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:24px}
+.calendar-panel h3{font-size:1.2rem;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.cal-nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cal-nav button{background:transparent;border:1px solid var(--border);color:var(--white);width:36px;height:36px;border-radius:8px;cursor:pointer;font-size:1.1rem}
+.cal-nav button:hover{border-color:var(--orange);color:var(--orange)}
+.cal-nav span{font-weight:700;font-size:1.05rem}
+.cal-weekdays{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-bottom:8px}
+.cal-weekdays span{text-align:center;font-size:.75rem;color:var(--muted);font-weight:600;padding:4px}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:8px;cursor:pointer;font-size:.9rem;border:1px solid transparent;position:relative;min-height:40px}
+.cal-day:hover{background:rgba(255,255,255,.05)}
+.cal-day.other{color:var(--muted);opacity:.45}
+.cal-day.today{border-color:var(--orange);color:var(--orange);font-weight:700}
+.cal-day.selected{background:var(--orange);color:var(--navy);font-weight:700}
+.cal-day.has-events::after{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);position:absolute;bottom:4px}
+.cal-day.selected.has-events::after{background:var(--navy)}
+.cal-events{margin-top:20px;padding-top:20px;border-top:1px solid var(--border)}
+.cal-events h4{font-size:1rem;color:var(--muted);margin-bottom:12px}
+.cal-event{background:var(--navy2);border:1px solid var(--border);border-left:4px solid var(--orange);border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.cal-event.reminder{border-left-color:var(--amber)}
+.cal-event.future{border-left-color:var(--blue)}
+.cal-event strong{display:block;font-size:1rem;margin-bottom:2px}
+.cal-event span{font-size:.9rem;color:var(--muted)}
+.cal-event .ev-kind{font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:4px}
+.cal-empty{color:var(--muted);font-size:.95rem;text-align:center;padding:12px 0}
+.event-form-label{display:block;color:var(--orange);font-weight:700;font-size:.95rem;margin:16px 0 8px;text-transform:uppercase;letter-spacing:.04em}
+.modal-box .event-date-label{color:var(--muted);font-size:1.05rem;margin:-8px 0 16px}
+.daily-log-section{margin-top:8px}
+.daily-log-section .check-section{margin-bottom:0}
+.log-label{display:block;color:var(--muted);font-size:.9rem;margin:16px 0 8px}
+.daily-log-summary{width:100%;min-height:110px;padding:14px;border-radius:10px;border:1px solid var(--border);background:var(--navy2);color:var(--white);font-size:1rem;line-height:1.5;resize:vertical;font-family:inherit}
+.daily-log-summary:focus{outline:none;border-color:var(--orange)}
+.log-point{display:flex;align-items:flex-start;gap:10px;padding:10px 0;border-bottom:1px dashed var(--border)}
+.log-point::before{content:'•';color:var(--orange);font-size:1.2rem;line-height:1.2;flex-shrink:0}
+.log-point span{flex:1;color:var(--muted);font-size:1rem;line-height:1.45}
+.log-point button{flex-shrink:0}
+.log-add-row{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.log-add-row input{flex:1;min-width:200px;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--navy);color:var(--white);font-size:1rem}
+.log-actions{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+.log-saved{color:var(--green);font-size:.9rem;font-weight:600}
+.log-empty{color:var(--muted);font-size:.95rem;padding:8px 0}
+.edit-only{display:none}body.edit-mode .edit-only{display:inline-flex}
+.btn{padding:10px 18px;border-radius:8px;border:none;font-weight:600;cursor:pointer;font-size:.9rem}
+.btn-orange{background:var(--orange);color:var(--navy)}.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.btn-sm{padding:6px 12px;font-size:.8rem}.btn-danger{color:#f87171;border-color:#f87171}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
+.modal.open{display:flex}
+.modal-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;width:100%;max-width:480px}
+.modal-box h4{font-size:1.2rem;margin-bottom:16px}
+.modal-box label{display:block;color:var(--muted);font-size:.9rem;margin:12px 0 6px}
+.modal-box input,.modal-box textarea,.modal-box select{width:100%;padding:12px;border-radius:8px;border:1px solid var(--border);background:var(--navy);color:var(--white);font-size:1rem}
+.modal-box select{cursor:pointer}
+.modal-box textarea{min-height:70px;resize:vertical}
+.color-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+.color-opt{width:32px;height:32px;border-radius:50%;cursor:pointer;border:3px solid transparent}
+.color-opt.selected{border-color:var(--white)}
+.modal-actions{display:flex;gap:10px;margin-top:20px;justify-content:flex-end}
+.legend{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:24px;font-size:.9rem;color:var(--muted)}
+footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:40px;padding-top:20px;border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-tabs">
+    <button class="nav-tab active" data-page="home">Home</button>
+    <button class="nav-tab" data-page="sensors">Sensor Monitor</button>
+    <button class="nav-tab" data-page="checklist">Daily Checkup</button>
+  </div>
+  <div class="nav-logo"><img src="/logo.png" alt="Curve Up"/></div>
+</nav>
+
+<main>
+  <div id="page-home" class="page active">
+    <div class="hero">
+      <div class="hero-logo"><img src="/logo.png" alt="Curve Up"/></div>
+      <h1>Smart <span>Aquaculture</span> System</h1>
+    </div>
+    <div class="iot-banner">
+      <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="55" y="20" width="50" height="35" rx="4" stroke="#FCB034" stroke-width="2" fill="#132A3A"/>
+        <text x="80" y="42" text-anchor="middle" fill="#FCB034" font-size="9" font-family="system-ui">ESP32</text>
+        <circle cx="30" cy="75" r="12" stroke="#38bdf8" stroke-width="2" fill="none"/>
+        <text x="30" y="79" text-anchor="middle" fill="#38bdf8" font-size="7">T</text>
+        <circle cx="80" cy="85" r="12" stroke="#a78bfa" stroke-width="2" fill="none"/>
+        <text x="80" y="89" text-anchor="middle" fill="#a78bfa" font-size="7">Tb</text>
+        <circle cx="130" cy="75" r="12" stroke="#34d399" stroke-width="2" fill="none"/>
+        <text x="130" y="79" text-anchor="middle" fill="#34d399" font-size="7">L</text>
+        <path d="M55 45 L30 63 M80 55 L80 73 M105 45 L130 63" stroke="#64748b" stroke-width="1.5" stroke-dasharray="3 2"/>
+        <path d="M80 20 L80 8 M68 12 h24" stroke="#FCB034" stroke-width="2"/>
+        <circle cx="80" cy="6" r="3" fill="#FCB034"/>
+        <rect x="10" y="100" width="140" height="14" rx="3" stroke="#334155" stroke-width="1" fill="#0A1F2B"/>
+        <text x="80" y="110" text-anchor="middle" fill="#94a3b8" font-size="8">WiFi · Live Dashboard</text>
+      </svg>
+      <div>
+        <h3>3-Basket IoT Monitoring</h3>
+        <p>ESP32-S3 reads temperature, turbidity, and water level. Data sent over WiFi to this dashboard every 2 seconds.</p>
+      </div>
+    </div>
+    <div class="section-title">Species Guide</div>
+    <div class="grid2">
+      <div class="species-card blue">
+        <img class="species-photo" src="/electric-blue.jpg" alt="Electric Blue Crayfish" id="imgBlue"/>
+        <h2>Electric Blue Crayfish</h2>
+        <p class="latin">Procambarus alleni</p>
+        <ul>
+          <li>Ideal temperature: 18–24°C</li>
+          <li>Needs clean, well-oxygenated water</li>
+          <li>Active at dawn and dusk — check movement daily</li>
+          <li>Molts periodically — provide hiding spots</li>
+          <li>Feed once daily; remove leftovers within 2 hours</li>
+          <li>Blue colour brightens with good water quality</li>
+        </ul>
+        <span class="tag">Basket L1 &amp; L3</span>
+      </div>
+      <div class="species-card red">
+        <img class="species-photo" src="/red-crayfish.jpg" alt="Neon Crayfish" id="imgRed"/>
+        <h2>Neon Crayfish</h2>
+        <p class="latin">Procambarus clarkii</p>
+        <ul>
+          <li>Ideal temperature: 24–30°C</li>
+          <li>Tolerates slightly turbid water; clean is still better</li>
+          <li>Check claws and antennae for damage or fungus</li>
+          <li>More aggressive — allow enough space per basket</li>
+          <li>Protein-rich diet; avoid overfeeding</li>
+          <li>Colour fades when stressed or water quality drops</li>
+        </ul>
+        <span class="tag">Basket L2</span>
+      </div>
+    </div>
+  </div>
+
+  <div id="page-sensors" class="page">
+    <div class="hero">
+      <h1>Sensor <span>Monitor</span></h1>
+      <p>Water parameters for baskets L1, L2, L3 — tap to expand or collapse</p>
+    </div>
+    <div class="summary">
+      <div class="pill" id="connPill">Loading...</div>
+      <div class="pill" id="timePill">--</div>
+    </div>
+    <div id="tanksContainer"></div>
+    <div class="legend"><span>🟢 Low / OK</span><span>🟡 Medium</span><span>🔴 High / Alert</span><span>🔵 Cold / Full</span></div>
+  </div>
+
+  <div id="page-checklist" class="page">
+    <div class="hero">
+      <h1>Daily <span>Checkup</span></h1>
+      <p>Tasks grouped by type. Click a calendar date to schedule reminders and future tasks.</p>
+    </div>
+    <div class="date-banner">
+      <div class="day" id="todayDay">--</div>
+      <div class="full" id="todayFull">--</div>
+    </div>
+    <div class="check-toolbar">
+      <button class="btn btn-orange" id="editModeBtn" onclick="toggleEditMode()">Edit Tasks</button>
+      <button class="btn btn-orange edit-only" onclick="openTaskModal()">+ Add Task</button>
+      <button class="btn btn-ghost" onclick="resetAllChecks()">Reset Progress</button>
+    </div>
+    <div class="check-layout">
+      <div id="checklistContainer"></div>
+      <div class="calendar-panel">
+        <h3>📅 Calendar</h3>
+        <div class="cal-nav">
+          <button onclick="changeCalMonth(-1)" aria-label="Previous month">‹</button>
+          <span id="calMonthLabel">--</span>
+          <button onclick="changeCalMonth(1)" aria-label="Next month">›</button>
+        </div>
+        <div class="cal-weekdays"><span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span></div>
+        <div class="cal-grid" id="calGrid"></div>
+        <div class="cal-events">
+          <h4 id="calSelectedLabel">Select a date</h4>
+          <div id="calEventsList"></div>
+        </div>
+      </div>
+    </div>
+    <div class="daily-log-section">
+      <div class="check-section">
+        <div class="check-section-head">
+          <h3><span class="dot"></span>Daily Log</h3>
+          <span id="dailyLogDateLabel" style="color:var(--muted);font-size:1rem">Today</span>
+        </div>
+        <p style="color:var(--muted);font-size:.95rem;margin-bottom:4px">Record monitoring observations and note points for this day.</p>
+        <label class="log-label">Monitoring summary</label>
+        <textarea class="daily-log-summary" id="dailyLogSummary" placeholder="e.g. L1 sensors stable, crayfish active in all baskets, slight foam on L2 surface, topped up water in L3..."></textarea>
+        <label class="log-label">Note points</label>
+        <div id="dailyLogPoints"></div>
+        <div class="log-add-row">
+          <input id="dailyLogPointInput" placeholder="Add a note point..." onkeydown="if(event.key==='Enter')addDailyLogPoint()"/>
+          <button class="btn btn-orange btn-sm" onclick="addDailyLogPoint()">+ Add Point</button>
+        </div>
+        <div class="log-actions">
+          <button class="btn btn-orange" onclick="saveDailyLog()">Save Log</button>
+          <span id="dailyLogSaved" class="log-saved"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>Curve Up · Smart Aquaculture IoT</footer>
+</main>
+
+<div class="modal" id="taskModal">
+  <div class="modal-box">
+    <h4 id="modalTitle">Add Task</h4>
+    <input type="hidden" id="modalTaskId"/>
+    <label>Task type</label>
+    <select id="modalTypeInput" onchange="onTypeSelectChange()"></select>
+    <div class="custom-type-row" id="customTypeRow">
+      <label>Custom type name</label>
+      <input id="modalCustomTypeInput" placeholder="e.g. Feeding, Sensor check"/>
+    </div>
+    <label>Task title</label><input id="modalTitleInput" placeholder="e.g. Health check"/>
+    <label>Description (optional)</label><textarea id="modalDescInput"></textarea>
+    <label>Colour flag</label><div class="color-row" id="colorRow"></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeModal()">Cancel</button>
+      <button class="btn btn-orange" onclick="saveTaskModal()">Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="eventModal">
+  <div class="modal-box">
+    <h4 id="eventModalTitle">Schedule</h4>
+    <p class="event-date-label" id="eventDateLabel">--</p>
+    <input type="hidden" id="eventId"/>
+    <input type="hidden" id="eventDateInput"/>
+    <div id="eventExistingList"></div>
+    <span class="event-form-label" id="eventFormLabel">Add schedule</span>
+    <label>Type</label>
+    <select id="eventKindInput">
+      <option value="reminder">Reminder</option>
+      <option value="task">Scheduled Task</option>
+      <option value="future">Future Task</option>
+    </select>
+    <label>Title</label><input id="eventTitleInput" placeholder="e.g. Water change, Vet visit"/>
+    <label>Notes (optional)</label><textarea id="eventNoteInput"></textarea>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeEventModal()">Close</button>
+      <button class="btn btn-orange" onclick="saveEventModal()">Save</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="subModal">
+  <div class="modal-box">
+    <h4 id="subModalTitle">Add Sub-task</h4>
+    <input type="hidden" id="subTaskId"/><input type="hidden" id="subId"/>
+    <label>Sub-task text</label><input id="subTextInput"/>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeSubModal()">Cancel</button>
+      <button class="btn btn-orange" onclick="saveSubModal()">Save</button>
+    </div>
+  </div>
+</div>
+
+<script>
+var COLORS=[{n:'Green',c:'#22c55e'},{n:'Orange',c:'#FCB034'},{n:'Amber',c:'#f59e0b'},{n:'Red',c:'#ef4444'},{n:'Blue',c:'#38bdf8'},{n:'Gray',c:'#64748b'}];
+var selectedColor='#FCB034',editMode=false,sensorData=null;
+var tankOpen=JSON.parse(localStorage.getItem('tankOpen')||'{"L1":true,"L2":false,"L3":false}');
+var calYear,calMonth,selectedCalDate;
+var EVENT_KINDS={reminder:'Reminder',task:'Scheduled Task',future:'Future Task'};
+
+var DEFAULT_TYPES=['Morning','Midday','End of Day','Weekly','General'];
+var DEFAULT_CHECKS={customTypes:[],tasks:[
+  {id:'m1',type:'Morning',title:'Morning health check',desc:'Inspect all 3 baskets for dead crayfish or unusual behaviour',color:'#FCB034',done:false,subs:[]},
+  {id:'m2',type:'Morning',title:'Review sensor dashboard',desc:'Check L1, L2, L3 temperature, turbidity, and water level',color:'#22c55e',done:false,subs:[]},
+  {id:'m3',type:'Morning',title:'Crayfish activity check',desc:'Confirm crayfish are alive and moving in L1, L2, L3',color:'#38bdf8',done:false,subs:[]},
+  {id:'m4',type:'Morning',title:'Feeding',desc:'Feed all baskets evenly; note any basket that did not eat',color:'#f59e0b',done:false,subs:[]},
+  {id:'m5',type:'Morning',title:'Water quality check',desc:'Check smell, surface foam, and leftover food — remove waste',color:'#ef4444',done:false,subs:[]},
+  {id:'e1',type:'End of Day',title:'Water level check',desc:'Confirm adequate water in L1, L2, and L3',color:'#38bdf8',done:false,subs:[]},
+  {id:'e2',type:'End of Day',title:'Basket security',desc:'All 3 baskets stable, level, and secure on the rack',color:'#FCB034',done:false,subs:[]},
+  {id:'e3',type:'End of Day',title:'Power supply',desc:'Pumps, aerators, and equipment are ON',color:'#22c55e',done:false,subs:[]},
+  {id:'e4',type:'End of Day',title:'ESP32 status',desc:'Device connected to WiFi; dashboard data updating',color:'#f59e0b',done:false,subs:[]},
+  {id:'e5',type:'End of Day',title:'Cable and wiring check',desc:'Sensor cables secure — not loose or submerged',color:'#ef4444',done:false,subs:[]}
+]};
+
+document.querySelectorAll('.nav-tab').forEach(function(t){
+  t.addEventListener('click',function(){
+    document.querySelectorAll('.nav-tab').forEach(function(x){x.classList.remove('active');});
+    document.querySelectorAll('.page').forEach(function(p){p.classList.remove('active');});
+    t.classList.add('active');
+    document.getElementById('page-'+t.dataset.page).classList.add('active');
+    if(t.dataset.page==='checklist'){updateTodayDate();renderCalendar();loadDailyLog(getNotesDate());}
+  });
+});
+
+function pad2(n){return n<10?'0'+n:''+n;}
+function toDateStr(d){return d.getFullYear()+'-'+pad2(d.getMonth()+1)+'-'+pad2(d.getDate());}
+function parseDate(s){var p=s.split('-');return new Date(+p[0],+p[1]-1,+p[2]);}
+
+function updateTodayDate(){
+  var now=new Date();
+  document.getElementById('todayDay').textContent=now.toLocaleDateString(undefined,{weekday:'long'});
+  document.getElementById('todayFull').textContent=now.toLocaleDateString(undefined,{day:'numeric',month:'long',year:'numeric'});
+}
+
+function loadCalendar(){
+  var s=localStorage.getItem('curveup_calendar');
+  if(s){try{return JSON.parse(s);}catch(e){}}
+  return{events:[]};
+}
+function saveCalendarData(d){localStorage.setItem('curveup_calendar',JSON.stringify(d));}
+
+function initCalendar(){
+  var now=new Date();
+  calYear=now.getFullYear();calMonth=now.getMonth();
+  selectedCalDate=toDateStr(now);
+}
+
+function changeCalMonth(delta){
+  calMonth+=delta;
+  if(calMonth>11){calMonth=0;calYear++;}
+  if(calMonth<0){calMonth=11;calYear--;}
+  renderCalendar();
+}
+
+function onCalDayClick(ds){
+  selectedCalDate=ds;
+  renderCalendar();
+  loadDailyLog(ds);
+  openDayScheduleModal(ds);
+}
+
+function datesWithEvents(){
+  var ev=loadCalendar().events,map={};
+  ev.forEach(function(e){if(e.date)map[e.date]=1;});
+  return map;
+}
+
+function renderCalendar(){
+  var grid=document.getElementById('calGrid');
+  if(!grid)return;
+  var first=new Date(calYear,calMonth,1),startDay=first.getDay();
+  var daysInMonth=new Date(calYear,calMonth+1,0).getDate();
+  var prevDays=new Date(calYear,calMonth,0).getDate();
+  var todayStr=toDateStr(new Date());
+  var marks=datesWithEvents();
+  document.getElementById('calMonthLabel').textContent=first.toLocaleDateString(undefined,{month:'long',year:'numeric'});
+  var html='',i,ds,d,cls;
+  for(i=0;i<startDay;i++){
+    d=prevDays-startDay+i+1;
+    ds=toDateStr(new Date(calYear,calMonth-1,d));
+    cls='cal-day other'+(marks[ds]?' has-events':'');
+    html+='<div class="'+cls+'" onclick="onCalDayClick(\''+ds+'\')">'+d+'</div>';
+  }
+  for(d=1;d<=daysInMonth;d++){
+    ds=toDateStr(new Date(calYear,calMonth,d));
+    cls='cal-day';
+    if(ds===todayStr)cls+=' today';
+    if(ds===selectedCalDate)cls+=' selected';
+    if(marks[ds])cls+=' has-events';
+    html+='<div class="'+cls+'" onclick="onCalDayClick(\''+ds+'\')">'+d+'</div>';
+  }
+  var total=startDay+daysInMonth,rem=total%7?7-total%7:0;
+  for(i=1;i<=rem;i++){
+    ds=toDateStr(new Date(calYear,calMonth+1,i));
+    cls='cal-day other'+(marks[ds]?' has-events':'');
+    html+='<div class="'+cls+'" onclick="onCalDayClick(\''+ds+'\')">'+i+'</div>';
+  }
+  grid.innerHTML=html;
+  renderCalEvents();
+}
+
+function renderCalEvents(){
+  var list=document.getElementById('calEventsList'),label=document.getElementById('calSelectedLabel');
+  if(!list)return;
+  var d=selectedCalDate?parseDate(selectedCalDate):new Date();
+  label.textContent=d.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  var items=loadCalendar().events.filter(function(e){return e.date===selectedCalDate;});
+  if(!items.length){list.innerHTML='<div class="cal-empty">Click a date to add a reminder or task.</div>';return;}
+  var html='';
+  items.forEach(function(ev){
+    html+='<div class="cal-event '+ev.kind+'">';
+    html+='<div class="ev-kind">'+esc(EVENT_KINDS[ev.kind]||ev.kind)+'</div>';
+    html+='<strong>'+esc(ev.title)+'</strong>';
+    if(ev.note)html+='<span>'+esc(ev.note)+'</span>';
+    html+='</div>';
+  });
+  list.innerHTML=html;
+}
+
+function renderEventExistingList(ds){
+  var el=document.getElementById('eventExistingList');
+  if(!el)return;
+  var items=loadCalendar().events.filter(function(e){return e.date===ds;});
+  if(!items.length){el.innerHTML='<div class="cal-empty" style="padding:8px 0">Nothing scheduled for this day.</div>';return;}
+  var html='';
+  items.forEach(function(ev){
+    html+='<div class="cal-event '+ev.kind+'">';
+    html+='<div class="ev-kind">'+esc(EVENT_KINDS[ev.kind]||ev.kind)+'</div>';
+    html+='<strong>'+esc(ev.title)+'</strong>';
+    if(ev.note)html+='<span>'+esc(ev.note)+'</span>';
+    html+='<div style="display:flex;gap:6px;margin-top:8px">';
+    html+='<button class="btn btn-sm btn-ghost" onclick="openDayScheduleModal(\''+ds+'\',\''+ev.id+'\')">Edit</button>';
+    html+='<button class="btn btn-sm btn-ghost btn-danger" onclick="removeEvent(\''+ev.id+'\')">Remove</button></div></div>';
+  });
+  el.innerHTML=html;
+}
+
+function openDayScheduleModal(ds,editId){
+  document.getElementById('eventDateInput').value=ds;
+  var d=parseDate(ds);
+  document.getElementById('eventModalTitle').textContent='Schedule';
+  document.getElementById('eventDateLabel').textContent=d.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  renderEventExistingList(ds);
+  if(editId){
+    var ev=loadCalendar().events.find(function(v){return v.id===editId;});
+    document.getElementById('eventId').value=editId;
+    document.getElementById('eventKindInput').value=ev.kind||'reminder';
+    document.getElementById('eventTitleInput').value=ev.title;
+    document.getElementById('eventNoteInput').value=ev.note||'';
+    document.getElementById('eventFormLabel').textContent='Edit schedule';
+  }else{
+    document.getElementById('eventId').value='';
+    document.getElementById('eventKindInput').value='reminder';
+    document.getElementById('eventTitleInput').value='';
+    document.getElementById('eventNoteInput').value='';
+    document.getElementById('eventFormLabel').textContent='Add schedule';
+  }
+  document.getElementById('eventModal').classList.add('open');
+}
+function closeEventModal(){document.getElementById('eventModal').classList.remove('open');}
+function saveEventModal(){
+  var editId=document.getElementById('eventId').value,date=document.getElementById('eventDateInput').value;
+  var kind=document.getElementById('eventKindInput').value,title=document.getElementById('eventTitleInput').value.trim();
+  var note=document.getElementById('eventNoteInput').value.trim();
+  if(!date){alert('Choose a date');return;}
+  if(!title){alert('Enter a title');return;}
+  var data=loadCalendar();
+  if(editId){
+    var ev=data.events.find(function(v){return v.id===editId;});
+    ev.kind=kind;ev.title=title;ev.note=note;
+  }else{
+    data.events.push({id:uid(),date:date,kind:kind,title:title,note:note});
+  }
+  saveCalendarData(data);
+  document.getElementById('eventId').value='';
+  document.getElementById('eventKindInput').value='reminder';
+  document.getElementById('eventTitleInput').value='';
+  document.getElementById('eventNoteInput').value='';
+  document.getElementById('eventFormLabel').textContent='Add schedule';
+  renderEventExistingList(date);
+  renderCalendar();
+}
+function removeEvent(id){
+  if(!confirm('Remove this scheduled item?'))return;
+  var data=loadCalendar();
+  data.events=data.events.filter(function(v){return v.id!==id;});
+  saveCalendarData(data);
+  if(document.getElementById('eventModal').classList.contains('open')){
+    renderEventExistingList(document.getElementById('eventDateInput').value);
+  }
+  renderCalendar();
+}
+
+function toggleTank(id){
+  tankOpen[id]=!tankOpen[id];
+  localStorage.setItem('tankOpen',JSON.stringify(tankOpen));
+  if(sensorData)renderTanks(sensorData);
+}
+
+function renderTankCard(tank){
+  var open=!!tankOpen[tank.id];
+  var liveCls=tank.live?'on':'off';
+  var liveTxt=tank.live?'LIVE':'OFFLINE';
+  var h='<div class="tank-block">';
+  h+='<div class="tank-head" onclick="toggleTank(\''+tank.id+'\')">';
+  h+='<div><h2>'+tank.id+' · '+tank.label.split('·').pop().trim()+'</h2>';
+  h+='<div class="species">'+tank.species+'</div></div>';
+  h+='<div class="tank-head-right"><span class="live-badge '+liveCls+'">'+liveTxt+'</span>';
+  h+='<span class="chevron'+(open?' open':'')+'">▼</span></div></div>';
+  h+='<div class="tank-body'+(open?' open':'')+'"><div class="sensor-grid">';
+  function sc(n,o,v,m,e){return '<div class="sensor-card" style="border-color:'+o.color+'"><h3>'+n+'</h3><div class="val">'+v+'</div><div class="meta">'+m+'</div><span class="badge" style="background:'+o.color+'">'+o.level+'</span><div style="color:var(--muted);font-size:.85rem;margin-top:8px">'+o.state+'</div>'+e+'</div>';}
+  var tc=tank.temperature.c!=null?tank.temperature.c.toFixed(1)+' °C':'—';
+  h+=sc('Temperature',tank.temperature,tc,'ADC '+tank.temperature.v.toFixed(3)+' V','');
+  h+=sc('Turbidity',tank.turbidity,tank.turbidity.v.toFixed(3)+' V','Raw '+tank.turbidity.raw,'');
+  h+=sc('Water Level',tank.water_level,tank.water_level.pct+'%',tank.water_level.label+' · raw '+tank.water_level.raw,'<div class="level-bar"><div style="width:'+tank.water_level.pct+'%;background:'+tank.water_level.color+'"></div></div>');
+  h+='</div></div></div>';
+  return h;
+}
+
+function renderTanks(d){
+  var html='';d.tanks.forEach(function(t){html+=renderTankCard(t);});
+  document.getElementById('tanksContainer').innerHTML=html;
+}
+
+async function refreshSensors(){
+  try{
+    var r=await fetch('/api/readings');sensorData=await r.json();
+    document.getElementById('connPill').innerHTML='<strong>'+sensorData.connected+'/9</strong> sensors · <strong>'+sensorData.active+'/9</strong> active';
+    document.getElementById('timePill').textContent='Updated '+new Date().toLocaleTimeString();
+    renderTanks(sensorData);
+  }catch(e){document.getElementById('connPill').textContent='Waiting for ESP32...';}
+}
+refreshSensors();setInterval(refreshSensors,2000);
+
+function toggleEditMode(){
+  editMode=!editMode;
+  document.body.classList.toggle('edit-mode',editMode);
+  document.getElementById('editModeBtn').textContent=editMode?'Done Editing':'Edit Tasks';
+  renderChecklists();renderCalendar();
+}
+
+function migrateChecks(d){
+  if(d.morning||d.evening){
+    var tasks=[];
+    if(d.morning&&d.morning.tasks)d.morning.tasks.forEach(function(t){tasks.push(Object.assign({},t,{type:t.type||'Morning'}));});
+    if(d.evening&&d.evening.tasks)d.evening.tasks.forEach(function(t){tasks.push(Object.assign({},t,{type:t.type||'End of Day'}));});
+    d={customTypes:[],tasks:tasks};
+  }
+  if(!d.tasks)d.tasks=[];
+  if(!d.customTypes)d.customTypes=[];
+  return d;
+}
+function loadChecks(){
+  var s=localStorage.getItem('curveup_checks');
+  if(s){try{return migrateChecks(JSON.parse(s));}catch(e){}}
+  return JSON.parse(JSON.stringify(DEFAULT_CHECKS));
+}
+function saveChecksData(d){localStorage.setItem('curveup_checks',JSON.stringify(d));}
+
+function getAllTypes(data){
+  var seen={},out=[];
+  DEFAULT_TYPES.forEach(function(t){if(!seen[t]){seen[t]=1;out.push(t);}});
+  data.customTypes.forEach(function(t){if(t&&!seen[t]){seen[t]=1;out.push(t);}});
+  data.tasks.forEach(function(task){
+    var t=task.type||'General';
+    if(!seen[t]){seen[t]=1;out.push(t);}
+  });
+  return out;
+}
+
+function buildTypeSelect(selected){
+  var data=loadChecks(),sel=document.getElementById('modalTypeInput'),types=getAllTypes(data);
+  sel.innerHTML='';
+  types.forEach(function(t){
+    var o=document.createElement('option');
+    o.value=t;o.textContent=t;
+    if(t===selected)o.selected=true;
+    sel.appendChild(o);
+  });
+  var customOpt=document.createElement('option');
+  customOpt.value='__custom__';customOpt.textContent='+ Custom type...';
+  sel.appendChild(customOpt);
+  if(selected&&types.indexOf(selected)<0){
+    customOpt.selected=true;
+    document.getElementById('modalCustomTypeInput').value=selected;
+  }else if(!selected||types.indexOf(selected)>=0){
+    document.getElementById('modalCustomTypeInput').value='';
+  }
+  onTypeSelectChange();
+}
+
+function onTypeSelectChange(){
+  var isCustom=document.getElementById('modalTypeInput').value==='__custom__';
+  document.getElementById('customTypeRow').classList.toggle('show',isCustom);
+}
+
+function resolveTaskType(){
+  var sel=document.getElementById('modalTypeInput').value;
+  if(sel==='__custom__'){
+    return document.getElementById('modalCustomTypeInput').value.trim();
+  }
+  return sel;
+}
+
+function ensureCustomType(data,type){
+  if(!type||DEFAULT_TYPES.indexOf(type)>=0)return;
+  if(data.customTypes.indexOf(type)<0)data.customTypes.push(type);
+}
+
+function renderChecklists(){
+  var data=loadChecks(),types=getAllTypes(data),grouped={},totalDone=0,html='';
+  data.tasks.forEach(function(t){
+    var type=t.type||'General';
+    if(!grouped[type])grouped[type]=[];
+    grouped[type].push(t);
+    if(t.done)totalDone++;
+  });
+  types.forEach(function(type){
+    var tasks=grouped[type];
+    if(!tasks||!tasks.length)return;
+    var done=tasks.filter(function(t){return t.done;}).length;
+    html+='<div class="check-section"><div class="check-section-head"><h3><span class="dot"></span>'+esc(type)+'</h3>';
+    html+='<span style="color:var(--muted);font-size:1.08rem">'+done+' / '+tasks.length+' done</span></div>';
+    tasks.forEach(function(task){
+      html+='<div class="task-card'+(task.done?' done':'')+'">';
+      html+='<div class="task-main" style="border-left-color:'+task.color+'">';
+      html+='<div class="task-top"><input type="checkbox"'+(task.done?' checked':'')+' onchange="toggleTask(\''+task.id+'\',this.checked)"/>';
+      html+='<div class="task-body"><strong><span class="task-color" style="background:'+task.color+'"></span>'+esc(task.title)+'</strong><span>'+esc(task.desc||'')+'</span></div></div>';
+      html+='<div class="task-actions">';
+      html+='<button class="btn btn-sm btn-ghost" onclick="openSubModal(\''+task.id+'\')">+ Sub-task</button>';
+      html+='<button class="btn btn-sm btn-ghost" onclick="editTask(\''+task.id+'\')">Edit</button>';
+      html+='<button class="btn btn-sm btn-ghost btn-danger" onclick="removeTask(\''+task.id+'\')">Remove</button></div></div>';
+      task.subs.forEach(function(sub){
+        html+='<div class="subtask"><input type="checkbox"'+(sub.done?' checked':'')+' onchange="toggleSub(\''+task.id+'\',\''+sub.id+'\',this.checked)"/>';
+        html+='<label>'+esc(sub.text)+'</label>';
+        html+='<div class="subtask-actions"><button class="btn btn-sm btn-ghost" onclick="editSub(\''+task.id+'\',\''+sub.id+'\')">Edit</button>';
+        html+='<button class="btn btn-sm btn-ghost btn-danger" onclick="removeSub(\''+task.id+'\',\''+sub.id+'\')">Remove</button></div></div>';
+      });
+      html+='</div>';
+    });
+    html+='</div>';
+  });
+  if(!data.tasks.length){
+    html+='<div class="check-section"><p style="color:var(--muted);text-align:center;padding:12px 0">No tasks yet. Click <strong>Edit Tasks</strong> then <strong>+ Add Task</strong>.</p></div>';
+  }else{
+    html='<div class="summary" style="margin-bottom:20px"><div class="pill"><strong>'+totalDone+' / '+data.tasks.length+'</strong> tasks done</div></div>'+html;
+  }
+  document.getElementById('checklistContainer').innerHTML=html;
+}
+
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');}
+function uid(){return 't'+Date.now()+Math.random().toString(36).slice(2,6);}
+function findTask(x,id){return x.tasks.find(function(v){return v.id===id;});}
+function toggleTask(i,d){var x=loadChecks(),t=findTask(x,i);if(t){t.done=d;saveChecksData(x);renderChecklists();}}
+function toggleSub(tid,sid,d){var x=loadChecks(),t=findTask(x,tid);if(t){var u=t.subs.find(function(v){return v.id===sid;});if(u){u.done=d;saveChecksData(x);renderChecklists();}}}
+function removeTask(i){if(!confirm('Remove this task?'))return;var x=loadChecks();x.tasks=x.tasks.filter(function(v){return v.id!==i;});saveChecksData(x);renderChecklists();}
+function removeSub(tid,sid){if(!confirm('Remove sub-task?'))return;var x=loadChecks(),t=findTask(x,tid);if(t){t.subs=t.subs.filter(function(v){return v.id!==sid;});saveChecksData(x);renderChecklists();}}
+function buildColorRow(){var row=document.getElementById('colorRow');row.innerHTML='';COLORS.forEach(function(c){var d=document.createElement('div');d.className='color-opt'+(c.c===selectedColor?' selected':'');d.style.background=c.c;d.onclick=function(){selectedColor=c.c;buildColorRow();};row.appendChild(d);});}
+function openTaskModal(editId){document.getElementById('modalTaskId').value=editId||'';document.getElementById('modalTitle').textContent=editId?'Edit Task':'Add Task';
+  document.getElementById('modalCustomTypeInput').value='';
+  if(editId){
+    var t=findTask(loadChecks(),editId);
+    buildTypeSelect(t.type||'General');
+    document.getElementById('modalTitleInput').value=t.title;
+    document.getElementById('modalDescInput').value=t.desc||'';
+    selectedColor=t.color;
+  }else{
+    buildTypeSelect('Morning');
+    document.getElementById('modalTitleInput').value='';
+    document.getElementById('modalDescInput').value='';
+    selectedColor='#FCB034';
+  }
+  buildColorRow();document.getElementById('taskModal').classList.add('open');}
+function editTask(i){openTaskModal(i);}function closeModal(){document.getElementById('taskModal').classList.remove('open');}
+function saveTaskModal(){var editId=document.getElementById('modalTaskId').value,type=resolveTaskType(),title=document.getElementById('modalTitleInput').value.trim();
+  if(!type){alert('Choose or enter a task type');return;}
+  if(!title){alert('Enter a title');return;}
+  var desc=document.getElementById('modalDescInput').value.trim(),x=loadChecks();
+  ensureCustomType(x,type);
+  if(editId){var t=findTask(x,editId);t.type=type;t.title=title;t.desc=desc;t.color=selectedColor;}
+  else{x.tasks.push({id:uid(),type:type,title:title,desc:desc,color:selectedColor,done:false,subs:[]});}
+  saveChecksData(x);closeModal();renderChecklists();}
+function openSubModal(tid,editSid){document.getElementById('subTaskId').value=tid;document.getElementById('subId').value=editSid||'';
+  document.getElementById('subModalTitle').textContent=editSid?'Edit Sub-task':'Add Sub-task';
+  if(editSid){var t=findTask(loadChecks(),tid);document.getElementById('subTextInput').value=t.subs.find(function(v){return v.id===editSid;}).text;}
+  else document.getElementById('subTextInput').value='';document.getElementById('subModal').classList.add('open');}
+function editSub(tid,sid){openSubModal(tid,sid);}function closeSubModal(){document.getElementById('subModal').classList.remove('open');}
+function saveSubModal(){var tid=document.getElementById('subTaskId').value,sid=document.getElementById('subId').value,text=document.getElementById('subTextInput').value.trim();
+  if(!text){alert('Enter sub-task text');return;}var x=loadChecks(),t=findTask(x,tid);
+  if(sid){t.subs.find(function(v){return v.id===sid;}).text=text;}else{t.subs.push({id:uid(),text:text,done:false});}
+  saveChecksData(x);closeSubModal();renderChecklists();}
+function resetAllChecks(){if(!confirm('Reset all checklist progress?'))return;var x=loadChecks();x.tasks.forEach(function(t){t.done=false;t.subs.forEach(function(s){s.done=false;});});saveChecksData(x);renderChecklists();}
+
+function getNotesDate(){return selectedCalDate||toDateStr(new Date());}
+function loadDailyNotes(){var s=localStorage.getItem('curveup_daily_notes');if(s){try{return JSON.parse(s);}catch(e){}}return{};}
+function saveDailyNotesData(d){localStorage.setItem('curveup_daily_notes',JSON.stringify(d));}
+
+function loadDailyLog(dateStr){
+  var ds=dateStr||getNotesDate(),all=loadDailyNotes(),entry=all[ds]||{summary:'',points:[]};
+  var d=parseDate(ds),todayStr=toDateStr(new Date());
+  document.getElementById('dailyLogDateLabel').textContent=ds===todayStr?'Today · '+d.toLocaleDateString(undefined,{day:'numeric',month:'long',year:'numeric'}):d.toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+  document.getElementById('dailyLogSummary').value=entry.summary||'';
+  document.getElementById('dailyLogSaved').textContent='';
+  renderDailyLogPoints(entry.points||[]);
+  window._dailyLogPoints=(entry.points||[]).slice();
+}
+
+function renderDailyLogPoints(points){
+  var el=document.getElementById('dailyLogPoints');
+  if(!points.length){el.innerHTML='<div class="log-empty">No note points yet — add observations below.</div>';return;}
+  var html='';
+  points.forEach(function(p){
+    html+='<div class="log-point"><span>'+esc(p.text)+'</span>';
+    html+='<button class="btn btn-sm btn-ghost btn-danger" onclick="removeDailyLogPoint(\''+p.id+'\')">Remove</button></div>';
+  });
+  el.innerHTML=html;
+}
+
+function addDailyLogPoint(){
+  var input=document.getElementById('dailyLogPointInput'),text=input.value.trim();
+  if(!text)return;
+  if(!window._dailyLogPoints)window._dailyLogPoints=[];
+  window._dailyLogPoints.push({id:uid(),text:text});
+  input.value='';
+  renderDailyLogPoints(window._dailyLogPoints);
+}
+
+function removeDailyLogPoint(id){
+  window._dailyLogPoints=(window._dailyLogPoints||[]).filter(function(p){return p.id!==id;});
+  renderDailyLogPoints(window._dailyLogPoints);
+}
+
+function saveDailyLog(){
+  var ds=getNotesDate(),summary=document.getElementById('dailyLogSummary').value.trim();
+  var all=loadDailyNotes();
+  all[ds]={summary:summary,points:window._dailyLogPoints||[],updatedAt:new Date().toISOString()};
+  saveDailyNotesData(all);
+  var el=document.getElementById('dailyLogSaved');
+  el.textContent='Saved '+new Date().toLocaleTimeString();
+  setTimeout(function(){if(el.textContent.indexOf('Saved')===0)el.textContent='';},3000);
+}
+
+updateTodayDate();initCalendar();renderChecklists();renderCalendar();loadDailyLog(getNotesDate());
+</script>
+</body>
+</html>

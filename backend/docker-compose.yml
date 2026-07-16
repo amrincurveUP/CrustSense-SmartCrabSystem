@@ -1,0 +1,29 @@
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2
+    ports:
+      - "1883:1883"
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf:ro
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+
+  backend:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+      MQTT_URL: mqtt://mosquitto:1883
+      MQTT_TOPIC: smart-aquaculture/+/readings
+      MQTT_STATUS_TOPIC: smart-aquaculture/+/status
+      DB_PATH: /data/aquaculture.db
+    volumes:
+      - backend_data:/data
+    depends_on:
+      - mosquitto
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
+  backend_data:

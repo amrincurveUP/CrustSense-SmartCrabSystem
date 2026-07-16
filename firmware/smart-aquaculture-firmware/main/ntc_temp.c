@@ -12,9 +12,8 @@ float ntc_voltage_to_celsius(float voltage)
         return NAN;
     }
 
-    const float resistance = NTC_SERIES_OHMS * voltage / (vcc - voltage);
-    const float steinhart = (1.0f / NTC_T0_KELVIN) +
-                            (1.0f / NTC_B_COEFFICIENT) * logf(resistance / NTC_R0_OHMS);
-
-    return (1.0f / steinhart) - 273.15f;
+    const float r = NTC_SERIES_OHMS * voltage / (vcc - voltage);
+    const float inv_t = (1.0f / NTC_T0_KELVIN) +
+                        (1.0f / NTC_B_COEFFICIENT) * logf(r / NTC_R0_OHMS);
+    return (1.0f / inv_t) - 273.15f;
 }
