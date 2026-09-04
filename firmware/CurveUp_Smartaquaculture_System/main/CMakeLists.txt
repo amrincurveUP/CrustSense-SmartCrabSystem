@@ -1,2 +1,25 @@
-idf_component_register(SRCS "CurveUp_Smartaquaculture_System.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(
+    SRCS
+        "main.c"
+        "sensor_adc.c"
+        "sensors.c"
+        "sensor_service.c"
+        "thresholds.c"
+        "wifi_setup.c"
+        "aq_mqtt.c"
+        "aq_http.c"
+        "pump.c"
+        "irrigation.c"
+    INCLUDE_DIRS "."
+    REQUIRES
+        esp_adc
+        driver
+        nvs_flash
+        freertos
+        esp_wifi
+        esp_netif
+        esp_event
+        mqtt
+        esp_http_client
+        esp_timer
+)

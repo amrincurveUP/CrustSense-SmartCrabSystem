@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Curve Up · Smart Aquaculture</title>
+<title>crab'IT · Smart Aquaculture</title>
 <style>
 :root{--navy:#0A1F2B;--navy2:#112636;--orange:#FCB034;--white:#F8FAFC;--muted:#94A3B8;--blue:#38BDF8;--red:#EF4444;--green:#22C55E;--amber:#F59E0B;--card:#132A3A;--border:#1E3A4F}
 *{box-sizing:border-box;margin:0;padding:0}
@@ -14,7 +14,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(10,31,43,.95);backdrop-fil
 .nav-tab{padding:12px 20px;border-radius:8px;cursor:pointer;font-size:1rem;font-weight:600;color:var(--muted);border:none;background:transparent;transition:.2s}
 .nav-tab:hover{color:var(--white);background:rgba(255,255,255,.05)}
 .nav-tab.active{color:var(--navy);background:var(--orange)}
-.nav-logo img{height:72px;width:auto;mix-blend-mode:lighten;filter:contrast(1.05)}
+.nav-logo img{height:72px;width:auto;filter:contrast(1.05)}
 main{position:relative;z-index:1;max-width:1280px;margin:0 auto;padding:32px 20px 60px}
 .page{display:none;animation:fadeIn .35s ease}.page.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
@@ -82,6 +82,14 @@ body.edit-mode .task-actions,body.edit-mode .subtask-actions{display:flex}
 .btn{padding:10px 18px;border-radius:8px;border:none;font-weight:600;cursor:pointer;font-size:.9rem}
 .btn-orange{background:var(--orange);color:var(--navy)}.btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
 .btn-sm{padding:6px 12px;font-size:.8rem}.btn-danger{color:#f87171;border-color:#f87171}
+.btn-green{background:var(--green);color:#052e16}.btn-red{background:var(--red);color:#fff}
+.irrig-panel{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:28px;max-width:560px;margin:0 auto}
+.irrig-status{display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap}
+.irrig-dot{width:18px;height:18px;border-radius:50%;background:var(--muted);box-shadow:0 0 0 4px rgba(148,163,184,.2)}
+.irrig-dot.on{background:var(--green);box-shadow:0 0 0 4px rgba(34,197,94,.25)}
+.irrig-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.irrig-meta{color:var(--muted);font-size:.95rem;line-height:1.6}
+.irrig-warn{margin-top:18px;padding:14px 16px;border-radius:12px;background:rgba(245,158,11,.12);border:1px solid rgba(245,158,11,.35);color:var(--amber);font-size:.95rem;line-height:1.45}
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:200;padding:20px}
 .modal.open{display:flex}
 .modal-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;width:100%;max-width:480px}
@@ -103,14 +111,15 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:40px;pad
   <div class="nav-tabs">
     <button class="nav-tab active" data-page="home">Home</button>
     <button class="nav-tab" data-page="sensors">Sensor Monitor</button>
+    <button class="nav-tab" data-page="irrigation">Irrigation</button>
     <button class="nav-tab" data-page="checklist">Daily Checkup</button>
   </div>
-  <div class="nav-logo"><img src="assets/logo.png" alt="Curve Up"/></div>
+  <div class="nav-logo"><img src="assets/logo.png" alt="crab'IT"/></div>
 </nav>
 
 <main>
   <div id="page-home" class="page active">
-    <div class="hero"><h1>Smart <span>Aquaculture</span> System</h1></div>
+    <div class="hero"><h1>crab<span>'IT</span></h1><p>Smart Aquaculture System</p></div>
     <div class="iot-banner">
       <svg viewBox="0 0 160 120" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <rect x="55" y="20" width="50" height="35" rx="4" stroke="#FCB034" stroke-width="2" fill="#132A3A"/>
@@ -135,7 +144,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:40px;pad
     <div class="section-title">Species Guide</div>
     <div class="grid2">
       <div class="species-card blue">
-        <img class="species-photo" src="assets/electric-blue.svg" alt="Electric Blue Crayfish" id="imgBlue"/>
+        <img class="species-photo" src="assets/electric-blue.png" alt="Electric Blue Crayfish" id="imgBlue"/>
         <h2>Electric Blue Crayfish</h2>
         <p class="latin">Procambarus alleni</p>
         <ul>
@@ -149,7 +158,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:40px;pad
         <span class="tag">Basket L1 &amp; L3</span>
       </div>
       <div class="species-card red">
-        <img class="species-photo" src="assets/red-crayfish.svg" alt="Neon Crayfish" id="imgRed"/>
+        <img class="species-photo" src="assets/red-crayfish.png" alt="Neon Crayfish" id="imgRed"/>
         <h2>Neon Crayfish</h2>
         <p class="latin">Procambarus clarkii</p>
         <ul>
@@ -178,6 +187,39 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:40px;pad
     <div class="legend"><span>🟢 Low / OK</span><span>🟡 Medium</span><span>🔴 High / Alert</span><span>🔵 Cold / Full</span></div>
   </div>
 
+  <div id="page-irrigation" class="page">
+    <div class="hero">
+      <h1>Irrigation <span>Control</span></h1>
+      <p>Manual pump control for basket recirculation (12V diaphragm via relay)</p>
+    </div>
+    <div class="irrig-panel">
+      <div class="irrig-status">
+        <div class="irrig-dot" id="irrigDot"></div>
+        <div>
+          <div style="font-size:1.4rem;font-weight:800" id="irrigLabel">Pump OFF</div>
+          <div class="irrig-meta" id="irrigDetail">Waiting for device…</div>
+        </div>
+      </div>
+      <div class="irrig-actions">
+        <button class="btn btn-green" id="irrigOnBtn" onclick="setPump(true)">Start Pump</button>
+        <button class="btn btn-red" id="irrigOffBtn" onclick="setPump(false)">Stop Pump</button>
+        <button class="btn btn-ghost" id="irrigTestBtn" onclick="testRelay()">Test Relay (8s blink)</button>
+      </div>
+      <div class="irrig-meta" id="irrigCmdMeta">Command: off · safety max 120 s</div>
+      <div class="irrig-warn">
+        <strong>Relay needs real 5V on D+/VCC — not 3.3V.</strong><br/>
+        At 3.3V the LEDs can light but the coil often will <em>not</em> click.<br/><br/>
+        <strong>Recommended power (best):</strong> 12V adapter → small 5V buck → relay D+.<br/>
+        Share GND: buck GND + relay D− + ESP GND + 12V−.<br/>
+        IN → GPIO16, jumper <strong>L</strong>. Do not power the coil from ESP 3.3V.<br/>
+        Pump− → <strong>12V− rail</strong> (not ESP GND — high current).<br/>
+        Buck needs <strong>both</strong> IN+←12V+ and IN−←12V−.<br/>
+        Load must be on <strong>NO</strong> (not NC). On Stop the relay red LED should go off.<br/><br/>
+        <strong>Quick check:</strong> Unplug IN, touch IN→GND. You need a <em>click</em>, not only a red LED.
+      </div>
+    </div>
+  </div>
+
   <div id="page-checklist" class="page">
     <div class="hero">
       <h1>Daily <span>Checkup</span></h1>
@@ -191,7 +233,7 @@ footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:40px;pad
     </div>
     <div id="checklistContainer"></div>
   </div>
-  <footer>Curve Up · Smart Aquaculture IoT</footer>
+  <footer>crab'IT · Smart Aquaculture IoT</footer>
 </main>
 
 <div class="modal" id="taskModal">
@@ -286,11 +328,68 @@ async function refreshSensors(){
   try{
     var r=await fetch('/api/readings');sensorData=await r.json();
     document.getElementById('connPill').innerHTML='<strong>'+sensorData.connected+'/9</strong> sensors · <strong>'+sensorData.active+'/9</strong> active';
-    document.getElementById('timePill').textContent='Updated '+new Date().toLocaleTimeString();
+    var last='';
+    if(sensorData.recorded_at){
+      var d=new Date(sensorData.recorded_at.replace(' ','T')+'Z');
+      last=isNaN(d.getTime())?(' · ESP '+sensorData.recorded_at):(' · ESP '+d.toLocaleTimeString());
+    }
+    document.getElementById('timePill').textContent='Updated '+new Date().toLocaleTimeString()+last;
     renderTanks(sensorData);
   }catch(e){document.getElementById('connPill').textContent='Waiting for ESP32...';}
 }
 refreshSensors();setInterval(refreshSensors,2000);
+
+function fmtRunMs(ms){
+  var s=Math.floor((ms||0)/1000);
+  if(s<60)return s+' s';
+  return Math.floor(s/60)+'m '+(s%60)+'s';
+}
+
+async function refreshIrrigation(){
+  try{
+    var r=await fetch('/api/irrigation');
+    var d=await r.json();
+    var cmd=d.command||{};
+    var dev=d.device||{};
+    var running=!!dev.running;
+    var want=!!cmd.pump;
+    document.getElementById('irrigDot').classList.toggle('on',running);
+    document.getElementById('irrigLabel').textContent=running?'Pump ON':'Pump OFF';
+    var seen=dev.seen_at?(' · ESP seen '+new Date(dev.seen_at).toLocaleTimeString()):' · ESP not seen yet';
+    document.getElementById('irrigDetail').textContent=
+      (dev.device_id||'device')+(running?(' · running '+fmtRunMs(dev.run_ms)):'')+seen;
+    var maxS=Math.round((cmd.max_run_ms||120000)/1000);
+    document.getElementById('irrigCmdMeta').textContent=
+      'Command: '+(want?'ON':'OFF')+' · safety max '+maxS+' s'+
+      (cmd.updated_at?(' · set '+new Date(cmd.updated_at).toLocaleTimeString()):'');
+  }catch(e){
+    document.getElementById('irrigDetail').textContent='Backend unreachable';
+  }
+}
+
+async function setPump(on){
+  try{
+    await fetch('/api/irrigation/command',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','X-Client':'dashboard'},
+      body:JSON.stringify({pump:!!on,relay_test:false,max_run_ms:120000})
+    });
+    await refreshIrrigation();
+  }catch(e){alert('Failed to send pump command');}
+}
+
+async function testRelay(){
+  try{
+    document.getElementById('irrigDetail').textContent='Relay test armed — listen for clicks (~8s)…';
+    await fetch('/api/irrigation/command',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','X-Client':'dashboard'},
+      body:JSON.stringify({relay_test:true,pump:false})
+    });
+    await refreshIrrigation();
+  }catch(e){alert('Failed to start relay test');}
+}
+refreshIrrigation();setInterval(refreshIrrigation,1500);
 
 function toggleEditMode(){
   editMode=!editMode;

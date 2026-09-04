@@ -1,0 +1,78 @@
+Command: ninja flash
+[1/5] cd /Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build/esp-idf/esptool_py && /Users/istore/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/istore/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build/partition_table/partition-table.bin /Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build/CurveUp_Smartaquaculture_System.bin
+CurveUp_Smartaquaculture_System.bin binary size 0xe62f0 bytes. Smallest app partition is 0x100000 bytes. 0x19d10 bytes (10%) free.
+[2/5] Performing build step for 'bootloader'
+[1/1] cd /Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build/bootloader/esp-idf/esptool_py && /Users/istore/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/istore/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 /Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build/bootloader/bootloader.bin
+Bootloader binary size 0x51a0 bytes. 0x2e60 bytes (36%) free.
+[3/5] No install step for 'bootloader'
+[4/5] Completed 'bootloader'
+[4/5] cd /Users/istore/esp/esp-idf/components/esptool_py && /opt/homebrew/bin/cmake -D IDF_PATH=/Users/istore/esp/esp-idf -D "SERIAL_TOOL=/Users/istore/.espressif/python_env/idf5.5_py3.13_env/bin/python;;/Users/istore/esp/esp-idf/components/esptool_py/esptool/esptool.py;--chip;esp32s3" -D "SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;write_flash;@flash_args" -D WORKING_DIRECTORY=/Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build -P /Users/istore/esp/esp-idf/components/esptool_py/run_serial_tool.cmake
+esptool.py --chip esp32s3 -p /dev/cu.usbmodem1101 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 80m --flash_size 16MB 0x0 bootloader/bootloader.bin 0x10000 CurveUp_Smartaquaculture_System.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.12.dev3
+Serial port /dev/cu.usbmodem1101
+Connecting...
+Chip is ESP32-S3 (QFN56) (revision v0.2)
+Features: WiFi, BLE, Embedded PSRAM 8MB (AP_3v3)
+Crystal is 40MHz
+USB mode: USB-Serial/JTAG
+MAC: e0:72:a1:d5:d3:b8
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00000000 to 0x00005fff...
+Flash will be erased from 0x00010000 to 0x000f6fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 20896 bytes to 13269...
+Writing at 0x00000000... (100 %)
+Wrote 20896 bytes (13269 compressed) at 0x00000000 in 0.3 seconds (effective 619.1 kbit/s)...
+Hash of data verified.
+Compressed 942832 bytes to 581242...
+Writing at 0x00010000... (2 %)
+Writing at 0x0001c418... (5 %)
+Writing at 0x00027207... (8 %)
+Writing at 0x00031558... (11 %)
+Writing at 0x0003a1c3... (13 %)
+Writing at 0x00040199... (16 %)
+Writing at 0x000465f0... (19 %)
+Writing at 0x0004ce7d... (22 %)
+Writing at 0x00052fcf... (25 %)
+Writing at 0x000590ad... (27 %)
+Writing at 0x0005f217... (30 %)
+Writing at 0x00064ff3... (33 %)
+Writing at 0x0006a712... (36 %)
+Writing at 0x0006f6a9... (38 %)
+Writing at 0x00074f32... (41 %)
+Writing at 0x0007a725... (44 %)
+Writing at 0x0007fc2b... (47 %)
+Writing at 0x0008510c... (50 %)
+Writing at 0x0008abb1... (52 %)
+Writing at 0x00090d88... (55 %)
+Writing at 0x0009667e... (58 %)
+Writing at 0x0009c33c... (61 %)
+Writing at 0x000a2179... (63 %)
+Writing at 0x000a79a2... (66 %)
+Writing at 0x000ad54f... (69 %)
+Writing at 0x000b332a... (72 %)
+Writing at 0x000b94a3... (75 %)
+Writing at 0x000bf15e... (77 %)
+Writing at 0x000c4add... (80 %)
+Writing at 0x000ca248... (83 %)
+Writing at 0x000d0329... (86 %)
+Writing at 0x000da4c4... (88 %)
+Writing at 0x000e133f... (91 %)
+Writing at 0x000e7504... (94 %)
+Writing at 0x000edffc... (97 %)
+Writing at 0x000f3090... (100 %)
+Wrote 942832 bytes (581242 compressed) at 0x00010000 in 6.0 seconds (effective 1254.6 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.1 seconds (effective 491.4 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...

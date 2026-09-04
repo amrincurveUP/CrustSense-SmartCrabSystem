@@ -1,0 +1,2046 @@
+Command: /Users/istore/.espressif/python_env/idf5.5_py3.13_env/bin/python /Users/istore/esp/esp-idf/tools/idf_monitor.py -p /dev/cu.usbmodem101 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 /Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build/CurveUp_Smartaquaculture_System.elf /Users/istore/Documents/SmartAquaculture-IoT/firmware/CurveUp_Smartaquaculture_System/build/bootloader/bootloader.elf -m '/Users/istore/.espressif/python_env/idf5.5_py3.13_env/bin/python' '/Users/istore/esp/esp-idf/tools/idf.py' '-p' '/dev/cu.usbmodem101'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0x8 (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40379e8a
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x158c
+load:0x403c8700,len:0xc80
+load:0x403cb700,len:0x2f40
+entry 0x403c8910
+[0;32mI (24) boot: ESP-IDF v5.5.1 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time Jul 16 2026 20:35:57[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (25) boot: efuse block revision: v1.4[0m
+[0;32mI (25) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (25) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (26) boot.esp32s3: SPI Flash Size : 16MB[0m
+[0;32mI (26) boot: Enabling RNG early entropy source...[0m
+[0;32mI (26) boot: Partition Table:[0m
+[0;32mI (26) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (26) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (27) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (27) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (28) boot: End of partition table[0m
+[0;32mI (28) esp_image: segment 0: paddr=00010020 vaddr=3c0b0020 size=20708h (132872) map[0m
+[0;32mI (52) esp_image: segment 1: paddr=00030730 vaddr=3fc9b200 size=04f1ch ( 20252) load[0m
+[0;32mI (56) esp_image: segment 2: paddr=00035654 vaddr=40374000 size=0a9c4h ( 43460) load[0m
+[0;32mI (66) esp_image: segment 3: paddr=00040020 vaddr=42000020 size=a1be8h (662504) map[0m
+[0;32mI (183) esp_image: segment 4: paddr=000e1c10 vaddr=4037e9c4 size=0c76ch ( 51052) load[0m
+[0;32mI (195) esp_image: segment 5: paddr=000ee384 vaddr=50000000 size=00020h (    32) load[0m
+[0;32mI (204) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (204) boot: Disabling RNG early entropy source...[0m
+[0;32mI (205) octal_psram: vendor id    : 0x0d (AP)[0m
+[0;32mI (205) octal_psram: dev id       : 0x02 (generation 3)[0m
+[0;32mI (206) octal_psram: density      : 0x03 (64 Mbit)[0m
+[0;32mI (206) octal_psram: good-die     : 0x01 (Pass)[0m
+[0;32mI (206) octal_psram: Latency      : 0x01 (Fixed)[0m
+[0;32mI (206) octal_psram: VCC          : 0x01 (3V)[0m
+[0;32mI (206) octal_psram: SRF          : 0x01 (Fast Refresh)[0m
+[0;32mI (207) octal_psram: BurstType    : 0x01 (Hybrid Wrap)[0m
+[0;32mI (207) octal_psram: BurstLen     : 0x01 (32 Byte)[0m
+[0;32mI (207) octal_psram: Readlatency  : 0x02 (10 cycles@Fixed)[0m
+[0;32mI (207) octal_psram: DriveStrength: 0x00 (1/1)[0m
+[0;32mI (208) esp_psram: Found 8MB PSRAM device[0m
+[0;32mI (208) esp_psram: Speed: 40MHz[0m
+[0;32mI (208) cpu_start: Multicore app[0m
+[0;32mI (939) esp_psram: SPI SRAM memory test OK[0m
+[0;32mI (948) cpu_start: Pro cpu start user code[0m
+[0;32mI (948) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (948) app_init: Application information:[0m
+[0;32mI (948) app_init: Project name:     CurveUp_Smartaquaculture_System[0m
+[0;32mI (949) app_init: App version:      67ebc65-dirty[0m
+[0;32mI (949) app_init: Compile time:     Jul 16 2026 20:35:49[0m
+[0;32mI (949) app_init: ELF file SHA256:  beb5fff34...[0m
+[0;32mI (949) app_init: ESP-IDF:          v5.5.1[0m
+[0;32mI (949) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (949) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (950) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (950) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (950) heap_init: At 3FCA44A8 len 00045268 (276 KiB): RAM[0m
+[0;32mI (950) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (950) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (951) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (951) esp_psram: Adding pool of 8192K of PSRAM memory to heap allocator[0m
+[0;32mI (952) spi_flash: detected chip: boya[0m
+[0;32mI (952) spi_flash: flash io: dio[0m
+[0;32mI (953) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (954) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (954) main_task: Started on CPU0[0m
+[0;32mI (964) esp_psram: Reserving pool of 32K of internal memory for DMA/internal allocations[0m
+[0;32mI (964) main_task: Calling app_main()[0m
+[0;32mI (1264) MAIN: ========================================[0m
+[0;32mI (1264) MAIN:  CurveUp_Smartaquaculture_System[0m
+[0;32mI (1264) MAIN:  Board: ESP32-S3-DevKitC-1-N16R8[0m
+[0;32mI (1264) MAIN:  Device: curveup-s3-1[0m
+[0;32mI (1264) MAIN: ========================================[0m
+[0;32mI (1274) ADC: ADC oneshot ready (ESP32-S3-DevKitC-1-N16R8), oversample=32[0m
+[0;32mI (1274) SENSORS: Sensors init — cal temp_off=0.00 level bands dry/low/med/full turb_clear=1.65V[0m
+[0;32mI (1314) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (1314) SENSOR_SVC: Temp        : 30.10 C  (1.467 V, raw 1735)[0m
+[0;32mI (1314) SENSOR_SVC: Turbidity   : OK  1.929 V  raw 2290  [CLEAR][0m
+[0;32mI (1314) SENSOR_SVC: Water level : OK  105%  1.718 V  raw 2037  [OVER][0m
+[0;33mW (1314) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (1314) SENSOR_SVC: CAL | temp_c=30.10 temp_v=1.467 | level_pct=105 level_v=1.718 | turb_v=1.929[0m
+[0;32mI (1314) SENSOR_SVC: ================================[0m
+[0;32mI (1314) SENSOR_SVC: Sensor service started[0m
+[0;32mI (1314) pp: pp rom version: e7ae62f[0m
+[0;32mI (1314) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (1324) wifi:wifi driver task: 3fcee83c, prio:23, stack:6656, core=0[0m
+[0;32mI (1334) wifi:wifi firmware version: 14da9b7[0m
+[0;32mI (1334) wifi:wifi certification version: v7.0[0m
+[0;32mI (1334) wifi:config NVS flash: enabled[0m
+[0;32mI (1334) wifi:config nano formatting: disabled[0m
+[0;32mI (1334) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (1334) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (1334) wifi:Init management short buffer num: 32[0m
+[0;32mI (1334) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (1334) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (1334) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1334) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1334) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1334) wifi_init: rx ba win: 6[0m
+[0;32mI (1334) wifi_init: accept mbox: 6[0m
+[0;32mI (1334) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1334) wifi_init: udp mbox: 6[0m
+[0;32mI (1334) wifi_init: tcp mbox: 6[0m
+[0;32mI (1334) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1334) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1334) wifi_init: tcp mss: 1440[0m
+[0;32mI (1334) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1334) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1334) WIFI: Open network (no password)[0m
+[0;32mI (1334) phy_init: phy_version 701,f4f1da3a,Mar  3 2025,15:50:10[0m
+[0;32mI (1374) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1414) wifi:mode : sta (e0:72:a1:d5:d3:b8)[0m
+[0;32mI (1414) wifi:enable tsf[0m
+[0;32mI (1424) WIFI: Connecting to "TP-Link_2.4GHz_A8E1C8"...[0m
+[0;32mI (1424) wifi:new:<1,0>, old:<1,0>, ap:<255,255>, sta:<1,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1424) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1434) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1434) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1434) wifi:connected with TP-Link_2.4GHz_A8E1C8, aid = 5, channel 1, BW20, bssid = 00:31:92:a8:e1:c8[0m
+[0;32mI (1444) wifi:security: Open Auth, phy: bgn, rssi: -68[0m
+[0;32mI (1444) wifi:pm start, type: 1[0m
+
+[0;32mI (1444) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1444) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (1524) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2344) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (2344) SENSOR_SVC: Temp        : 30.10 C  (1.467 V, raw 1733)[0m
+[0;32mI (2344) SENSOR_SVC: Turbidity   : OK  1.918 V  raw 2278  [CLEAR][0m
+[0;32mI (2344) SENSOR_SVC: Water level : OK  95%  1.684 V  raw 1996  [FULL][0m
+[0;33mW (2344) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (2344) SENSOR_SVC: CAL | temp_c=30.10 temp_v=1.467 | level_pct=95 level_v=1.684 | turb_v=1.918[0m
+[0;32mI (2344) SENSOR_SVC: ================================[0m
+[0;32mI (3374) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (3374) SENSOR_SVC: Temp        : 30.10 C  (1.466 V, raw 1733)[0m
+[0;32mI (3374) SENSOR_SVC: Turbidity   : OK  1.920 V  raw 2279  [CLEAR][0m
+[0;32mI (3374) SENSOR_SVC: Water level : OK  86%  1.653 V  raw 1960  [FULL][0m
+[0;33mW (3374) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (3374) SENSOR_SVC: CAL | temp_c=30.10 temp_v=1.466 | level_pct=86 level_v=1.653 | turb_v=1.920[0m
+[0;32mI (3374) SENSOR_SVC: ================================[0m
+[0;32mI (3494) wifi:<ba-add>idx:0 (ifx:0, 00:31:92:a8:e1:c8), tid:0, ssn:1, winSize:64[0m
+[0;32mI (4404) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (4404) SENSOR_SVC: Temp        : 30.11 C  (1.466 V, raw 1731)[0m
+[0;32mI (4404) SENSOR_SVC: Turbidity   : OK  1.877 V  raw 2226  [CLEAR][0m
+[0;32mI (4404) SENSOR_SVC: Water level : OK  70%  1.588 V  raw 1881  [MEDIUM][0m
+[0;33mW (4404) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (4404) SENSOR_SVC: CAL | temp_c=30.11 temp_v=1.466 | level_pct=70 level_v=1.588 | turb_v=1.877[0m
+[0;32mI (4404) SENSOR_SVC: ================================[0m
+[0;32mI (4504) esp_netif_handlers: sta ip: 192.168.1.4, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4504) WIFI: Connected — IP: 192.168.1.4[0m
+[0;32mI (4504) MAIN: WiFi OK — IP 192.168.1.4[0m
+[0;32mI (4504) AQ_HTTP: HTTP ingest every 5000 ms → http://192.168.1.5:3000/api/ingest[0m
+[0;32mI (4504) MAIN: Dashboard sync: HTTP → http://192.168.1.5:3000/api/ingest[0m
+[0;32mI (4504) MAIN: Open dashboard: http://192.168.1.5:3000/[0m
+[0;32mI (5434) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (5434) SENSOR_SVC: Temp        : 30.12 C  (1.465 V, raw 1731)[0m
+[0;32mI (5434) SENSOR_SVC: Turbidity   : OK  1.774 V  raw 2104  [CLEAR][0m
+[0;32mI (5434) SENSOR_SVC: Water level : OK  70%  1.588 V  raw 1881  [MEDIUM][0m
+[0;33mW (5434) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (5434) SENSOR_SVC: CAL | temp_c=30.12 temp_v=1.465 | level_pct=70 level_v=1.588 | turb_v=1.774[0m
+[0;32mI (5434) SENSOR_SVC: ================================[0m
+[0;32mI (6064) AQ_HTTP: Posted 1157 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (6464) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (6464) SENSOR_SVC: Temp        : 30.14 C  (1.460 V, raw 1693)[0m
+[0;32mI (6464) SENSOR_SVC: Turbidity   : OK  1.852 V  raw 2197  [CLEAR][0m
+[0;32mI (6464) SENSOR_SVC: Water level : OK  105%  1.715 V  raw 2035  [OVER][0m
+[0;33mW (6464) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (6464) SENSOR_SVC: CAL | temp_c=30.14 temp_v=1.460 | level_pct=104 level_v=1.715 | turb_v=1.852[0m
+[0;32mI (6464) SENSOR_SVC: ================================[0m
+[0;32mI (7504) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (7504) SENSOR_SVC: Temp        : 30.17 C  (1.460 V, raw 1731)[0m
+[0;32mI (7504) SENSOR_SVC: Turbidity   : OK  1.920 V  raw 2280  [CLEAR][0m
+[0;32mI (7504) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2029  [OVER][0m
+[0;33mW (7504) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (7504) SENSOR_SVC: CAL | temp_c=30.17 temp_v=1.460 | level_pct=103 level_v=1.711 | turb_v=1.920[0m
+[0;32mI (7504) SENSOR_SVC: ================================[0m
+[0;32mI (8534) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (8534) SENSOR_SVC: Temp        : 30.18 C  (1.460 V, raw 1731)[0m
+[0;32mI (8534) SENSOR_SVC: Turbidity   : OK  1.922 V  raw 2282  [CLEAR][0m
+[0;32mI (8534) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2028  [OVER][0m
+[0;33mW (8534) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (8534) SENSOR_SVC: CAL | temp_c=30.18 temp_v=1.460 | level_pct=103 level_v=1.711 | turb_v=1.922[0m
+[0;32mI (8534) SENSOR_SVC: ================================[0m
+[0;32mI (9564) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (9564) SENSOR_SVC: Temp        : 30.20 C  (1.461 V, raw 1731)[0m
+[0;32mI (9564) SENSOR_SVC: Turbidity   : OK  1.918 V  raw 2278  [CLEAR][0m
+[0;32mI (9564) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2027  [OVER][0m
+[0;33mW (9564) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (9564) SENSOR_SVC: CAL | temp_c=30.20 temp_v=1.461 | level_pct=103 level_v=1.711 | turb_v=1.918[0m
+[0;32mI (9564) SENSOR_SVC: ================================[0m
+[0;32mI (10594) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (10594) SENSOR_SVC: Temp        : 30.21 C  (1.460 V, raw 1725)[0m
+[0;32mI (10594) SENSOR_SVC: Turbidity   : OK  1.918 V  raw 2276  [CLEAR][0m
+[0;32mI (10594) SENSOR_SVC: Water level : OK  102%  1.708 V  raw 2024  [OVER][0m
+[0;33mW (10594) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (10594) SENSOR_SVC: CAL | temp_c=30.21 temp_v=1.460 | level_pct=102 level_v=1.708 | turb_v=1.918[0m
+[0;32mI (10594) SENSOR_SVC: ================================[0m
+[0;32mI (11104) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (11624) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (11624) SENSOR_SVC: Temp        : 30.22 C  (1.460 V, raw 1729)[0m
+[0;32mI (11624) SENSOR_SVC: Turbidity   : OK  1.918 V  raw 2278  [CLEAR][0m
+[0;32mI (11624) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2027  [OVER][0m
+[0;33mW (11624) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (11624) SENSOR_SVC: CAL | temp_c=30.22 temp_v=1.460 | level_pct=103 level_v=1.711 | turb_v=1.918[0m
+[0;32mI (11624) SENSOR_SVC: ================================[0m
+[0;32mI (12654) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (12654) SENSOR_SVC: Temp        : 30.24 C  (1.460 V, raw 1727)[0m
+[0;32mI (12654) SENSOR_SVC: Turbidity   : OK  1.918 V  raw 2278  [CLEAR][0m
+[0;32mI (12654) SENSOR_SVC: Water level : OK  103%  1.709 V  raw 2025  [OVER][0m
+[0;33mW (12654) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (12654) SENSOR_SVC: CAL | temp_c=30.24 temp_v=1.460 | level_pct=103 level_v=1.709 | turb_v=1.918[0m
+[0;32mI (12654) SENSOR_SVC: ================================[0m
+[0;32mI (13684) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (13684) SENSOR_SVC: Temp        : 30.24 C  (1.460 V, raw 1727)[0m
+[0;32mI (13684) SENSOR_SVC: Turbidity   : OK  1.918 V  raw 2278  [CLEAR][0m
+[0;32mI (13684) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2027  [OVER][0m
+[0;33mW (13684) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (13684) SENSOR_SVC: CAL | temp_c=30.24 temp_v=1.460 | level_pct=103 level_v=1.711 | turb_v=1.918[0m
+[0;32mI (13684) SENSOR_SVC: ================================[0m
+[0;32mI (14714) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (14714) SENSOR_SVC: Temp        : 30.25 C  (1.460 V, raw 1730)[0m
+[0;32mI (14714) SENSOR_SVC: Turbidity   : OK  1.918 V  raw 2277  [CLEAR][0m
+[0;32mI (14714) SENSOR_SVC: Water level : OK  103%  1.709 V  raw 2025  [OVER][0m
+[0;33mW (14714) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (14714) SENSOR_SVC: CAL | temp_c=30.25 temp_v=1.460 | level_pct=103 level_v=1.709 | turb_v=1.918[0m
+[0;32mI (14714) SENSOR_SVC: ================================[0m
+[0;32mI (15744) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (15744) SENSOR_SVC: Temp        : 30.26 C  (1.461 V, raw 1731)[0m
+[0;32mI (15744) SENSOR_SVC: Turbidity   : OK  1.909 V  raw 2268  [CLEAR][0m
+[0;32mI (15744) SENSOR_SVC: Water level : OK  103%  1.709 V  raw 2025  [OVER][0m
+[0;33mW (15744) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (15744) SENSOR_SVC: CAL | temp_c=30.26 temp_v=1.461 | level_pct=103 level_v=1.709 | turb_v=1.909[0m
+[0;32mI (15744) SENSOR_SVC: ================================[0m
+[0;32mI (16144) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (16774) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (16774) SENSOR_SVC: Temp        : 30.26 C  (1.461 V, raw 1732)[0m
+[0;32mI (16774) SENSOR_SVC: Turbidity   : OK  1.914 V  raw 2273  [CLEAR][0m
+[0;32mI (16774) SENSOR_SVC: Water level : OK  95%  1.682 V  raw 1994  [FULL][0m
+[0;33mW (16774) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (16774) SENSOR_SVC: CAL | temp_c=30.26 temp_v=1.461 | level_pct=95 level_v=1.682 | turb_v=1.914[0m
+[0;32mI (16774) SENSOR_SVC: ================================[0m
+[0;32mI (17804) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (17804) SENSOR_SVC: Temp        : 30.26 C  (1.461 V, raw 1730)[0m
+[0;32mI (17804) SENSOR_SVC: Turbidity   : OK  1.912 V  raw 2271  [CLEAR][0m
+[0;32mI (17804) SENSOR_SVC: Water level : OK  86%  1.653 V  raw 1960  [FULL][0m
+[0;33mW (17804) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (17804) SENSOR_SVC: CAL | temp_c=30.26 temp_v=1.461 | level_pct=86 level_v=1.653 | turb_v=1.912[0m
+[0;32mI (17804) SENSOR_SVC: ================================[0m
+[0;32mI (18834) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (18834) SENSOR_SVC: Temp        : 30.26 C  (1.461 V, raw 1728)[0m
+[0;32mI (18834) SENSOR_SVC: Turbidity   : OK  0.959 V  raw 1124  [DIRTY][0m
+[0;32mI (18834) SENSOR_SVC: Water level : OK  100%  1.701 V  raw 2018  [FULL][0m
+[0;33mW (18834) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (18834) SENSOR_SVC: CAL | temp_c=30.26 temp_v=1.461 | level_pct=100 level_v=1.701 | turb_v=0.959[0m
+[0;32mI (18834) SENSOR_SVC: ================================[0m
+[0;32mI (19864) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (19864) SENSOR_SVC: Temp        : 30.26 C  (1.461 V, raw 1728)[0m
+[0;32mI (19864) SENSOR_SVC: Turbidity   : OK  1.502 V  raw 1779  [CLOUDY][0m
+[0;32mI (19864) SENSOR_SVC: Water level : OK  112%  1.741 V  raw 2064  [OVER][0m
+[0;33mW (19864) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (19864) SENSOR_SVC: CAL | temp_c=30.26 temp_v=1.461 | level_pct=112 level_v=1.741 | turb_v=1.502[0m
+[0;32mI (19864) SENSOR_SVC: ================================[0m
+[0;32mI (20894) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (20894) SENSOR_SVC: Temp        : 30.29 C  (1.456 V, raw 1687)[0m
+[0;32mI (20894) SENSOR_SVC: Turbidity   : OK  1.681 V  raw 1993  [CLEAR][0m
+[0;32mI (20894) SENSOR_SVC: Water level : OK  110%  1.734 V  raw 2057  [OVER][0m
+[0;33mW (20894) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (20894) SENSOR_SVC: CAL | temp_c=30.29 temp_v=1.456 | level_pct=110 level_v=1.734 | turb_v=1.681[0m
+[0;32mI (20894) SENSOR_SVC: ================================[0m
+[0;32mI (21194) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (21924) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (21924) SENSOR_SVC: Temp        : 30.32 C  (1.452 V, raw 1693)[0m
+[0;32mI (21924) SENSOR_SVC: Turbidity   : OK  1.409 V  raw 1667  [CLOUDY][0m
+[0;32mI (21924) SENSOR_SVC: Water level : OK  109%  1.729 V  raw 2050  [OVER][0m
+[0;33mW (21924) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (21924) SENSOR_SVC: CAL | temp_c=30.32 temp_v=1.452 | level_pct=109 level_v=1.729 | turb_v=1.409[0m
+[0;32mI (21924) SENSOR_SVC: ================================[0m
+[0;32mI (22954) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (22954) SENSOR_SVC: Temp        : 30.35 C  (1.453 V, raw 1726)[0m
+[0;32mI (22954) SENSOR_SVC: Turbidity   : OK  0.954 V  raw 1119  [DIRTY][0m
+[0;32mI (22954) SENSOR_SVC: Water level : OK  107%  1.722 V  raw 2041  [OVER][0m
+[0;33mW (22954) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (22954) SENSOR_SVC: CAL | temp_c=30.35 temp_v=1.453 | level_pct=107 level_v=1.722 | turb_v=0.954[0m
+[0;32mI (22954) SENSOR_SVC: ================================[0m
+[0;32mI (23984) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (23984) SENSOR_SVC: Temp        : 30.37 C  (1.454 V, raw 1728)[0m
+[0;32mI (23984) SENSOR_SVC: Turbidity   : OK  0.922 V  raw 1079  [DIRTY][0m
+[0;32mI (23984) SENSOR_SVC: Water level : OK  107%  1.722 V  raw 2042  [OVER][0m
+[0;33mW (23984) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (23984) SENSOR_SVC: CAL | temp_c=30.37 temp_v=1.454 | level_pct=107 level_v=1.722 | turb_v=0.922[0m
+[0;32mI (23984) SENSOR_SVC: ================================[0m
+[0;32mI (25014) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (25014) SENSOR_SVC: Temp        : 30.38 C  (1.455 V, raw 1726)[0m
+[0;32mI (25014) SENSOR_SVC: Turbidity   : OK  0.916 V  raw 1072  [DIRTY][0m
+[0;32mI (25014) SENSOR_SVC: Water level : OK  107%  1.724 V  raw 2044  [OVER][0m
+[0;33mW (25014) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (25014) SENSOR_SVC: CAL | temp_c=30.38 temp_v=1.455 | level_pct=107 level_v=1.724 | turb_v=0.916[0m
+[0;32mI (25014) SENSOR_SVC: ================================[0m
+[0;32mI (26044) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (26044) SENSOR_SVC: Temp        : 30.39 C  (1.455 V, raw 1725)[0m
+[0;32mI (26044) SENSOR_SVC: Turbidity   : OK  0.939 V  raw 1100  [DIRTY][0m
+[0;32mI (26044) SENSOR_SVC: Water level : OK  107%  1.722 V  raw 2042  [OVER][0m
+[0;33mW (26044) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (26044) SENSOR_SVC: CAL | temp_c=30.39 temp_v=1.455 | level_pct=107 level_v=1.722 | turb_v=0.939[0m
+[0;32mI (26044) SENSOR_SVC: ================================[0m
+[0;32mI (26244) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (27074) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (27074) SENSOR_SVC: Temp        : 30.40 C  (1.456 V, raw 1728)[0m
+[0;32mI (27074) SENSOR_SVC: Turbidity   : OK  0.910 V  raw 1065  [DIRTY][0m
+[0;32mI (27074) SENSOR_SVC: Water level : OK  105%  1.718 V  raw 2038  [OVER][0m
+[0;33mW (27074) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (27074) SENSOR_SVC: CAL | temp_c=30.40 temp_v=1.456 | level_pct=105 level_v=1.718 | turb_v=0.910[0m
+[0;32mI (27074) SENSOR_SVC: ================================[0m
+[0;32mI (28104) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (28104) SENSOR_SVC: Temp        : 30.40 C  (1.456 V, raw 1726)[0m
+[0;32mI (28104) SENSOR_SVC: Turbidity   : OK  0.935 V  raw 1095  [DIRTY][0m
+[0;32mI (28104) SENSOR_SVC: Water level : OK  106%  1.719 V  raw 2039  [OVER][0m
+[0;33mW (28104) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (28104) SENSOR_SVC: CAL | temp_c=30.40 temp_v=1.456 | level_pct=106 level_v=1.719 | turb_v=0.935[0m
+[0;32mI (28104) SENSOR_SVC: ================================[0m
+[0;32mI (29134) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (29134) SENSOR_SVC: Temp        : 30.40 C  (1.456 V, raw 1726)[0m
+[0;32mI (29134) SENSOR_SVC: Turbidity   : OK  0.934 V  raw 1094  [DIRTY][0m
+[0;32mI (29134) SENSOR_SVC: Water level : OK  106%  1.721 V  raw 2040  [OVER][0m
+[0;33mW (29134) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (29134) SENSOR_SVC: CAL | temp_c=30.40 temp_v=1.456 | level_pct=106 level_v=1.721 | turb_v=0.934[0m
+[0;32mI (29134) SENSOR_SVC: ================================[0m
+[0;32mI (30164) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (30164) SENSOR_SVC: Temp        : 30.40 C  (1.457 V, raw 1727)[0m
+[0;32mI (30164) SENSOR_SVC: Turbidity   : OK  0.966 V  raw 1133  [DIRTY][0m
+[0;32mI (30164) SENSOR_SVC: Water level : OK  105%  1.718 V  raw 2037  [OVER][0m
+[0;33mW (30164) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (30164) SENSOR_SVC: CAL | temp_c=30.40 temp_v=1.457 | level_pct=105 level_v=1.718 | turb_v=0.966[0m
+[0;32mI (30164) SENSOR_SVC: ================================[0m
+[0;32mI (31194) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (31194) SENSOR_SVC: Temp        : 30.39 C  (1.457 V, raw 1727)[0m
+[0;32mI (31194) SENSOR_SVC: Turbidity   : OK  0.932 V  raw 1092  [DIRTY][0m
+[0;32mI (31194) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2027  [OVER][0m
+[0;33mW (31194) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (31194) SENSOR_SVC: CAL | temp_c=30.39 temp_v=1.457 | level_pct=103 level_v=1.711 | turb_v=0.932[0m
+[0;32mI (31194) SENSOR_SVC: ================================[0m
+[0;32mI (31424) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (32224) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (32224) SENSOR_SVC: Temp        : 30.39 C  (1.457 V, raw 1719)[0m
+[0;32mI (32224) SENSOR_SVC: Turbidity   : OK  0.922 V  raw 1080  [DIRTY][0m
+[0;32mI (32224) SENSOR_SVC: Water level : OK  99%  1.698 V  raw 2014  [FULL][0m
+[0;33mW (32224) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (32224) SENSOR_SVC: CAL | temp_c=30.39 temp_v=1.457 | level_pct=99 level_v=1.698 | turb_v=0.922[0m
+[0;32mI (32224) SENSOR_SVC: ================================[0m
+[0;32mI (33254) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (33254) SENSOR_SVC: Temp        : 30.40 C  (1.456 V, raw 1722)[0m
+[0;32mI (33254) SENSOR_SVC: Turbidity   : OK  0.900 V  raw 1054  [DIRTY][0m
+[0;32mI (33254) SENSOR_SVC: Water level : OK  89%  1.662 V  raw 1970  [FULL][0m
+[0;33mW (33254) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (33254) SENSOR_SVC: CAL | temp_c=30.40 temp_v=1.456 | level_pct=89 level_v=1.662 | turb_v=0.900[0m
+[0;32mI (33254) SENSOR_SVC: ================================[0m
+[0;32mI (34284) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (34284) SENSOR_SVC: Temp        : 30.40 C  (1.456 V, raw 1722)[0m
+[0;32mI (34284) SENSOR_SVC: Turbidity   : OK  0.887 V  raw 1037  [DIRTY][0m
+[0;32mI (34284) SENSOR_SVC: Water level : OK  99%  1.698 V  raw 2014  [FULL][0m
+[0;33mW (34284) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (34284) SENSOR_SVC: CAL | temp_c=30.40 temp_v=1.456 | level_pct=99 level_v=1.698 | turb_v=0.887[0m
+[0;32mI (34284) SENSOR_SVC: ================================[0m
+[0;32mI (35314) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (35314) SENSOR_SVC: Temp        : 30.40 C  (1.456 V, raw 1725)[0m
+[0;32mI (35314) SENSOR_SVC: Turbidity   : OK  0.848 V  raw 992  [DIRTY][0m
+[0;32mI (35314) SENSOR_SVC: Water level : OK  123%  1.778 V  raw 2110  [OVER][0m
+[0;33mW (35314) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (35314) SENSOR_SVC: CAL | temp_c=30.40 temp_v=1.456 | level_pct=123 level_v=1.778 | turb_v=0.848[0m
+[0;32mI (35314) SENSOR_SVC: ================================[0m
+[0;32mI (36344) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (36344) SENSOR_SVC: Temp        : 30.43 C  (1.450 V, raw 1672)[0m
+[0;32mI (36344) SENSOR_SVC: Turbidity   : OK  0.873 V  raw 1020  [DIRTY][0m
+[0;32mI (36344) SENSOR_SVC: Water level : OK  99%  1.695 V  raw 2010  [FULL][0m
+[0;33mW (36344) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (36344) SENSOR_SVC: CAL | temp_c=30.43 temp_v=1.450 | level_pct=98 level_v=1.695 | turb_v=0.873[0m
+[0;32mI (36344) SENSOR_SVC: ================================[0m
+[0;32mI (36464) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (37374) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (37374) SENSOR_SVC: Temp        : 30.47 C  (1.445 V, raw 1678)[0m
+[0;32mI (37374) SENSOR_SVC: Turbidity   : OK  0.975 V  raw 1143  [DIRTY][0m
+[0;32mI (37374) SENSOR_SVC: Water level : OK  123%  1.777 V  raw 2108  [OVER][0m
+[0;33mW (37374) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (37374) SENSOR_SVC: CAL | temp_c=30.47 temp_v=1.445 | level_pct=123 level_v=1.777 | turb_v=0.975[0m
+[0;32mI (37374) SENSOR_SVC: ================================[0m
+[0;32mI (38404) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (38404) SENSOR_SVC: Temp        : 30.51 C  (1.445 V, raw 1707)[0m
+[0;32mI (38404) SENSOR_SVC: Turbidity   : OK  1.038 V  raw 1220  [DIRTY][0m
+[0;32mI (38404) SENSOR_SVC: Water level : OK  121%  1.770 V  raw 2100  [OVER][0m
+[0;33mW (38404) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (38404) SENSOR_SVC: CAL | temp_c=30.51 temp_v=1.445 | level_pct=121 level_v=1.770 | turb_v=1.038[0m
+[0;32mI (38404) SENSOR_SVC: ================================[0m
+[0;32mI (39434) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (39434) SENSOR_SVC: Temp        : 30.54 C  (1.446 V, raw 1717)[0m
+[0;32mI (39434) SENSOR_SVC: Turbidity   : OK  1.041 V  raw 1223  [DIRTY][0m
+[0;32mI (39434) SENSOR_SVC: Water level : OK  122%  1.775 V  raw 2107  [OVER][0m
+[0;33mW (39434) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (39434) SENSOR_SVC: CAL | temp_c=30.54 temp_v=1.446 | level_pct=122 level_v=1.775 | turb_v=1.041[0m
+[0;32mI (39434) SENSOR_SVC: ================================[0m
+[0;32mI (40464) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (40464) SENSOR_SVC: Temp        : 30.56 C  (1.446 V, raw 1715)[0m
+[0;32mI (40464) SENSOR_SVC: Turbidity   : OK  1.041 V  raw 1224  [DIRTY][0m
+[0;32mI (40464) SENSOR_SVC: Water level : OK  123%  1.778 V  raw 2110  [OVER][0m
+[0;33mW (40464) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (40464) SENSOR_SVC: CAL | temp_c=30.56 temp_v=1.446 | level_pct=123 level_v=1.778 | turb_v=1.041[0m
+[0;32mI (40464) SENSOR_SVC: ================================[0m
+[0;32mI (41494) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (41494) SENSOR_SVC: Temp        : 30.58 C  (1.447 V, raw 1716)[0m
+[0;32mI (41494) SENSOR_SVC: Turbidity   : OK  1.047 V  raw 1230  [DIRTY][0m
+[0;32mI (41494) SENSOR_SVC: Water level : OK  123%  1.778 V  raw 2109  [OVER][0m
+[0;33mW (41494) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (41494) SENSOR_SVC: CAL | temp_c=30.58 temp_v=1.447 | level_pct=123 level_v=1.778 | turb_v=1.047[0m
+[0;32mI (41494) SENSOR_SVC: ================================[0m
+[0;32mI (41594) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (42524) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (42524) SENSOR_SVC: Temp        : 30.59 C  (1.447 V, raw 1716)[0m
+[0;32mI (42524) SENSOR_SVC: Turbidity   : OK  1.050 V  raw 1235  [DIRTY][0m
+[0;32mI (42524) SENSOR_SVC: Water level : OK  123%  1.778 V  raw 2109  [OVER][0m
+[0;33mW (42524) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (42524) SENSOR_SVC: CAL | temp_c=30.59 temp_v=1.447 | level_pct=123 level_v=1.778 | turb_v=1.050[0m
+[0;32mI (42524) SENSOR_SVC: ================================[0m
+[0;32mI (43554) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (43554) SENSOR_SVC: Temp        : 30.60 C  (1.448 V, raw 1715)[0m
+[0;32mI (43554) SENSOR_SVC: Turbidity   : OK  1.053 V  raw 1237  [DIRTY][0m
+[0;32mI (43554) SENSOR_SVC: Water level : OK  122%  1.775 V  raw 2105  [OVER][0m
+[0;33mW (43554) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (43554) SENSOR_SVC: CAL | temp_c=30.60 temp_v=1.448 | level_pct=122 level_v=1.775 | turb_v=1.053[0m
+[0;32mI (43554) SENSOR_SVC: ================================[0m
+[0;32mI (44584) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (44584) SENSOR_SVC: Temp        : 30.61 C  (1.448 V, raw 1715)[0m
+[0;32mI (44584) SENSOR_SVC: Turbidity   : OK  1.057 V  raw 1243  [DIRTY][0m
+[0;32mI (44584) SENSOR_SVC: Water level : OK  122%  1.773 V  raw 2103  [OVER][0m
+[0;33mW (44584) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (44584) SENSOR_SVC: CAL | temp_c=30.61 temp_v=1.448 | level_pct=122 level_v=1.773 | turb_v=1.057[0m
+[0;32mI (44584) SENSOR_SVC: ================================[0m
+[0;32mI (45614) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (45614) SENSOR_SVC: Temp        : 30.61 C  (1.448 V, raw 1712)[0m
+[0;32mI (45614) SENSOR_SVC: Turbidity   : OK  1.056 V  raw 1242  [DIRTY][0m
+[0;32mI (45614) SENSOR_SVC: Water level : OK  121%  1.770 V  raw 2100  [OVER][0m
+[0;33mW (45614) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (45614) SENSOR_SVC: CAL | temp_c=30.61 temp_v=1.448 | level_pct=121 level_v=1.770 | turb_v=1.056[0m
+[0;32mI (45614) SENSOR_SVC: ================================[0m
+[0;32mI (46644) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (46644) SENSOR_SVC: Temp        : 30.67 C  (1.437 V, raw 1628)[0m
+[0;32mI (46644) SENSOR_SVC: Turbidity   : OK  0.959 V  raw 1123  [DIRTY][0m
+[0;32mI (46644) SENSOR_SVC: Water level : OK  83%  1.643 V  raw 1947  [FULL][0m
+[0;33mW (46644) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (46644) SENSOR_SVC: CAL | temp_c=30.67 temp_v=1.437 | level_pct=83 level_v=1.643 | turb_v=0.959[0m
+[0;32mI (46644) SENSOR_SVC: ================================[0m
+[0;32mI (46664) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (47674) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (47674) SENSOR_SVC: Temp        : 30.70 C  (1.439 V, raw 1712)[0m
+[0;32mI (47674) SENSOR_SVC: Turbidity   : OK  1.065 V  raw 1252  [DIRTY][0m
+[0;32mI (47674) SENSOR_SVC: Water level : OK  119%  1.763 V  raw 2092  [OVER][0m
+[0;33mW (47674) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (47674) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.439 | level_pct=119 level_v=1.763 | turb_v=1.065[0m
+[0;32mI (47674) SENSOR_SVC: ================================[0m
+[0;32mI (48704) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (48704) SENSOR_SVC: Temp        : 30.73 C  (1.440 V, raw 1715)[0m
+[0;32mI (48704) SENSOR_SVC: Turbidity   : OK  1.067 V  raw 1255  [DIRTY][0m
+[0;32mI (48704) SENSOR_SVC: Water level : OK  109%  1.729 V  raw 2050  [OVER][0m
+[0;33mW (48704) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (48704) SENSOR_SVC: CAL | temp_c=30.73 temp_v=1.440 | level_pct=109 level_v=1.729 | turb_v=1.067[0m
+[0;32mI (48704) SENSOR_SVC: ================================[0m
+[0;32mI (49734) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (49734) SENSOR_SVC: Temp        : 30.74 C  (1.441 V, raw 1714)[0m
+[0;32mI (49734) SENSOR_SVC: Turbidity   : OK  1.067 V  raw 1256  [DIRTY][0m
+[0;32mI (49734) SENSOR_SVC: Water level : OK  101%  1.702 V  raw 2017  [OVER][0m
+[0;33mW (49734) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (49734) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.441 | level_pct=101 level_v=1.702 | turb_v=1.067[0m
+[0;32mI (49734) SENSOR_SVC: ================================[0m
+[0;32mI (50764) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (50764) SENSOR_SVC: Temp        : 30.75 C  (1.443 V, raw 1716)[0m
+[0;32mI (50764) SENSOR_SVC: Turbidity   : OK  1.017 V  raw 1193  [DIRTY][0m
+[0;32mI (50764) SENSOR_SVC: Water level : OK  118%  1.759 V  raw 2087  [OVER][0m
+[0;33mW (50764) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (50764) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.443 | level_pct=118 level_v=1.759 | turb_v=1.017[0m
+[0;32mI (50764) SENSOR_SVC: ================================[0m
+[0;32mI (51704) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (51794) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (51794) SENSOR_SVC: Temp        : 30.80 C  (1.433 V, raw 1630)[0m
+[0;32mI (51794) SENSOR_SVC: Turbidity   : OK  0.988 V  raw 1160  [DIRTY][0m
+[0;32mI (51794) SENSOR_SVC: Water level : OK  119%  1.763 V  raw 2092  [OVER][0m
+[0;33mW (51794) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (51794) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.433 | level_pct=119 level_v=1.763 | turb_v=0.988[0m
+[0;32mI (51794) SENSOR_SVC: ================================[0m
+[0;32mI (52824) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (52824) SENSOR_SVC: Temp        : 30.85 C  (1.430 V, raw 1674)[0m
+[0;32mI (52824) SENSOR_SVC: Turbidity   : OK  1.081 V  raw 1271  [DIRTY][0m
+[0;32mI (52824) SENSOR_SVC: Water level : OK  116%  1.754 V  raw 2080  [OVER][0m
+[0;33mW (52824) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (52824) SENSOR_SVC: CAL | temp_c=30.85 temp_v=1.430 | level_pct=116 level_v=1.754 | turb_v=1.081[0m
+[0;32mI (52824) SENSOR_SVC: ================================[0m
+[0;32mI (53854) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (53854) SENSOR_SVC: Temp        : 30.90 C  (1.430 V, raw 1691)[0m
+[0;32mI (53854) SENSOR_SVC: Turbidity   : OK  1.074 V  raw 1264  [DIRTY][0m
+[0;32mI (53854) SENSOR_SVC: Water level : OK  116%  1.752 V  raw 2078  [OVER][0m
+[0;33mW (53854) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (53854) SENSOR_SVC: CAL | temp_c=30.90 temp_v=1.430 | level_pct=116 level_v=1.752 | turb_v=1.074[0m
+[0;32mI (53854) SENSOR_SVC: ================================[0m
+[0;32mI (54884) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (54884) SENSOR_SVC: Temp        : 30.92 C  (1.433 V, raw 1715)[0m
+[0;32mI (54884) SENSOR_SVC: Turbidity   : OK  1.078 V  raw 1268  [DIRTY][0m
+[0;32mI (54884) SENSOR_SVC: Water level : OK  115%  1.750 V  raw 2075  [OVER][0m
+[0;33mW (54884) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (54884) SENSOR_SVC: CAL | temp_c=30.92 temp_v=1.433 | level_pct=115 level_v=1.750 | turb_v=1.078[0m
+[0;32mI (54884) SENSOR_SVC: ================================[0m
+[0;32mI (55914) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (55914) SENSOR_SVC: Temp        : 30.93 C  (1.436 V, raw 1716)[0m
+[0;32mI (55914) SENSOR_SVC: Turbidity   : OK  1.079 V  raw 1270  [DIRTY][0m
+[0;32mI (55914) SENSOR_SVC: Water level : OK  115%  1.750 V  raw 2075  [OVER][0m
+[0;33mW (55914) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (55914) SENSOR_SVC: CAL | temp_c=30.93 temp_v=1.436 | level_pct=115 level_v=1.750 | turb_v=1.079[0m
+[0;32mI (55914) SENSOR_SVC: ================================[0m
+[0;32mI (56944) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (56944) SENSOR_SVC: Temp        : 30.98 C  (1.427 V, raw 1627)[0m
+[0;32mI (56944) SENSOR_SVC: Turbidity   : OK  0.977 V  raw 1146  [DIRTY][0m
+[0;32mI (56944) SENSOR_SVC: Water level : OK  77%  1.624 V  raw 1924  [FULL][0m
+[0;33mW (56944) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (56944) SENSOR_SVC: CAL | temp_c=30.98 temp_v=1.427 | level_pct=77 level_v=1.624 | turb_v=0.977[0m
+[0;32mI (56944) SENSOR_SVC: ================================[0m
+[0;32mI (56954) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (57974) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (57974) SENSOR_SVC: Temp        : 31.01 C  (1.431 V, raw 1718)[0m
+[0;32mI (57974) SENSOR_SVC: Turbidity   : OK  1.082 V  raw 1273  [DIRTY][0m
+[0;32mI (57974) SENSOR_SVC: Water level : OK  114%  1.747 V  raw 2072  [OVER][0m
+[0;33mW (57974) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (57974) SENSOR_SVC: CAL | temp_c=31.01 temp_v=1.431 | level_pct=114 level_v=1.747 | turb_v=1.082[0m
+[0;32mI (57974) SENSOR_SVC: ================================[0m
+[0;32mI (59004) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (59004) SENSOR_SVC: Temp        : 31.01 C  (1.434 V, raw 1716)[0m
+[0;32mI (59004) SENSOR_SVC: Turbidity   : OK  1.082 V  raw 1274  [DIRTY][0m
+[0;32mI (59004) SENSOR_SVC: Water level : OK  113%  1.745 V  raw 2068  [OVER][0m
+[0;33mW (59004) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (59004) SENSOR_SVC: CAL | temp_c=31.01 temp_v=1.434 | level_pct=113 level_v=1.745 | turb_v=1.082[0m
+[0;32mI (59004) SENSOR_SVC: ================================[0m
+[0;32mI (60034) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (60034) SENSOR_SVC: Temp        : 31.01 C  (1.436 V, raw 1716)[0m
+[0;32mI (60034) SENSOR_SVC: Turbidity   : OK  1.089 V  raw 1282  [DIRTY][0m
+[0;32mI (60034) SENSOR_SVC: Water level : OK  113%  1.744 V  raw 2069  [OVER][0m
+[0;33mW (60034) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (60034) SENSOR_SVC: CAL | temp_c=31.01 temp_v=1.436 | level_pct=113 level_v=1.744 | turb_v=1.089[0m
+[0;32mI (60034) SENSOR_SVC: ================================[0m
+[0;32mI (61064) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (61064) SENSOR_SVC: Temp        : 31.00 C  (1.438 V, raw 1716)[0m
+[0;32mI (61064) SENSOR_SVC: Turbidity   : OK  1.081 V  raw 1272  [DIRTY][0m
+[0;32mI (61064) SENSOR_SVC: Water level : OK  113%  1.742 V  raw 2066  [OVER][0m
+[0;33mW (61064) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (61064) SENSOR_SVC: CAL | temp_c=31.00 temp_v=1.438 | level_pct=113 level_v=1.742 | turb_v=1.081[0m
+[0;32mI (61064) SENSOR_SVC: ================================[0m
+[0;32mI (61984) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (62094) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (62094) SENSOR_SVC: Temp        : 30.98 C  (1.441 V, raw 1721)[0m
+[0;32mI (62094) SENSOR_SVC: Turbidity   : OK  1.069 V  raw 1257  [DIRTY][0m
+[0;32mI (62094) SENSOR_SVC: Water level : OK  101%  1.704 V  raw 2021  [OVER][0m
+[0;33mW (62094) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (62094) SENSOR_SVC: CAL | temp_c=30.98 temp_v=1.441 | level_pct=101 level_v=1.704 | turb_v=1.069[0m
+[0;32mI (62094) SENSOR_SVC: ================================[0m
+[0;32mI (63124) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (63124) SENSOR_SVC: Temp        : 30.95 C  (1.442 V, raw 1719)[0m
+[0;32mI (63124) SENSOR_SVC: Turbidity   : OK  0.974 V  raw 1142  [DIRTY][0m
+[0;32mI (63124) SENSOR_SVC: Water level : OK  99%  1.698 V  raw 2012  [FULL][0m
+[0;33mW (63124) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (63124) SENSOR_SVC: CAL | temp_c=30.95 temp_v=1.442 | level_pct=99 level_v=1.698 | turb_v=0.974[0m
+[0;32mI (63124) SENSOR_SVC: ================================[0m
+[0;32mI (64154) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (64154) SENSOR_SVC: Temp        : 30.92 C  (1.444 V, raw 1716)[0m
+[0;32mI (64154) SENSOR_SVC: Turbidity   : OK  0.977 V  raw 1145  [DIRTY][0m
+[0;32mI (64154) SENSOR_SVC: Water level : OK  95%  1.683 V  raw 1995  [FULL][0m
+[0;33mW (64154) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (64154) SENSOR_SVC: CAL | temp_c=30.92 temp_v=1.444 | level_pct=95 level_v=1.683 | turb_v=0.977[0m
+[0;32mI (64154) SENSOR_SVC: ================================[0m
+[0;32mI (65184) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (65184) SENSOR_SVC: Temp        : 30.90 C  (1.444 V, raw 1714)[0m
+[0;32mI (65184) SENSOR_SVC: Turbidity   : OK  0.978 V  raw 1147  [DIRTY][0m
+[0;32mI (65184) SENSOR_SVC: Water level : OK  88%  1.659 V  raw 1967  [FULL][0m
+[0;33mW (65184) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (65184) SENSOR_SVC: CAL | temp_c=30.90 temp_v=1.444 | level_pct=88 level_v=1.659 | turb_v=0.978[0m
+[0;32mI (65184) SENSOR_SVC: ================================[0m
+[0;32mI (66214) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (66214) SENSOR_SVC: Temp        : 30.87 C  (1.446 V, raw 1718)[0m
+[0;32mI (66214) SENSOR_SVC: Turbidity   : OK  0.954 V  raw 1119  [DIRTY][0m
+[0;32mI (66214) SENSOR_SVC: Water level : OK  99%  1.698 V  raw 2014  [FULL][0m
+[0;33mW (66214) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (66214) SENSOR_SVC: CAL | temp_c=30.87 temp_v=1.446 | level_pct=99 level_v=1.698 | turb_v=0.954[0m
+[0;32mI (66214) SENSOR_SVC: ================================[0m
+[0;32mI (67044) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (67244) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (67244) SENSOR_SVC: Temp        : 30.84 C  (1.447 V, raw 1717)[0m
+[0;32mI (67244) SENSOR_SVC: Turbidity   : OK  0.936 V  raw 1097  [DIRTY][0m
+[0;32mI (67244) SENSOR_SVC: Water level : OK  112%  1.739 V  raw 2062  [OVER][0m
+[0;33mW (67244) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (67244) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.447 | level_pct=112 level_v=1.739 | turb_v=0.936[0m
+[0;32mI (67244) SENSOR_SVC: ================================[0m
+[0;32mI (68274) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (68274) SENSOR_SVC: Temp        : 30.83 C  (1.443 V, raw 1687)[0m
+[0;32mI (68274) SENSOR_SVC: Turbidity   : OK  0.982 V  raw 1153  [DIRTY][0m
+[0;32mI (68274) SENSOR_SVC: Water level : OK  110%  1.735 V  raw 2058  [OVER][0m
+[0;33mW (68274) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (68274) SENSOR_SVC: CAL | temp_c=30.83 temp_v=1.443 | level_pct=110 level_v=1.735 | turb_v=0.982[0m
+[0;32mI (68274) SENSOR_SVC: ================================[0m
+[0;32mI (69304) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (69304) SENSOR_SVC: Temp        : 30.84 C  (1.440 V, raw 1680)[0m
+[0;32mI (69304) SENSOR_SVC: Turbidity   : OK  0.984 V  raw 1155  [DIRTY][0m
+[0;32mI (69304) SENSOR_SVC: Water level : OK  110%  1.734 V  raw 2056  [OVER][0m
+[0;33mW (69304) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (69304) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.440 | level_pct=110 level_v=1.734 | turb_v=0.984[0m
+[0;32mI (69304) SENSOR_SVC: ================================[0m
+[0;32mI (70334) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (70334) SENSOR_SVC: Temp        : 30.84 C  (1.441 V, raw 1714)[0m
+[0;32mI (70334) SENSOR_SVC: Turbidity   : OK  0.978 V  raw 1147  [DIRTY][0m
+[0;32mI (70334) SENSOR_SVC: Water level : OK  110%  1.734 V  raw 2056  [OVER][0m
+[0;33mW (70334) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (70334) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.441 | level_pct=110 level_v=1.734 | turb_v=0.978[0m
+[0;32mI (70334) SENSOR_SVC: ================================[0m
+[0;32mI (71364) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (71364) SENSOR_SVC: Temp        : 30.84 C  (1.442 V, raw 1713)[0m
+[0;32mI (71364) SENSOR_SVC: Turbidity   : OK  0.981 V  raw 1150  [DIRTY][0m
+[0;32mI (71364) SENSOR_SVC: Water level : OK  107%  1.724 V  raw 2044  [OVER][0m
+[0;33mW (71364) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (71364) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.442 | level_pct=107 level_v=1.724 | turb_v=0.981[0m
+[0;32mI (71364) SENSOR_SVC: ================================[0m
+[0;32mI (72094) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (72394) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (72394) SENSOR_SVC: Temp        : 30.83 C  (1.443 V, raw 1713)[0m
+[0;32mI (72394) SENSOR_SVC: Turbidity   : OK  0.982 V  raw 1152  [DIRTY][0m
+[0;32mI (72394) SENSOR_SVC: Water level : OK  113%  1.742 V  raw 2065  [OVER][0m
+[0;33mW (72394) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (72394) SENSOR_SVC: CAL | temp_c=30.83 temp_v=1.443 | level_pct=113 level_v=1.742 | turb_v=0.982[0m
+[0;32mI (72394) SENSOR_SVC: ================================[0m
+[0;32mI (73424) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (73424) SENSOR_SVC: Temp        : 30.82 C  (1.443 V, raw 1710)[0m
+[0;32mI (73424) SENSOR_SVC: Turbidity   : OK  0.982 V  raw 1152  [DIRTY][0m
+[0;32mI (73424) SENSOR_SVC: Water level : OK  113%  1.742 V  raw 2066  [OVER][0m
+[0;33mW (73424) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (73424) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.443 | level_pct=113 level_v=1.742 | turb_v=0.982[0m
+[0;32mI (73424) SENSOR_SVC: ================================[0m
+[0;32mI (74454) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (74454) SENSOR_SVC: Temp        : 30.82 C  (1.443 V, raw 1711)[0m
+[0;32mI (74454) SENSOR_SVC: Turbidity   : OK  0.985 V  raw 1156  [DIRTY][0m
+[0;32mI (74454) SENSOR_SVC: Water level : OK  113%  1.742 V  raw 2065  [OVER][0m
+[0;33mW (74454) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (74454) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.443 | level_pct=113 level_v=1.742 | turb_v=0.985[0m
+[0;32mI (74454) SENSOR_SVC: ================================[0m
+[0;32mI (75484) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (75484) SENSOR_SVC: Temp        : 30.81 C  (1.444 V, raw 1712)[0m
+[0;32mI (75484) SENSOR_SVC: Turbidity   : OK  0.989 V  raw 1161  [DIRTY][0m
+[0;32mI (75484) SENSOR_SVC: Water level : OK  110%  1.734 V  raw 2056  [OVER][0m
+[0;33mW (75484) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (75484) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.444 | level_pct=110 level_v=1.734 | turb_v=0.989[0m
+[0;32mI (75484) SENSOR_SVC: ================================[0m
+[0;32mI (76514) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (76514) SENSOR_SVC: Temp        : 30.80 C  (1.444 V, raw 1712)[0m
+[0;32mI (76514) SENSOR_SVC: Turbidity   : OK  0.986 V  raw 1157  [DIRTY][0m
+[0;32mI (76514) SENSOR_SVC: Water level : OK  110%  1.732 V  raw 2053  [OVER][0m
+[0;33mW (76514) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (76514) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.444 | level_pct=110 level_v=1.732 | turb_v=0.986[0m
+[0;32mI (76514) SENSOR_SVC: ================================[0m
+[0;32mI (77134) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (77544) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (77544) SENSOR_SVC: Temp        : 30.79 C  (1.445 V, raw 1712)[0m
+[0;32mI (77544) SENSOR_SVC: Turbidity   : OK  0.992 V  raw 1164  [DIRTY][0m
+[0;32mI (77544) SENSOR_SVC: Water level : OK  109%  1.729 V  raw 2050  [OVER][0m
+[0;33mW (77544) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (77544) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.445 | level_pct=109 level_v=1.729 | turb_v=0.992[0m
+[0;32mI (77544) SENSOR_SVC: ================================[0m
+[0;32mI (78574) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (78574) SENSOR_SVC: Temp        : 30.78 C  (1.445 V, raw 1711)[0m
+[0;32mI (78574) SENSOR_SVC: Turbidity   : OK  0.990 V  raw 1162  [DIRTY][0m
+[0;32mI (78574) SENSOR_SVC: Water level : OK  107%  1.722 V  raw 2041  [OVER][0m
+[0;33mW (78574) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (78574) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.445 | level_pct=107 level_v=1.722 | turb_v=0.990[0m
+[0;32mI (78574) SENSOR_SVC: ================================[0m
+[0;32mI (79604) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (79604) SENSOR_SVC: Temp        : 30.77 C  (1.445 V, raw 1712)[0m
+[0;32mI (79604) SENSOR_SVC: Turbidity   : OK  0.991 V  raw 1163  [DIRTY][0m
+[0;32mI (79604) SENSOR_SVC: Water level : OK  105%  1.715 V  raw 2035  [OVER][0m
+[0;33mW (79604) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (79604) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.445 | level_pct=104 level_v=1.715 | turb_v=0.991[0m
+[0;32mI (79604) SENSOR_SVC: ================================[0m
+[0;32mI (80634) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (80634) SENSOR_SVC: Temp        : 30.76 C  (1.445 V, raw 1712)[0m
+[0;32mI (80634) SENSOR_SVC: Turbidity   : OK  0.994 V  raw 1167  [DIRTY][0m
+[0;32mI (80634) SENSOR_SVC: Water level : OK  89%  1.664 V  raw 1972  [FULL][0m
+[0;33mW (80634) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (80634) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.445 | level_pct=89 level_v=1.664 | turb_v=0.994[0m
+[0;32mI (80634) SENSOR_SVC: ================================[0m
+[0;32mI (81664) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (81664) SENSOR_SVC: Temp        : 30.76 C  (1.446 V, raw 1712)[0m
+[0;32mI (81664) SENSOR_SVC: Turbidity   : OK  0.992 V  raw 1165  [DIRTY][0m
+[0;32mI (81664) SENSOR_SVC: Water level : OK  87%  1.658 V  raw 1965  [FULL][0m
+[0;33mW (81664) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (81664) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.446 | level_pct=87 level_v=1.658 | turb_v=0.992[0m
+[0;32mI (81664) SENSOR_SVC: ================================[0m
+[0;32mI (82174) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (82694) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (82694) SENSOR_SVC: Temp        : 30.75 C  (1.446 V, raw 1711)[0m
+[0;32mI (82694) SENSOR_SVC: Turbidity   : OK  0.942 V  raw 1103  [DIRTY][0m
+[0;32mI (82694) SENSOR_SVC: Water level : OK  102%  1.705 V  raw 2023  [OVER][0m
+[0;33mW (82694) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (82694) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.446 | level_pct=102 level_v=1.705 | turb_v=0.942[0m
+[0;32mI (82694) SENSOR_SVC: ================================[0m
+[0;32mI (83724) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (83724) SENSOR_SVC: Temp        : 30.75 C  (1.445 V, raw 1708)[0m
+[0;32mI (83724) SENSOR_SVC: Turbidity   : OK  0.963 V  raw 1129  [DIRTY][0m
+[0;32mI (83724) SENSOR_SVC: Water level : OK  100%  1.700 V  raw 2015  [FULL][0m
+[0;33mW (83724) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (83724) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.445 | level_pct=100 level_v=1.700 | turb_v=0.963[0m
+[0;32mI (83724) SENSOR_SVC: ================================[0m
+[0;32mI (84754) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (84754) SENSOR_SVC: Temp        : 30.76 C  (1.440 V, raw 1673)[0m
+[0;32mI (84754) SENSOR_SVC: Turbidity   : OK  1.000 V  raw 1173  [DIRTY][0m
+[0;32mI (84754) SENSOR_SVC: Water level : OK  99%  1.695 V  raw 2009  [FULL][0m
+[0;33mW (84754) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (84754) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.440 | level_pct=98 level_v=1.695 | turb_v=1.000[0m
+[0;32mI (84754) SENSOR_SVC: ================================[0m
+[0;32mI (85784) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (85784) SENSOR_SVC: Temp        : 30.78 C  (1.439 V, raw 1693)[0m
+[0;32mI (85784) SENSOR_SVC: Turbidity   : OK  0.996 V  raw 1170  [DIRTY][0m
+[0;32mI (85784) SENSOR_SVC: Water level : OK  97%  1.691 V  raw 2004  [FULL][0m
+[0;33mW (85784) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (85784) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.439 | level_pct=97 level_v=1.691 | turb_v=0.996[0m
+[0;32mI (85784) SENSOR_SVC: ================================[0m
+[0;32mI (86814) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (86814) SENSOR_SVC: Temp        : 30.80 C  (1.440 V, raw 1715)[0m
+[0;32mI (86814) SENSOR_SVC: Turbidity   : OK  0.996 V  raw 1169  [DIRTY][0m
+[0;32mI (86814) SENSOR_SVC: Water level : OK  96%  1.686 V  raw 1998  [FULL][0m
+[0;33mW (86814) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (86814) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.440 | level_pct=96 level_v=1.686 | turb_v=0.996[0m
+[0;32mI (86814) SENSOR_SVC: ================================[0m
+[0;32mI (87214) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (87844) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (87844) SENSOR_SVC: Temp        : 30.80 C  (1.442 V, raw 1715)[0m
+[0;32mI (87844) SENSOR_SVC: Turbidity   : OK  0.996 V  raw 1169  [DIRTY][0m
+[0;32mI (87844) SENSOR_SVC: Water level : OK  95%  1.683 V  raw 1995  [FULL][0m
+[0;33mW (87844) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (87844) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.442 | level_pct=95 level_v=1.683 | turb_v=0.996[0m
+[0;32mI (87844) SENSOR_SVC: ================================[0m
+[0;32mI (88874) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (88874) SENSOR_SVC: Temp        : 30.80 C  (1.443 V, raw 1714)[0m
+[0;32mI (88874) SENSOR_SVC: Turbidity   : OK  0.999 V  raw 1172  [DIRTY][0m
+[0;32mI (88874) SENSOR_SVC: Water level : OK  94%  1.679 V  raw 1990  [FULL][0m
+[0;33mW (88874) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (88874) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.443 | level_pct=94 level_v=1.679 | turb_v=0.999[0m
+[0;32mI (88874) SENSOR_SVC: ================================[0m
+[0;32mI (89904) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (89904) SENSOR_SVC: Temp        : 30.79 C  (1.443 V, raw 1712)[0m
+[0;32mI (89904) SENSOR_SVC: Turbidity   : OK  0.996 V  raw 1169  [DIRTY][0m
+[0;32mI (89904) SENSOR_SVC: Water level : OK  92%  1.673 V  raw 1984  [FULL][0m
+[0;33mW (89904) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (89904) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.443 | level_pct=92 level_v=1.673 | turb_v=0.996[0m
+[0;32mI (89904) SENSOR_SVC: ================================[0m
+[0;32mI (90934) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (90934) SENSOR_SVC: Temp        : 30.79 C  (1.445 V, raw 1719)[0m
+[0;32mI (90934) SENSOR_SVC: Turbidity   : OK  0.998 V  raw 1171  [DIRTY][0m
+[0;32mI (90934) SENSOR_SVC: Water level : OK  91%  1.669 V  raw 1979  [FULL][0m
+[0;33mW (90934) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (90934) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.445 | level_pct=91 level_v=1.669 | turb_v=0.998[0m
+[0;32mI (90934) SENSOR_SVC: ================================[0m
+[0;32mI (91964) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (91964) SENSOR_SVC: Temp        : 30.78 C  (1.445 V, raw 1713)[0m
+[0;32mI (91964) SENSOR_SVC: Turbidity   : OK  0.999 V  raw 1172  [DIRTY][0m
+[0;32mI (91964) SENSOR_SVC: Water level : OK  90%  1.666 V  raw 1975  [FULL][0m
+[0;33mW (91964) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (91964) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.445 | level_pct=90 level_v=1.666 | turb_v=0.999[0m
+[0;32mI (91964) SENSOR_SVC: ================================[0m
+[0;32mI (92244) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (92994) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (92994) SENSOR_SVC: Temp        : 30.77 C  (1.445 V, raw 1713)[0m
+[0;32mI (92994) SENSOR_SVC: Turbidity   : OK  1.000 V  raw 1173  [DIRTY][0m
+[0;32mI (92994) SENSOR_SVC: Water level : OK  89%  1.662 V  raw 1971  [FULL][0m
+[0;33mW (92994) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (92994) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.445 | level_pct=89 level_v=1.662 | turb_v=1.000[0m
+[0;32mI (92994) SENSOR_SVC: ================================[0m
+[0;32mI (94024) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (94024) SENSOR_SVC: Temp        : 30.76 C  (1.446 V, raw 1716)[0m
+[0;32mI (94024) SENSOR_SVC: Turbidity   : OK  1.000 V  raw 1174  [DIRTY][0m
+[0;32mI (94024) SENSOR_SVC: Water level : OK  88%  1.659 V  raw 1967  [FULL][0m
+[0;33mW (94024) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (94024) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.446 | level_pct=88 level_v=1.659 | turb_v=1.000[0m
+[0;32mI (94024) SENSOR_SVC: ================================[0m
+[0;32mI (95054) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (95054) SENSOR_SVC: Temp        : 30.74 C  (1.447 V, raw 1719)[0m
+[0;32mI (95054) SENSOR_SVC: Turbidity   : OK  1.000 V  raw 1173  [DIRTY][0m
+[0;32mI (95054) SENSOR_SVC: Water level : OK  86%  1.655 V  raw 1961  [FULL][0m
+[0;33mW (95054) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (95054) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.447 | level_pct=86 level_v=1.655 | turb_v=1.000[0m
+[0;32mI (95054) SENSOR_SVC: ================================[0m
+[0;32mI (96084) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (96084) SENSOR_SVC: Temp        : 30.73 C  (1.447 V, raw 1714)[0m
+[0;32mI (96084) SENSOR_SVC: Turbidity   : OK  1.000 V  raw 1173  [DIRTY][0m
+[0;32mI (96084) SENSOR_SVC: Water level : OK  82%  1.641 V  raw 1945  [FULL][0m
+[0;33mW (96084) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (96084) SENSOR_SVC: CAL | temp_c=30.73 temp_v=1.447 | level_pct=82 level_v=1.641 | turb_v=1.000[0m
+[0;32mI (96084) SENSOR_SVC: ================================[0m
+[0;32mI (97114) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (97114) SENSOR_SVC: Temp        : 30.72 C  (1.448 V, raw 1714)[0m
+[0;32mI (97114) SENSOR_SVC: Turbidity   : OK  1.000 V  raw 1174  [DIRTY][0m
+[0;32mI (97114) SENSOR_SVC: Water level : OK  70%  1.596 V  raw 1891  [MEDIUM][0m
+[0;33mW (97114) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (97114) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.448 | level_pct=70 level_v=1.596 | turb_v=1.000[0m
+[0;32mI (97114) SENSOR_SVC: ================================[0m
+[0;32mI (97434) AQ_HTTP: Posted 1157 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (98144) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (98144) SENSOR_SVC: Temp        : 30.71 C  (1.448 V, raw 1716)[0m
+[0;32mI (98144) SENSOR_SVC: Turbidity   : OK  0.967 V  raw 1135  [DIRTY][0m
+[0;32mI (98144) SENSOR_SVC: Water level : OK  81%  1.636 V  raw 1938  [FULL][0m
+[0;33mW (98144) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (98144) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.448 | level_pct=81 level_v=1.636 | turb_v=0.967[0m
+[0;32mI (98144) SENSOR_SVC: ================================[0m
+[0;32mI (99174) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (99174) SENSOR_SVC: Temp        : 30.70 C  (1.448 V, raw 1715)[0m
+[0;32mI (99174) SENSOR_SVC: Turbidity   : OK  0.954 V  raw 1119  [DIRTY][0m
+[0;32mI (99174) SENSOR_SVC: Water level : OK  86%  1.652 V  raw 1957  [FULL][0m
+[0;33mW (99174) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (99174) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.448 | level_pct=86 level_v=1.652 | turb_v=0.954[0m
+[0;32mI (99174) SENSOR_SVC: ================================[0m
+[0;32mI (100204) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (100204) SENSOR_SVC: Temp        : 30.71 C  (1.444 V, raw 1679)[0m
+[0;32mI (100204) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (100204) SENSOR_SVC: Water level : OK  84%  1.647 V  raw 1952  [FULL][0m
+[0;33mW (100204) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (100204) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.444 | level_pct=84 level_v=1.647 | turb_v=1.012[0m
+[0;32mI (100204) SENSOR_SVC: ================================[0m
+[0;32mI (101234) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (101234) SENSOR_SVC: Temp        : 30.73 C  (1.440 V, raw 1679)[0m
+[0;32mI (101234) SENSOR_SVC: Turbidity   : OK  1.004 V  raw 1178  [DIRTY][0m
+[0;32mI (101234) SENSOR_SVC: Water level : OK  84%  1.646 V  raw 1951  [FULL][0m
+[0;33mW (101234) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (101234) SENSOR_SVC: CAL | temp_c=30.73 temp_v=1.440 | level_pct=84 level_v=1.646 | turb_v=1.004[0m
+[0;32mI (101234) SENSOR_SVC: ================================[0m
+[0;32mI (102264) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (102264) SENSOR_SVC: Temp        : 30.75 C  (1.441 V, raw 1715)[0m
+[0;32mI (102264) SENSOR_SVC: Turbidity   : OK  1.003 V  raw 1177  [DIRTY][0m
+[0;32mI (102264) SENSOR_SVC: Water level : OK  83%  1.643 V  raw 1948  [FULL][0m
+[0;33mW (102264) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (102264) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.441 | level_pct=83 level_v=1.643 | turb_v=1.003[0m
+[0;32mI (102264) SENSOR_SVC: ================================[0m
+[0;32mI (102474) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (103294) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (103294) SENSOR_SVC: Temp        : 30.75 C  (1.443 V, raw 1718)[0m
+[0;32mI (103294) SENSOR_SVC: Turbidity   : OK  1.003 V  raw 1177  [DIRTY][0m
+[0;32mI (103294) SENSOR_SVC: Water level : OK  83%  1.643 V  raw 1948  [FULL][0m
+[0;33mW (103294) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (103294) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.443 | level_pct=83 level_v=1.643 | turb_v=1.003[0m
+[0;32mI (103294) SENSOR_SVC: ================================[0m
+[0;32mI (104324) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (104324) SENSOR_SVC: Temp        : 30.75 C  (1.444 V, raw 1715)[0m
+[0;32mI (104324) SENSOR_SVC: Turbidity   : OK  1.004 V  raw 1178  [DIRTY][0m
+[0;32mI (104324) SENSOR_SVC: Water level : OK  83%  1.642 V  raw 1946  [FULL][0m
+[0;33mW (104324) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (104324) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.444 | level_pct=83 level_v=1.642 | turb_v=1.004[0m
+[0;32mI (104324) SENSOR_SVC: ================================[0m
+[0;32mI (105354) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (105354) SENSOR_SVC: Temp        : 30.75 C  (1.445 V, raw 1716)[0m
+[0;32mI (105354) SENSOR_SVC: Turbidity   : OK  1.001 V  raw 1176  [DIRTY][0m
+[0;32mI (105354) SENSOR_SVC: Water level : OK  83%  1.642 V  raw 1946  [FULL][0m
+[0;33mW (105354) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (105354) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.445 | level_pct=83 level_v=1.642 | turb_v=1.001[0m
+[0;32mI (105354) SENSOR_SVC: ================================[0m
+[0;32mI (106384) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (106384) SENSOR_SVC: Temp        : 30.75 C  (1.445 V, raw 1715)[0m
+[0;32mI (106384) SENSOR_SVC: Turbidity   : OK  1.004 V  raw 1179  [DIRTY][0m
+[0;32mI (106384) SENSOR_SVC: Water level : OK  83%  1.642 V  raw 1946  [FULL][0m
+[0;33mW (106384) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (106384) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.445 | level_pct=83 level_v=1.642 | turb_v=1.004[0m
+[0;32mI (106384) SENSOR_SVC: ================================[0m
+[0;32mI (107414) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (107414) SENSOR_SVC: Temp        : 30.74 C  (1.446 V, raw 1715)[0m
+[0;32mI (107414) SENSOR_SVC: Turbidity   : OK  1.004 V  raw 1178  [DIRTY][0m
+[0;32mI (107414) SENSOR_SVC: Water level : OK  83%  1.642 V  raw 1946  [FULL][0m
+[0;33mW (107414) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (107414) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.446 | level_pct=83 level_v=1.642 | turb_v=1.004[0m
+[0;32mI (107414) SENSOR_SVC: ================================[0m
+[0;32mI (107504) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (108444) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (108444) SENSOR_SVC: Temp        : 30.73 C  (1.446 V, raw 1713)[0m
+[0;32mI (108444) SENSOR_SVC: Turbidity   : OK  1.004 V  raw 1179  [DIRTY][0m
+[0;32mI (108444) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1944  [FULL][0m
+[0;33mW (108444) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (108444) SENSOR_SVC: CAL | temp_c=30.73 temp_v=1.446 | level_pct=82 level_v=1.640 | turb_v=1.004[0m
+[0;32mI (108444) SENSOR_SVC: ================================[0m
+[0;32mI (109474) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (109474) SENSOR_SVC: Temp        : 30.72 C  (1.447 V, raw 1718)[0m
+[0;32mI (109474) SENSOR_SVC: Turbidity   : OK  1.007 V  raw 1181  [DIRTY][0m
+[0;32mI (109474) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (109474) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (109474) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.447 | level_pct=82 level_v=1.640 | turb_v=1.007[0m
+[0;32mI (109474) SENSOR_SVC: ================================[0m
+[0;32mI (110504) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (110504) SENSOR_SVC: Temp        : 30.71 C  (1.447 V, raw 1716)[0m
+[0;32mI (110504) SENSOR_SVC: Turbidity   : OK  1.004 V  raw 1179  [DIRTY][0m
+[0;32mI (110504) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (110504) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (110504) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.447 | level_pct=82 level_v=1.640 | turb_v=1.004[0m
+[0;32mI (110504) SENSOR_SVC: ================================[0m
+[0;32mI (111534) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (111534) SENSOR_SVC: Temp        : 30.70 C  (1.448 V, raw 1715)[0m
+[0;32mI (111534) SENSOR_SVC: Turbidity   : OK  1.007 V  raw 1181  [DIRTY][0m
+[0;32mI (111534) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (111534) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (111534) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.448 | level_pct=82 level_v=1.640 | turb_v=1.007[0m
+[0;32mI (111534) SENSOR_SVC: ================================[0m
+[0;32mI (112564) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (112564) SENSOR_SVC: Temp        : 30.74 C  (1.437 V, raw 1628)[0m
+[0;32mI (112564) SENSOR_SVC: Turbidity   : OK  0.913 V  raw 1069  [DIRTY][0m
+[0;32mI (112564) SENSOR_SVC: Water level : OK  70%  1.512 V  raw 1790  [MEDIUM][0m
+[0;33mW (112564) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (112564) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.437 | level_pct=70 level_v=1.512 | turb_v=0.913[0m
+[0;32mI (112564) SENSOR_SVC: ================================[0m
+[0;32mI (112584) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (113594) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (113594) SENSOR_SVC: Temp        : 30.77 C  (1.439 V, raw 1716)[0m
+[0;32mI (113594) SENSOR_SVC: Turbidity   : OK  1.007 V  raw 1181  [DIRTY][0m
+[0;32mI (113594) SENSOR_SVC: Water level : OK  70%  1.588 V  raw 1880  [MEDIUM][0m
+[0;33mW (113594) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (113594) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.439 | level_pct=70 level_v=1.588 | turb_v=1.007[0m
+[0;32mI (113594) SENSOR_SVC: ================================[0m
+[0;32mI (114624) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (114624) SENSOR_SVC: Temp        : 30.78 C  (1.441 V, raw 1715)[0m
+[0;32mI (114624) SENSOR_SVC: Turbidity   : OK  0.957 V  raw 1121  [DIRTY][0m
+[0;32mI (114624) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1943  [FULL][0m
+[0;33mW (114624) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (114624) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.441 | level_pct=82 level_v=1.640 | turb_v=0.957[0m
+[0;32mI (114624) SENSOR_SVC: ================================[0m
+[0;32mI (115654) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (115654) SENSOR_SVC: Temp        : 30.79 C  (1.440 V, raw 1703)[0m
+[0;32mI (115654) SENSOR_SVC: Turbidity   : OK  0.988 V  raw 1159  [DIRTY][0m
+[0;32mI (115654) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (115654) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (115654) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.440 | level_pct=82 level_v=1.640 | turb_v=0.988[0m
+[0;32mI (115654) SENSOR_SVC: ================================[0m
+[0;32mI (116684) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (116684) SENSOR_SVC: Temp        : 30.81 C  (1.438 V, raw 1681)[0m
+[0;32mI (116684) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1188  [DIRTY][0m
+[0;32mI (116684) SENSOR_SVC: Water level : OK  81%  1.638 V  raw 1941  [FULL][0m
+[0;33mW (116684) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (116684) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.438 | level_pct=81 level_v=1.638 | turb_v=1.012[0m
+[0;32mI (116684) SENSOR_SVC: ================================[0m
+[0;32mI (117624) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (117714) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (117714) SENSOR_SVC: Temp        : 30.87 C  (1.429 V, raw 1630)[0m
+[0;32mI (117714) SENSOR_SVC: Turbidity   : OK  0.916 V  raw 1072  [DIRTY][0m
+[0;32mI (117714) SENSOR_SVC: Water level : OK  84%  1.646 V  raw 1951  [FULL][0m
+[0;33mW (117714) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (117714) SENSOR_SVC: CAL | temp_c=30.87 temp_v=1.429 | level_pct=84 level_v=1.646 | turb_v=0.916[0m
+[0;32mI (117714) SENSOR_SVC: ================================[0m
+[0;32mI (118744) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (118744) SENSOR_SVC: Temp        : 30.91 C  (1.432 V, raw 1716)[0m
+[0;32mI (118744) SENSOR_SVC: Turbidity   : OK  1.009 V  raw 1185  [DIRTY][0m
+[0;32mI (118744) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (118744) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (118744) SENSOR_SVC: CAL | temp_c=30.91 temp_v=1.432 | level_pct=82 level_v=1.640 | turb_v=1.009[0m
+[0;32mI (118744) SENSOR_SVC: ================================[0m
+[0;32mI (119774) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (119774) SENSOR_SVC: Temp        : 30.92 C  (1.435 V, raw 1715)[0m
+[0;32mI (119774) SENSOR_SVC: Turbidity   : OK  1.008 V  raw 1184  [DIRTY][0m
+[0;32mI (119774) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (119774) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (119774) SENSOR_SVC: CAL | temp_c=30.92 temp_v=1.435 | level_pct=82 level_v=1.640 | turb_v=1.008[0m
+[0;32mI (119774) SENSOR_SVC: ================================[0m
+[0;32mI (120804) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (120804) SENSOR_SVC: Temp        : 30.93 C  (1.437 V, raw 1716)[0m
+[0;32mI (120804) SENSOR_SVC: Turbidity   : OK  1.009 V  raw 1185  [DIRTY][0m
+[0;32mI (120804) SENSOR_SVC: Water level : OK  81%  1.638 V  raw 1941  [FULL][0m
+[0;33mW (120804) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (120804) SENSOR_SVC: CAL | temp_c=30.93 temp_v=1.437 | level_pct=81 level_v=1.638 | turb_v=1.009[0m
+[0;32mI (120804) SENSOR_SVC: ================================[0m
+[0;32mI (121834) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (121834) SENSOR_SVC: Temp        : 30.93 C  (1.439 V, raw 1714)[0m
+[0;32mI (121834) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1188  [DIRTY][0m
+[0;32mI (121834) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1943  [FULL][0m
+[0;33mW (121834) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (121834) SENSOR_SVC: CAL | temp_c=30.93 temp_v=1.439 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (121834) SENSOR_SVC: ================================[0m
+[0;32mI (122664) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (122864) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (122864) SENSOR_SVC: Temp        : 30.92 C  (1.440 V, raw 1715)[0m
+[0;32mI (122864) SENSOR_SVC: Turbidity   : OK  1.011 V  raw 1187  [DIRTY][0m
+[0;32mI (122864) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1944  [FULL][0m
+[0;33mW (122864) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (122864) SENSOR_SVC: CAL | temp_c=30.92 temp_v=1.440 | level_pct=82 level_v=1.640 | turb_v=1.011[0m
+[0;32mI (122864) SENSOR_SVC: ================================[0m
+[0;32mI (123894) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (123894) SENSOR_SVC: Temp        : 30.91 C  (1.441 V, raw 1713)[0m
+[0;32mI (123894) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1188  [DIRTY][0m
+[0;32mI (123894) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1943  [FULL][0m
+[0;33mW (123894) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (123894) SENSOR_SVC: CAL | temp_c=30.91 temp_v=1.441 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (123894) SENSOR_SVC: ================================[0m
+[0;32mI (124924) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (124924) SENSOR_SVC: Temp        : 30.89 C  (1.442 V, raw 1715)[0m
+[0;32mI (124924) SENSOR_SVC: Turbidity   : OK  1.010 V  raw 1186  [DIRTY][0m
+[0;32mI (124924) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1943  [FULL][0m
+[0;33mW (124924) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (124924) SENSOR_SVC: CAL | temp_c=30.89 temp_v=1.442 | level_pct=82 level_v=1.640 | turb_v=1.010[0m
+[0;32mI (124924) SENSOR_SVC: ================================[0m
+[0;32mI (125954) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (125954) SENSOR_SVC: Temp        : 30.87 C  (1.443 V, raw 1715)[0m
+[0;32mI (125954) SENSOR_SVC: Turbidity   : OK  1.011 V  raw 1187  [DIRTY][0m
+[0;32mI (125954) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1944  [FULL][0m
+[0;33mW (125954) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (125954) SENSOR_SVC: CAL | temp_c=30.87 temp_v=1.443 | level_pct=82 level_v=1.640 | turb_v=1.011[0m
+[0;32mI (125954) SENSOR_SVC: ================================[0m
+[0;32mI (126984) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (126984) SENSOR_SVC: Temp        : 30.85 C  (1.444 V, raw 1714)[0m
+[0;32mI (126984) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1188  [DIRTY][0m
+[0;32mI (126984) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1943  [FULL][0m
+[0;33mW (126984) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (126984) SENSOR_SVC: CAL | temp_c=30.85 temp_v=1.444 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (126984) SENSOR_SVC: ================================[0m
+[0;32mI (127704) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (128014) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (128014) SENSOR_SVC: Temp        : 30.84 C  (1.445 V, raw 1716)[0m
+[0;32mI (128014) SENSOR_SVC: Turbidity   : OK  1.011 V  raw 1187  [DIRTY][0m
+[0;32mI (128014) SENSOR_SVC: Water level : OK  74%  1.615 V  raw 1913  [FULL][0m
+[0;33mW (128014) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (128014) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.445 | level_pct=74 level_v=1.615 | turb_v=1.011[0m
+[0;32mI (128014) SENSOR_SVC: ================================[0m
+[0;32mI (129044) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (129044) SENSOR_SVC: Temp        : 30.81 C  (1.446 V, raw 1717)[0m
+[0;32mI (129044) SENSOR_SVC: Turbidity   : OK  1.011 V  raw 1187  [DIRTY][0m
+[0;32mI (129044) SENSOR_SVC: Water level : OK  70%  1.582 V  raw 1875  [MEDIUM][0m
+[0;33mW (129044) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (129044) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.446 | level_pct=70 level_v=1.582 | turb_v=1.011[0m
+[0;32mI (129044) SENSOR_SVC: ================================[0m
+[0;32mI (130074) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (130074) SENSOR_SVC: Temp        : 30.80 C  (1.446 V, raw 1713)[0m
+[0;32mI (130074) SENSOR_SVC: Turbidity   : OK  0.966 V  raw 1134  [DIRTY][0m
+[0;32mI (130074) SENSOR_SVC: Water level : OK  70%  1.569 V  raw 1860  [MEDIUM][0m
+[0;33mW (130074) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (130074) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.446 | level_pct=70 level_v=1.569 | turb_v=0.966[0m
+[0;32mI (130074) SENSOR_SVC: ================================[0m
+[0;32mI (131104) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (131104) SENSOR_SVC: Temp        : 30.78 C  (1.446 V, raw 1713)[0m
+[0;32mI (131104) SENSOR_SVC: Turbidity   : OK  0.966 V  raw 1134  [DIRTY][0m
+[0;32mI (131104) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1944  [FULL][0m
+[0;33mW (131104) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (131104) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.446 | level_pct=82 level_v=1.640 | turb_v=0.966[0m
+[0;32mI (131104) SENSOR_SVC: ================================[0m
+[0;32mI (132134) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (132134) SENSOR_SVC: Temp        : 30.79 C  (1.442 V, raw 1675)[0m
+[0;32mI (132134) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1197  [DIRTY][0m
+[0;32mI (132134) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1944  [FULL][0m
+[0;33mW (132134) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (132134) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.442 | level_pct=82 level_v=1.640 | turb_v=1.018[0m
+[0;32mI (132134) SENSOR_SVC: ================================[0m
+[0;32mI (132744) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (133164) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (133164) SENSOR_SVC: Temp        : 30.81 C  (1.438 V, raw 1680)[0m
+[0;32mI (133164) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (133164) SENSOR_SVC: Water level : OK  82%  1.641 V  raw 1945  [FULL][0m
+[0;33mW (133164) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (133164) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.438 | level_pct=82 level_v=1.641 | turb_v=1.014[0m
+[0;32mI (133164) SENSOR_SVC: ================================[0m
+[0;32mI (134194) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (134194) SENSOR_SVC: Temp        : 30.82 C  (1.440 V, raw 1716)[0m
+[0;32mI (134194) SENSOR_SVC: Turbidity   : OK  1.013 V  raw 1190  [DIRTY][0m
+[0;32mI (134194) SENSOR_SVC: Water level : OK  82%  1.641 V  raw 1945  [FULL][0m
+[0;33mW (134194) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (134194) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.440 | level_pct=82 level_v=1.641 | turb_v=1.013[0m
+[0;32mI (134194) SENSOR_SVC: ================================[0m
+[0;32mI (135224) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (135224) SENSOR_SVC: Temp        : 30.82 C  (1.442 V, raw 1716)[0m
+[0;32mI (135224) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (135224) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (135224) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (135224) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.442 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (135224) SENSOR_SVC: ================================[0m
+[0;32mI (136254) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (136254) SENSOR_SVC: Temp        : 30.81 C  (1.443 V, raw 1714)[0m
+[0;32mI (136254) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (136254) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1944  [FULL][0m
+[0;33mW (136254) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (136254) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.443 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (136254) SENSOR_SVC: ================================[0m
+[0;32mI (137284) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (137284) SENSOR_SVC: Temp        : 30.81 C  (1.443 V, raw 1713)[0m
+[0;32mI (137284) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (137284) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (137284) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (137284) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.443 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (137284) SENSOR_SVC: ================================[0m
+[0;32mI (137774) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (138314) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (138314) SENSOR_SVC: Temp        : 30.80 C  (1.444 V, raw 1713)[0m
+[0;32mI (138314) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1192  [DIRTY][0m
+[0;32mI (138314) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (138314) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (138314) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.444 | level_pct=82 level_v=1.640 | turb_v=1.014[0m
+[0;32mI (138314) SENSOR_SVC: ================================[0m
+[0;32mI (139344) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (139344) SENSOR_SVC: Temp        : 30.79 C  (1.445 V, raw 1714)[0m
+[0;32mI (139344) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (139344) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1943  [FULL][0m
+[0;33mW (139344) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (139344) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.445 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (139344) SENSOR_SVC: ================================[0m
+[0;32mI (140374) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (140374) SENSOR_SVC: Temp        : 30.78 C  (1.445 V, raw 1715)[0m
+[0;32mI (140374) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (140374) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (140374) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (140374) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.445 | level_pct=82 level_v=1.640 | turb_v=1.012[0m
+[0;32mI (140374) SENSOR_SVC: ================================[0m
+[0;32mI (141404) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (141404) SENSOR_SVC: Temp        : 30.77 C  (1.446 V, raw 1718)[0m
+[0;32mI (141404) SENSOR_SVC: Turbidity   : OK  1.013 V  raw 1190  [DIRTY][0m
+[0;32mI (141404) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (141404) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (141404) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.446 | level_pct=82 level_v=1.640 | turb_v=1.013[0m
+[0;32mI (141404) SENSOR_SVC: ================================[0m
+[0;32mI (142434) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (142434) SENSOR_SVC: Temp        : 30.75 C  (1.447 V, raw 1717)[0m
+[0;32mI (142434) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (142434) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (142434) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (142434) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.447 | level_pct=82 level_v=1.640 | turb_v=1.014[0m
+[0;32mI (142434) SENSOR_SVC: ================================[0m
+[0;32mI (142794) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (143464) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (143464) SENSOR_SVC: Temp        : 30.74 C  (1.447 V, raw 1715)[0m
+[0;32mI (143464) SENSOR_SVC: Turbidity   : OK  1.008 V  raw 1184  [DIRTY][0m
+[0;32mI (143464) SENSOR_SVC: Water level : OK  81%  1.638 V  raw 1941  [FULL][0m
+[0;33mW (143464) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (143464) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.447 | level_pct=81 level_v=1.638 | turb_v=1.008[0m
+[0;32mI (143464) SENSOR_SVC: ================================[0m
+[0;32mI (144494) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (144494) SENSOR_SVC: Temp        : 30.72 C  (1.448 V, raw 1719)[0m
+[0;32mI (144494) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (144494) SENSOR_SVC: Water level : OK  70%  1.580 V  raw 1872  [MEDIUM][0m
+[0;33mW (144494) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (144494) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.448 | level_pct=70 level_v=1.580 | turb_v=1.014[0m
+[0;32mI (144494) SENSOR_SVC: ================================[0m
+[0;32mI (145524) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (145524) SENSOR_SVC: Temp        : 30.71 C  (1.449 V, raw 1718)[0m
+[0;32mI (145524) SENSOR_SVC: Turbidity   : OK  1.000 V  raw 1175  [DIRTY][0m
+[0;32mI (145524) SENSOR_SVC: Water level : OK  70%  1.598 V  raw 1894  [MEDIUM][0m
+[0;33mW (145524) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (145524) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.449 | level_pct=70 level_v=1.598 | turb_v=1.000[0m
+[0;32mI (145524) SENSOR_SVC: ================================[0m
+[0;32mI (146554) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (146554) SENSOR_SVC: Temp        : 30.69 C  (1.449 V, raw 1715)[0m
+[0;32mI (146554) SENSOR_SVC: Turbidity   : OK  0.964 V  raw 1132  [DIRTY][0m
+[0;32mI (146554) SENSOR_SVC: Water level : OK  81%  1.638 V  raw 1941  [FULL][0m
+[0;33mW (146554) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (146554) SENSOR_SVC: CAL | temp_c=30.69 temp_v=1.449 | level_pct=81 level_v=1.638 | turb_v=0.964[0m
+[0;32mI (146554) SENSOR_SVC: ================================[0m
+[0;32mI (147584) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (147584) SENSOR_SVC: Temp        : 30.69 C  (1.446 V, raw 1696)[0m
+[0;32mI (147584) SENSOR_SVC: Turbidity   : OK  1.004 V  raw 1179  [DIRTY][0m
+[0;32mI (147584) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (147584) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (147584) SENSOR_SVC: CAL | temp_c=30.69 temp_v=1.446 | level_pct=82 level_v=1.640 | turb_v=1.004[0m
+[0;32mI (147584) SENSOR_SVC: ================================[0m
+[0;32mI (147824) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (148614) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (148614) SENSOR_SVC: Temp        : 30.71 C  (1.442 V, raw 1678)[0m
+[0;32mI (148614) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1196  [DIRTY][0m
+[0;32mI (148614) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (148614) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (148614) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.442 | level_pct=82 level_v=1.640 | turb_v=1.018[0m
+[0;32mI (148614) SENSOR_SVC: ================================[0m
+[0;32mI (149644) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (149644) SENSOR_SVC: Temp        : 30.72 C  (1.443 V, raw 1713)[0m
+[0;32mI (149644) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (149644) SENSOR_SVC: Water level : OK  81%  1.638 V  raw 1941  [FULL][0m
+[0;33mW (149644) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (149644) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.443 | level_pct=81 level_v=1.638 | turb_v=1.012[0m
+[0;32mI (149644) SENSOR_SVC: ================================[0m
+[0;32mI (150674) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (150674) SENSOR_SVC: Temp        : 30.72 C  (1.444 V, raw 1717)[0m
+[0;32mI (150674) SENSOR_SVC: Turbidity   : OK  1.011 V  raw 1187  [DIRTY][0m
+[0;32mI (150674) SENSOR_SVC: Water level : OK  81%  1.637 V  raw 1940  [FULL][0m
+[0;33mW (150674) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (150674) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.444 | level_pct=81 level_v=1.637 | turb_v=1.011[0m
+[0;32mI (150674) SENSOR_SVC: ================================[0m
+[0;32mI (151704) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (151704) SENSOR_SVC: Temp        : 30.72 C  (1.446 V, raw 1718)[0m
+[0;32mI (151704) SENSOR_SVC: Turbidity   : OK  1.013 V  raw 1190  [DIRTY][0m
+[0;32mI (151704) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (151704) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (151704) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.446 | level_pct=82 level_v=1.640 | turb_v=1.013[0m
+[0;32mI (151704) SENSOR_SVC: ================================[0m
+[0;32mI (152734) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (152734) SENSOR_SVC: Temp        : 30.72 C  (1.447 V, raw 1717)[0m
+[0;32mI (152734) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (152734) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (152734) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (152734) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.447 | level_pct=82 level_v=1.640 | turb_v=1.014[0m
+[0;32mI (152734) SENSOR_SVC: ================================[0m
+[0;32mI (152864) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (153764) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (153764) SENSOR_SVC: Temp        : 30.71 C  (1.448 V, raw 1720)[0m
+[0;32mI (153764) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (153764) SENSOR_SVC: Water level : OK  82%  1.640 V  raw 1942  [FULL][0m
+[0;33mW (153764) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (153764) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.448 | level_pct=82 level_v=1.640 | turb_v=1.014[0m
+[0;32mI (153764) SENSOR_SVC: ================================[0m
+[0;32mI (154794) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (154794) SENSOR_SVC: Temp        : 30.70 C  (1.448 V, raw 1718)[0m
+[0;32mI (154794) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (154794) SENSOR_SVC: Water level : OK  81%  1.636 V  raw 1938  [FULL][0m
+[0;33mW (154794) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (154794) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.448 | level_pct=81 level_v=1.636 | turb_v=1.012[0m
+[0;32mI (154794) SENSOR_SVC: ================================[0m
+[0;32mI (155824) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (155824) SENSOR_SVC: Temp        : 30.69 C  (1.449 V, raw 1717)[0m
+[0;32mI (155824) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1188  [DIRTY][0m
+[0;32mI (155824) SENSOR_SVC: Water level : OK  91%  1.670 V  raw 1980  [FULL][0m
+[0;33mW (155824) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (155824) SENSOR_SVC: CAL | temp_c=30.69 temp_v=1.449 | level_pct=91 level_v=1.670 | turb_v=1.012[0m
+[0;32mI (155824) SENSOR_SVC: ================================[0m
+[0;32mI (156854) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (156854) SENSOR_SVC: Temp        : 30.67 C  (1.449 V, raw 1716)[0m
+[0;32mI (156854) SENSOR_SVC: Turbidity   : OK  1.011 V  raw 1187  [DIRTY][0m
+[0;32mI (156854) SENSOR_SVC: Water level : OK  104%  1.712 V  raw 2030  [OVER][0m
+[0;33mW (156854) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (156854) SENSOR_SVC: CAL | temp_c=30.67 temp_v=1.449 | level_pct=104 level_v=1.712 | turb_v=1.011[0m
+[0;32mI (156854) SENSOR_SVC: ================================[0m
+[0;32mI (157884) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (157884) SENSOR_SVC: Temp        : 30.66 C  (1.449 V, raw 1716)[0m
+[0;32mI (157884) SENSOR_SVC: Turbidity   : OK  1.013 V  raw 1190  [DIRTY][0m
+[0;32mI (157884) SENSOR_SVC: Water level : OK  113%  1.742 V  raw 2066  [OVER][0m
+[0;33mW (157884) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (157884) SENSOR_SVC: CAL | temp_c=30.66 temp_v=1.449 | level_pct=113 level_v=1.742 | turb_v=1.013[0m
+[0;32mI (157884) SENSOR_SVC: ================================[0m
+[0;32mI (157924) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (158914) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (158914) SENSOR_SVC: Temp        : 30.66 C  (1.449 V, raw 1716)[0m
+[0;32mI (158914) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (158914) SENSOR_SVC: Water level : OK  117%  1.757 V  raw 2084  [OVER][0m
+[0;33mW (158914) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (158914) SENSOR_SVC: CAL | temp_c=30.66 temp_v=1.449 | level_pct=117 level_v=1.757 | turb_v=1.012[0m
+[0;32mI (158914) SENSOR_SVC: ================================[0m
+[0;32mI (159944) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (159944) SENSOR_SVC: Temp        : 30.65 C  (1.449 V, raw 1714)[0m
+[0;32mI (159944) SENSOR_SVC: Turbidity   : OK  1.017 V  raw 1193  [DIRTY][0m
+[0;32mI (159944) SENSOR_SVC: Water level : OK  107%  1.724 V  raw 2044  [OVER][0m
+[0;33mW (159944) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (159944) SENSOR_SVC: CAL | temp_c=30.65 temp_v=1.449 | level_pct=107 level_v=1.724 | turb_v=1.017[0m
+[0;32mI (159944) SENSOR_SVC: ================================[0m
+[0;32mI (160974) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (160974) SENSOR_SVC: Temp        : 30.64 C  (1.449 V, raw 1716)[0m
+[0;32mI (160974) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (160974) SENSOR_SVC: Water level : OK  105%  1.715 V  raw 2034  [OVER][0m
+[0;33mW (160974) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (160974) SENSOR_SVC: CAL | temp_c=30.64 temp_v=1.449 | level_pct=104 level_v=1.715 | turb_v=1.012[0m
+[0;32mI (160974) SENSOR_SVC: ================================[0m
+[0;32mI (162004) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (162004) SENSOR_SVC: Temp        : 30.64 C  (1.449 V, raw 1713)[0m
+[0;32mI (162004) SENSOR_SVC: Turbidity   : OK  0.963 V  raw 1129  [DIRTY][0m
+[0;32mI (162004) SENSOR_SVC: Water level : OK  124%  1.779 V  raw 2111  [OVER][0m
+[0;33mW (162004) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (162004) SENSOR_SVC: CAL | temp_c=30.64 temp_v=1.449 | level_pct=124 level_v=1.779 | turb_v=0.963[0m
+[0;32mI (162004) SENSOR_SVC: ================================[0m
+[0;32mI (162954) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (163034) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (163034) SENSOR_SVC: Temp        : 30.68 C  (1.438 V, raw 1628)[0m
+[0;32mI (163034) SENSOR_SVC: Turbidity   : OK  0.918 V  raw 1074  [DIRTY][0m
+[0;32mI (163034) SENSOR_SVC: Water level : OK  89%  1.662 V  raw 1969  [FULL][0m
+[0;33mW (163034) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (163034) SENSOR_SVC: CAL | temp_c=30.68 temp_v=1.438 | level_pct=89 level_v=1.662 | turb_v=0.918[0m
+[0;32mI (163034) SENSOR_SVC: ================================[0m
+[0;32mI (164064) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (164064) SENSOR_SVC: Temp        : 30.74 C  (1.434 V, raw 1664)[0m
+[0;32mI (164064) SENSOR_SVC: Turbidity   : OK  0.991 V  raw 1163  [DIRTY][0m
+[0;32mI (164064) SENSOR_SVC: Water level : OK  125%  1.785 V  raw 2117  [OVER][0m
+[0;33mW (164064) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (164064) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.434 | level_pct=125 level_v=1.785 | turb_v=0.991[0m
+[0;32mI (164064) SENSOR_SVC: ================================[0m
+[0;32mI (165104) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (165104) SENSOR_SVC: Temp        : 30.78 C  (1.436 V, raw 1714)[0m
+[0;32mI (165104) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1192  [DIRTY][0m
+[0;32mI (165104) SENSOR_SVC: Water level : OK  124%  1.779 V  raw 2111  [OVER][0m
+[0;33mW (165104) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (165104) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.436 | level_pct=124 level_v=1.779 | turb_v=1.014[0m
+[0;32mI (165104) SENSOR_SVC: ================================[0m
+[0;32mI (166134) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (166134) SENSOR_SVC: Temp        : 30.80 C  (1.438 V, raw 1713)[0m
+[0;32mI (166134) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (166134) SENSOR_SVC: Water level : OK  125%  1.785 V  raw 2116  [OVER][0m
+[0;33mW (166134) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (166134) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.438 | level_pct=125 level_v=1.785 | turb_v=1.014[0m
+[0;32mI (166134) SENSOR_SVC: ================================[0m
+[0;32mI (167164) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (167164) SENSOR_SVC: Temp        : 30.82 C  (1.439 V, raw 1713)[0m
+[0;32mI (167164) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (167164) SENSOR_SVC: Water level : OK  125%  1.785 V  raw 2116  [OVER][0m
+[0;33mW (167164) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (167164) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.439 | level_pct=125 level_v=1.785 | turb_v=1.014[0m
+[0;32mI (167164) SENSOR_SVC: ================================[0m
+[0;32mI (167994) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (168194) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (168194) SENSOR_SVC: Temp        : 30.82 C  (1.440 V, raw 1713)[0m
+[0;32mI (168194) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (168194) SENSOR_SVC: Water level : OK  127%  1.789 V  raw 2121  [OVER][0m
+[0;33mW (168194) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (168194) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.440 | level_pct=127 level_v=1.789 | turb_v=1.014[0m
+[0;32mI (168194) SENSOR_SVC: ================================[0m
+[0;32mI (169224) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (169224) SENSOR_SVC: Temp        : 30.83 C  (1.441 V, raw 1713)[0m
+[0;32mI (169224) SENSOR_SVC: Turbidity   : OK  1.013 V  raw 1190  [DIRTY][0m
+[0;32mI (169224) SENSOR_SVC: Water level : OK  125%  1.785 V  raw 2117  [OVER][0m
+[0;33mW (169224) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (169224) SENSOR_SVC: CAL | temp_c=30.83 temp_v=1.441 | level_pct=125 level_v=1.785 | turb_v=1.013[0m
+[0;32mI (169224) SENSOR_SVC: ================================[0m
+[0;32mI (170254) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (170254) SENSOR_SVC: Temp        : 30.82 C  (1.442 V, raw 1713)[0m
+[0;32mI (170254) SENSOR_SVC: Turbidity   : OK  1.014 V  raw 1191  [DIRTY][0m
+[0;32mI (170254) SENSOR_SVC: Water level : OK  126%  1.788 V  raw 2122  [OVER][0m
+[0;33mW (170254) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (170254) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.442 | level_pct=126 level_v=1.788 | turb_v=1.014[0m
+[0;32mI (170254) SENSOR_SVC: ================================[0m
+[0;32mI (171284) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (171284) SENSOR_SVC: Temp        : 30.82 C  (1.443 V, raw 1713)[0m
+[0;32mI (171284) SENSOR_SVC: Turbidity   : OK  1.017 V  raw 1193  [DIRTY][0m
+[0;32mI (171284) SENSOR_SVC: Water level : OK  127%  1.790 V  raw 2123  [OVER][0m
+[0;33mW (171284) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (171284) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.443 | level_pct=127 level_v=1.790 | turb_v=1.017[0m
+[0;32mI (171284) SENSOR_SVC: ================================[0m
+[0;32mI (172314) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (172314) SENSOR_SVC: Temp        : 30.81 C  (1.443 V, raw 1713)[0m
+[0;32mI (172314) SENSOR_SVC: Turbidity   : OK  1.017 V  raw 1193  [DIRTY][0m
+[0;32mI (172314) SENSOR_SVC: Water level : OK  127%  1.789 V  raw 2121  [OVER][0m
+[0;33mW (172314) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (172314) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.443 | level_pct=127 level_v=1.789 | turb_v=1.017[0m
+[0;32mI (172314) SENSOR_SVC: ================================[0m
+[0;32mI (173034) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (173344) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (173344) SENSOR_SVC: Temp        : 30.80 C  (1.444 V, raw 1715)[0m
+[0;32mI (173344) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (173344) SENSOR_SVC: Water level : OK  127%  1.789 V  raw 2120  [OVER][0m
+[0;33mW (173344) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (173344) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.444 | level_pct=127 level_v=1.789 | turb_v=1.012[0m
+[0;32mI (173344) SENSOR_SVC: ================================[0m
+[0;32mI (174374) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (174374) SENSOR_SVC: Temp        : 30.79 C  (1.445 V, raw 1713)[0m
+[0;32mI (174374) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1195  [DIRTY][0m
+[0;32mI (174374) SENSOR_SVC: Water level : OK  112%  1.741 V  raw 2063  [OVER][0m
+[0;33mW (174374) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (174374) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.445 | level_pct=112 level_v=1.741 | turb_v=1.018[0m
+[0;32mI (174374) SENSOR_SVC: ================================[0m
+[0;32mI (175404) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (175404) SENSOR_SVC: Temp        : 30.78 C  (1.445 V, raw 1714)[0m
+[0;32mI (175404) SENSOR_SVC: Turbidity   : OK  1.017 V  raw 1193  [DIRTY][0m
+[0;32mI (175404) SENSOR_SVC: Water level : OK  109%  1.729 V  raw 2049  [OVER][0m
+[0;33mW (175404) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (175404) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.445 | level_pct=109 level_v=1.729 | turb_v=1.017[0m
+[0;32mI (175404) SENSOR_SVC: ================================[0m
+[0;32mI (176434) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (176434) SENSOR_SVC: Temp        : 30.77 C  (1.446 V, raw 1712)[0m
+[0;32mI (176434) SENSOR_SVC: Turbidity   : OK  0.963 V  raw 1129  [DIRTY][0m
+[0;32mI (176434) SENSOR_SVC: Water level : OK  124%  1.779 V  raw 2111  [OVER][0m
+[0;33mW (176434) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (176434) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.446 | level_pct=124 level_v=1.779 | turb_v=0.963[0m
+[0;32mI (176434) SENSOR_SVC: ================================[0m
+[0;32mI (177464) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (177464) SENSOR_SVC: Temp        : 30.77 C  (1.445 V, raw 1704)[0m
+[0;32mI (177464) SENSOR_SVC: Turbidity   : OK  0.985 V  raw 1156  [DIRTY][0m
+[0;32mI (177464) SENSOR_SVC: Water level : OK  122%  1.775 V  raw 2106  [OVER][0m
+[0;33mW (177464) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (177464) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.445 | level_pct=122 level_v=1.775 | turb_v=0.985[0m
+[0;32mI (177464) SENSOR_SVC: ================================[0m
+[0;32mI (178064) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (178494) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (178494) SENSOR_SVC: Temp        : 30.78 C  (1.440 V, raw 1676)[0m
+[0;32mI (178494) SENSOR_SVC: Turbidity   : OK  1.022 V  raw 1200  [DIRTY][0m
+[0;32mI (178494) SENSOR_SVC: Water level : OK  122%  1.773 V  raw 2103  [OVER][0m
+[0;33mW (178494) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (178494) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.440 | level_pct=122 level_v=1.773 | turb_v=1.022[0m
+[0;32mI (178494) SENSOR_SVC: ================================[0m
+[0;32mI (179524) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (179524) SENSOR_SVC: Temp        : 30.80 C  (1.439 V, raw 1695)[0m
+[0;32mI (179524) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1194  [DIRTY][0m
+[0;32mI (179524) SENSOR_SVC: Water level : OK  121%  1.770 V  raw 2100  [OVER][0m
+[0;33mW (179524) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (179524) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.439 | level_pct=121 level_v=1.770 | turb_v=1.018[0m
+[0;32mI (179524) SENSOR_SVC: ================================[0m
+[0;32mI (180554) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (180554) SENSOR_SVC: Temp        : 30.81 C  (1.441 V, raw 1714)[0m
+[0;32mI (180554) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1195  [DIRTY][0m
+[0;32mI (180554) SENSOR_SVC: Water level : OK  119%  1.765 V  raw 2094  [OVER][0m
+[0;33mW (180554) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (180554) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.441 | level_pct=119 level_v=1.765 | turb_v=1.018[0m
+[0;32mI (180554) SENSOR_SVC: ================================[0m
+[0;32mI (181584) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (181584) SENSOR_SVC: Temp        : 30.81 C  (1.442 V, raw 1714)[0m
+[0;32mI (181584) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1194  [DIRTY][0m
+[0;32mI (181584) SENSOR_SVC: Water level : OK  121%  1.769 V  raw 2097  [OVER][0m
+[0;33mW (181584) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (181584) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.442 | level_pct=121 level_v=1.769 | turb_v=1.018[0m
+[0;32mI (181584) SENSOR_SVC: ================================[0m
+[0;32mI (182614) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (182614) SENSOR_SVC: Temp        : 30.81 C  (1.443 V, raw 1714)[0m
+[0;32mI (182614) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1195  [DIRTY][0m
+[0;32mI (182614) SENSOR_SVC: Water level : OK  119%  1.762 V  raw 2090  [OVER][0m
+[0;33mW (182614) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (182614) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.443 | level_pct=119 level_v=1.762 | turb_v=1.018[0m
+[0;32mI (182614) SENSOR_SVC: ================================[0m
+[0;32mI (183094) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (183644) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (183644) SENSOR_SVC: Temp        : 30.80 C  (1.444 V, raw 1716)[0m
+[0;32mI (183644) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1194  [DIRTY][0m
+[0;32mI (183644) SENSOR_SVC: Water level : OK  119%  1.762 V  raw 2090  [OVER][0m
+[0;33mW (183644) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (183644) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.444 | level_pct=119 level_v=1.762 | turb_v=1.018[0m
+[0;32mI (183644) SENSOR_SVC: ================================[0m
+[0;32mI (184674) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (184674) SENSOR_SVC: Temp        : 30.79 C  (1.445 V, raw 1714)[0m
+[0;32mI (184674) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1196  [DIRTY][0m
+[0;32mI (184674) SENSOR_SVC: Water level : OK  118%  1.759 V  raw 2087  [OVER][0m
+[0;33mW (184674) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (184674) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.445 | level_pct=118 level_v=1.759 | turb_v=1.018[0m
+[0;32mI (184674) SENSOR_SVC: ================================[0m
+[0;32mI (185704) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (185704) SENSOR_SVC: Temp        : 30.78 C  (1.445 V, raw 1714)[0m
+[0;32mI (185704) SENSOR_SVC: Turbidity   : OK  1.017 V  raw 1193  [DIRTY][0m
+[0;32mI (185704) SENSOR_SVC: Water level : OK  117%  1.757 V  raw 2085  [OVER][0m
+[0;33mW (185704) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (185704) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.445 | level_pct=117 level_v=1.757 | turb_v=1.017[0m
+[0;32mI (185704) SENSOR_SVC: ================================[0m
+[0;32mI (186734) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (186734) SENSOR_SVC: Temp        : 30.77 C  (1.446 V, raw 1713)[0m
+[0;32mI (186734) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1197  [DIRTY][0m
+[0;32mI (186734) SENSOR_SVC: Water level : OK  117%  1.757 V  raw 2084  [OVER][0m
+[0;33mW (186734) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (186734) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.446 | level_pct=117 level_v=1.757 | turb_v=1.018[0m
+[0;32mI (186734) SENSOR_SVC: ================================[0m
+[0;32mI (187764) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (187764) SENSOR_SVC: Temp        : 30.76 C  (1.446 V, raw 1713)[0m
+[0;32mI (187764) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1196  [DIRTY][0m
+[0;32mI (187764) SENSOR_SVC: Water level : OK  116%  1.755 V  raw 2081  [OVER][0m
+[0;33mW (187764) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (187764) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.446 | level_pct=116 level_v=1.755 | turb_v=1.018[0m
+[0;32mI (187764) SENSOR_SVC: ================================[0m
+[0;32mI (188134) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (188794) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (188794) SENSOR_SVC: Temp        : 30.75 C  (1.446 V, raw 1712)[0m
+[0;32mI (188794) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1195  [DIRTY][0m
+[0;32mI (188794) SENSOR_SVC: Water level : OK  116%  1.753 V  raw 2079  [OVER][0m
+[0;33mW (188794) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (188794) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.446 | level_pct=116 level_v=1.753 | turb_v=1.018[0m
+[0;32mI (188794) SENSOR_SVC: ================================[0m
+[0;32mI (189824) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (189824) SENSOR_SVC: Temp        : 30.74 C  (1.446 V, raw 1714)[0m
+[0;32mI (189824) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1196  [DIRTY][0m
+[0;32mI (189824) SENSOR_SVC: Water level : OK  112%  1.739 V  raw 2062  [OVER][0m
+[0;33mW (189824) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (189824) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.446 | level_pct=112 level_v=1.739 | turb_v=1.018[0m
+[0;32mI (189824) SENSOR_SVC: ================================[0m
+[0;32mI (190854) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (190854) SENSOR_SVC: Temp        : 30.73 C  (1.447 V, raw 1716)[0m
+[0;32mI (190854) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1196  [DIRTY][0m
+[0;32mI (190854) SENSOR_SVC: Water level : OK  98%  1.694 V  raw 2008  [FULL][0m
+[0;33mW (190854) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (190854) SENSOR_SVC: CAL | temp_c=30.73 temp_v=1.447 | level_pct=98 level_v=1.694 | turb_v=1.018[0m
+[0;32mI (190854) SENSOR_SVC: ================================[0m
+[0;32mI (191884) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (191884) SENSOR_SVC: Temp        : 30.72 C  (1.447 V, raw 1715)[0m
+[0;32mI (191884) SENSOR_SVC: Turbidity   : OK  0.990 V  raw 1162  [DIRTY][0m
+[0;32mI (191884) SENSOR_SVC: Water level : OK  109%  1.729 V  raw 2050  [OVER][0m
+[0;33mW (191884) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (191884) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.447 | level_pct=109 level_v=1.729 | turb_v=0.990[0m
+[0;32mI (191884) SENSOR_SVC: ================================[0m
+[0;32mI (192914) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (192914) SENSOR_SVC: Temp        : 30.71 C  (1.448 V, raw 1714)[0m
+[0;32mI (192914) SENSOR_SVC: Turbidity   : OK  0.972 V  raw 1140  [DIRTY][0m
+[0;32mI (192914) SENSOR_SVC: Water level : OK  114%  1.748 V  raw 2074  [OVER][0m
+[0;33mW (192914) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (192914) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.448 | level_pct=114 level_v=1.748 | turb_v=0.972[0m
+[0;32mI (192914) SENSOR_SVC: ================================[0m
+[0;32mI (193334) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (193944) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (193944) SENSOR_SVC: Temp        : 30.72 C  (1.444 V, raw 1682)[0m
+[0;32mI (193944) SENSOR_SVC: Turbidity   : OK  1.026 V  raw 1206  [DIRTY][0m
+[0;32mI (193944) SENSOR_SVC: Water level : OK  114%  1.748 V  raw 2073  [OVER][0m
+[0;33mW (193944) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (193944) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.444 | level_pct=114 level_v=1.748 | turb_v=1.026[0m
+[0;32mI (193944) SENSOR_SVC: ================================[0m
+[0;32mI (194974) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (194974) SENSOR_SVC: Temp        : 30.76 C  (1.436 V, raw 1643)[0m
+[0;32mI (194974) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1210  [DIRTY][0m
+[0;32mI (194974) SENSOR_SVC: Water level : OK  114%  1.746 V  raw 2070  [OVER][0m
+[0;33mW (194974) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (194974) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.436 | level_pct=114 level_v=1.746 | turb_v=1.029[0m
+[0;32mI (194974) SENSOR_SVC: ================================[0m
+[0;32mI (196004) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (196004) SENSOR_SVC: Temp        : 30.81 C  (1.433 V, raw 1680)[0m
+[0;32mI (196004) SENSOR_SVC: Turbidity   : OK  1.024 V  raw 1202  [DIRTY][0m
+[0;32mI (196004) SENSOR_SVC: Water level : OK  113%  1.745 V  raw 2068  [OVER][0m
+[0;33mW (196004) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (196004) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.433 | level_pct=113 level_v=1.745 | turb_v=1.024[0m
+[0;32mI (196004) SENSOR_SVC: ================================[0m
+[0;32mI (197034) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (197034) SENSOR_SVC: Temp        : 30.84 C  (1.435 V, raw 1713)[0m
+[0;32mI (197034) SENSOR_SVC: Turbidity   : OK  1.020 V  raw 1198  [DIRTY][0m
+[0;32mI (197034) SENSOR_SVC: Water level : OK  113%  1.743 V  raw 2067  [OVER][0m
+[0;33mW (197034) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (197034) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.435 | level_pct=113 level_v=1.743 | turb_v=1.020[0m
+[0;32mI (197034) SENSOR_SVC: ================================[0m
+[0;32mI (198064) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (198064) SENSOR_SVC: Temp        : 30.85 C  (1.437 V, raw 1715)[0m
+[0;32mI (198064) SENSOR_SVC: Turbidity   : OK  1.020 V  raw 1198  [DIRTY][0m
+[0;32mI (198064) SENSOR_SVC: Water level : OK  113%  1.742 V  raw 2066  [OVER][0m
+[0;33mW (198064) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (198064) SENSOR_SVC: CAL | temp_c=30.85 temp_v=1.437 | level_pct=113 level_v=1.742 | turb_v=1.020[0m
+[0;32mI (198064) SENSOR_SVC: ================================[0m
+[0;32mI (198364) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (199094) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (199094) SENSOR_SVC: Temp        : 30.86 C  (1.440 V, raw 1717)[0m
+[0;32mI (199094) SENSOR_SVC: Turbidity   : OK  1.022 V  raw 1200  [DIRTY][0m
+[0;32mI (199094) SENSOR_SVC: Water level : OK  112%  1.741 V  raw 2063  [OVER][0m
+[0;33mW (199094) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (199094) SENSOR_SVC: CAL | temp_c=30.86 temp_v=1.440 | level_pct=112 level_v=1.741 | turb_v=1.022[0m
+[0;32mI (199094) SENSOR_SVC: ================================[0m
+[0;32mI (200124) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (200124) SENSOR_SVC: Temp        : 30.86 C  (1.441 V, raw 1714)[0m
+[0;32mI (200124) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1197  [DIRTY][0m
+[0;32mI (200124) SENSOR_SVC: Water level : OK  110%  1.735 V  raw 2059  [OVER][0m
+[0;33mW (200124) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (200124) SENSOR_SVC: CAL | temp_c=30.86 temp_v=1.441 | level_pct=110 level_v=1.735 | turb_v=1.018[0m
+[0;32mI (200124) SENSOR_SVC: ================================[0m
+[0;32mI (201154) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (201154) SENSOR_SVC: Temp        : 30.85 C  (1.442 V, raw 1714)[0m
+[0;32mI (201154) SENSOR_SVC: Turbidity   : OK  1.021 V  raw 1199  [DIRTY][0m
+[0;32mI (201154) SENSOR_SVC: Water level : OK  110%  1.732 V  raw 2053  [OVER][0m
+[0;33mW (201154) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (201154) SENSOR_SVC: CAL | temp_c=30.85 temp_v=1.442 | level_pct=110 level_v=1.732 | turb_v=1.021[0m
+[0;32mI (201154) SENSOR_SVC: ================================[0m
+[0;32mI (202184) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (202184) SENSOR_SVC: Temp        : 30.84 C  (1.443 V, raw 1713)[0m
+[0;32mI (202184) SENSOR_SVC: Turbidity   : OK  1.020 V  raw 1198  [DIRTY][0m
+[0;32mI (202184) SENSOR_SVC: Water level : OK  110%  1.733 V  raw 2055  [OVER][0m
+[0;33mW (202184) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (202184) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.443 | level_pct=110 level_v=1.733 | turb_v=1.020[0m
+[0;32mI (202184) SENSOR_SVC: ================================[0m
+[0;32mI (203214) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (203214) SENSOR_SVC: Temp        : 30.83 C  (1.444 V, raw 1715)[0m
+[0;32mI (203214) SENSOR_SVC: Turbidity   : OK  1.021 V  raw 1199  [DIRTY][0m
+[0;32mI (203214) SENSOR_SVC: Water level : OK  108%  1.727 V  raw 2047  [OVER][0m
+[0;33mW (203214) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (203214) SENSOR_SVC: CAL | temp_c=30.83 temp_v=1.444 | level_pct=108 level_v=1.727 | turb_v=1.021[0m
+[0;32mI (203214) SENSOR_SVC: ================================[0m
+[0;32mI (203394) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (204244) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (204244) SENSOR_SVC: Temp        : 30.82 C  (1.444 V, raw 1713)[0m
+[0;32mI (204244) SENSOR_SVC: Turbidity   : OK  1.021 V  raw 1199  [DIRTY][0m
+[0;32mI (204244) SENSOR_SVC: Water level : OK  107%  1.724 V  raw 2044  [OVER][0m
+[0;33mW (204244) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (204244) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.444 | level_pct=107 level_v=1.724 | turb_v=1.021[0m
+[0;32mI (204244) SENSOR_SVC: ================================[0m
+[0;32mI (205274) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (205274) SENSOR_SVC: Temp        : 30.81 C  (1.445 V, raw 1713)[0m
+[0;32mI (205274) SENSOR_SVC: Turbidity   : OK  1.022 V  raw 1200  [DIRTY][0m
+[0;32mI (205274) SENSOR_SVC: Water level : OK  106%  1.721 V  raw 2040  [OVER][0m
+[0;33mW (205274) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (205274) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.445 | level_pct=106 level_v=1.721 | turb_v=1.022[0m
+[0;32mI (205274) SENSOR_SVC: ================================[0m
+[0;32mI (206304) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (206304) SENSOR_SVC: Temp        : 30.79 C  (1.445 V, raw 1714)[0m
+[0;32mI (206304) SENSOR_SVC: Turbidity   : OK  1.021 V  raw 1199  [DIRTY][0m
+[0;32mI (206304) SENSOR_SVC: Water level : OK  89%  1.662 V  raw 1969  [FULL][0m
+[0;33mW (206304) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (206304) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.445 | level_pct=89 level_v=1.662 | turb_v=1.021[0m
+[0;32mI (206304) SENSOR_SVC: ================================[0m
+[0;32mI (207334) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (207334) SENSOR_SVC: Temp        : 30.78 C  (1.446 V, raw 1717)[0m
+[0;32mI (207334) SENSOR_SVC: Turbidity   : OK  1.020 V  raw 1198  [DIRTY][0m
+[0;32mI (207334) SENSOR_SVC: Water level : OK  90%  1.666 V  raw 1975  [FULL][0m
+[0;33mW (207334) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (207334) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.446 | level_pct=90 level_v=1.666 | turb_v=1.020[0m
+[0;32mI (207334) SENSOR_SVC: ================================[0m
+[0;32mI (208364) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (208364) SENSOR_SVC: Temp        : 30.76 C  (1.446 V, raw 1712)[0m
+[0;32mI (208364) SENSOR_SVC: Turbidity   : OK  0.972 V  raw 1140  [DIRTY][0m
+[0;32mI (208364) SENSOR_SVC: Water level : OK  105%  1.715 V  raw 2035  [OVER][0m
+[0;33mW (208364) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (208364) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.446 | level_pct=104 level_v=1.715 | turb_v=0.972[0m
+[0;32mI (208364) SENSOR_SVC: ================================[0m
+[0;32mI (208424) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (209394) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (209394) SENSOR_SVC: Temp        : 30.75 C  (1.446 V, raw 1710)[0m
+[0;32mI (209394) SENSOR_SVC: Turbidity   : OK  1.001 V  raw 1176  [DIRTY][0m
+[0;32mI (209394) SENSOR_SVC: Water level : OK  104%  1.714 V  raw 2032  [OVER][0m
+[0;33mW (209394) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (209394) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.446 | level_pct=104 level_v=1.714 | turb_v=1.001[0m
+[0;32mI (209394) SENSOR_SVC: ================================[0m
+[0;32mI (210424) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (210424) SENSOR_SVC: Temp        : 30.76 C  (1.443 V, raw 1681)[0m
+[0;32mI (210424) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1210  [DIRTY][0m
+[0;32mI (210424) SENSOR_SVC: Water level : OK  104%  1.712 V  raw 2030  [OVER][0m
+[0;33mW (210424) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (210424) SENSOR_SVC: CAL | temp_c=30.76 temp_v=1.443 | level_pct=104 level_v=1.712 | turb_v=1.029[0m
+[0;32mI (210424) SENSOR_SVC: ================================[0m
+[0;32mI (211454) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (211454) SENSOR_SVC: Temp        : 30.77 C  (1.442 V, raw 1704)[0m
+[0;32mI (211454) SENSOR_SVC: Turbidity   : OK  1.024 V  raw 1202  [DIRTY][0m
+[0;32mI (211454) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2027  [OVER][0m
+[0;33mW (211454) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (211454) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.442 | level_pct=103 level_v=1.711 | turb_v=1.024[0m
+[0;32mI (211454) SENSOR_SVC: ================================[0m
+[0;32mI (212484) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (212484) SENSOR_SVC: Temp        : 30.77 C  (1.443 V, raw 1716)[0m
+[0;32mI (212484) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1205  [DIRTY][0m
+[0;32mI (212484) SENSOR_SVC: Water level : OK  103%  1.711 V  raw 2029  [OVER][0m
+[0;33mW (212484) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (212484) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.443 | level_pct=103 level_v=1.711 | turb_v=1.025[0m
+[0;32mI (212484) SENSOR_SVC: ================================[0m
+[0;32mI (213454) AQ_HTTP: Posted 1266 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (213514) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (213514) SENSOR_SVC: Temp        : 30.81 C  (1.433 V, raw 1628)[0m
+[0;32mI (213514) SENSOR_SVC: Turbidity   : OK  0.925 V  raw 1084  [DIRTY][0m
+[0;32mI (213514) SENSOR_SVC: Water level : OK  70%  1.585 V  raw 1879  [MEDIUM][0m
+[0;33mW (213514) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (213514) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.433 | level_pct=70 level_v=1.585 | turb_v=0.925[0m
+[0;32mI (213514) SENSOR_SVC: ================================[0m
+[0;32mI (214544) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (214544) SENSOR_SVC: Temp        : 30.84 C  (1.436 V, raw 1715)[0m
+[0;32mI (214544) SENSOR_SVC: Turbidity   : OK  1.024 V  raw 1202  [DIRTY][0m
+[0;32mI (214544) SENSOR_SVC: Water level : OK  101%  1.704 V  raw 2021  [OVER][0m
+[0;33mW (214544) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (214544) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.436 | level_pct=101 level_v=1.704 | turb_v=1.024[0m
+[0;32mI (214544) SENSOR_SVC: ================================[0m
+[0;32mI (215574) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (215574) SENSOR_SVC: Temp        : 30.85 C  (1.438 V, raw 1716)[0m
+[0;32mI (215574) SENSOR_SVC: Turbidity   : OK  1.024 V  raw 1203  [DIRTY][0m
+[0;32mI (215574) SENSOR_SVC: Water level : OK  101%  1.703 V  raw 2019  [OVER][0m
+[0;33mW (215574) SENSOR_SVC: ALERTS (2): [{"code":"TEMP_HIGH","message":"Water too warm"},{"code":"LEVEL_OVER","message":"Water level rose above normal — something may have been added to the basket"}][0m
+[0;32mI (215574) SENSOR_SVC: CAL | temp_c=30.85 temp_v=1.438 | level_pct=101 level_v=1.703 | turb_v=1.024[0m
+[0;32mI (215574) SENSOR_SVC: ================================[0m
+[0;32mI (216604) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (216604) SENSOR_SVC: Temp        : 30.86 C  (1.439 V, raw 1713)[0m
+[0;32mI (216604) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1205  [DIRTY][0m
+[0;32mI (216604) SENSOR_SVC: Water level : OK  100%  1.700 V  raw 2016  [FULL][0m
+[0;33mW (216604) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (216604) SENSOR_SVC: CAL | temp_c=30.86 temp_v=1.439 | level_pct=100 level_v=1.700 | turb_v=1.025[0m
+[0;32mI (216604) SENSOR_SVC: ================================[0m
+[0;32mI (217634) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (217634) SENSOR_SVC: Temp        : 30.86 C  (1.441 V, raw 1714)[0m
+[0;32mI (217634) SENSOR_SVC: Turbidity   : OK  1.024 V  raw 1203  [DIRTY][0m
+[0;32mI (217634) SENSOR_SVC: Water level : OK  99%  1.695 V  raw 2010  [FULL][0m
+[0;33mW (217634) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (217634) SENSOR_SVC: CAL | temp_c=30.86 temp_v=1.441 | level_pct=98 level_v=1.695 | turb_v=1.024[0m
+[0;32mI (217634) SENSOR_SVC: ================================[0m
+[0;32mI (218494) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (218664) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (218664) SENSOR_SVC: Temp        : 30.85 C  (1.442 V, raw 1716)[0m
+[0;32mI (218664) SENSOR_SVC: Turbidity   : OK  1.026 V  raw 1206  [DIRTY][0m
+[0;32mI (218664) SENSOR_SVC: Water level : OK  99%  1.698 V  raw 2013  [FULL][0m
+[0;33mW (218664) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (218664) SENSOR_SVC: CAL | temp_c=30.85 temp_v=1.442 | level_pct=99 level_v=1.698 | turb_v=1.026[0m
+[0;32mI (218664) SENSOR_SVC: ================================[0m
+[0;32mI (219694) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (219694) SENSOR_SVC: Temp        : 30.84 C  (1.443 V, raw 1715)[0m
+[0;32mI (219694) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1204  [DIRTY][0m
+[0;32mI (219694) SENSOR_SVC: Water level : OK  99%  1.695 V  raw 2009  [FULL][0m
+[0;33mW (219694) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (219694) SENSOR_SVC: CAL | temp_c=30.84 temp_v=1.443 | level_pct=98 level_v=1.695 | turb_v=1.025[0m
+[0;32mI (219694) SENSOR_SVC: ================================[0m
+[0;32mI (220724) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (220724) SENSOR_SVC: Temp        : 30.83 C  (1.444 V, raw 1715)[0m
+[0;32mI (220724) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1205  [DIRTY][0m
+[0;32mI (220724) SENSOR_SVC: Water level : OK  98%  1.694 V  raw 2008  [FULL][0m
+[0;33mW (220724) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (220724) SENSOR_SVC: CAL | temp_c=30.83 temp_v=1.444 | level_pct=98 level_v=1.694 | turb_v=1.025[0m
+[0;32mI (220724) SENSOR_SVC: ================================[0m
+[0;32mI (221754) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (221754) SENSOR_SVC: Temp        : 30.82 C  (1.445 V, raw 1714)[0m
+[0;32mI (221754) SENSOR_SVC: Turbidity   : OK  1.026 V  raw 1206  [DIRTY][0m
+[0;32mI (221754) SENSOR_SVC: Water level : OK  91%  1.669 V  raw 1977  [FULL][0m
+[0;33mW (221754) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (221754) SENSOR_SVC: CAL | temp_c=30.82 temp_v=1.445 | level_pct=91 level_v=1.669 | turb_v=1.026[0m
+[0;32mI (221754) SENSOR_SVC: ================================[0m
+[0;32mI (222784) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (222784) SENSOR_SVC: Temp        : 30.80 C  (1.445 V, raw 1714)[0m
+[0;32mI (222784) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1204  [DIRTY][0m
+[0;32mI (222784) SENSOR_SVC: Water level : OK  79%  1.629 V  raw 1931  [FULL][0m
+[0;33mW (222784) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (222784) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.445 | level_pct=79 level_v=1.629 | turb_v=1.025[0m
+[0;32mI (222784) SENSOR_SVC: ================================[0m
+[0;32mI (223524) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (223814) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (223814) SENSOR_SVC: Temp        : 30.79 C  (1.446 V, raw 1715)[0m
+[0;32mI (223814) SENSOR_SVC: Turbidity   : OK  0.982 V  raw 1154  [DIRTY][0m
+[0;32mI (223814) SENSOR_SVC: Water level : OK  95%  1.684 V  raw 1996  [FULL][0m
+[0;33mW (223814) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (223814) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.446 | level_pct=95 level_v=1.684 | turb_v=0.982[0m
+[0;32mI (223814) SENSOR_SVC: ================================[0m
+[0;32mI (224844) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (224844) SENSOR_SVC: Temp        : 30.77 C  (1.446 V, raw 1714)[0m
+[0;32mI (224844) SENSOR_SVC: Turbidity   : OK  0.978 V  raw 1148  [DIRTY][0m
+[0;32mI (224844) SENSOR_SVC: Water level : OK  96%  1.686 V  raw 1999  [FULL][0m
+[0;33mW (224844) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (224844) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.446 | level_pct=96 level_v=1.686 | turb_v=0.978[0m
+[0;32mI (224844) SENSOR_SVC: ================================[0m
+[0;32mI (225874) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (225874) SENSOR_SVC: Temp        : 30.78 C  (1.441 V, raw 1673)[0m
+[0;32mI (225874) SENSOR_SVC: Turbidity   : OK  1.035 V  raw 1216  [DIRTY][0m
+[0;32mI (225874) SENSOR_SVC: Water level : OK  95%  1.684 V  raw 1996  [FULL][0m
+[0;33mW (225874) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (225874) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.441 | level_pct=95 level_v=1.684 | turb_v=1.035[0m
+[0;32mI (225874) SENSOR_SVC: ================================[0m
+[0;32mI (226904) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (226904) SENSOR_SVC: Temp        : 30.80 C  (1.438 V, raw 1681)[0m
+[0;32mI (226904) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1209  [DIRTY][0m
+[0;32mI (226904) SENSOR_SVC: Water level : OK  95%  1.684 V  raw 1997  [FULL][0m
+[0;33mW (226904) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (226904) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.438 | level_pct=95 level_v=1.684 | turb_v=1.029[0m
+[0;32mI (226904) SENSOR_SVC: ================================[0m
+[0;32mI (227934) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (227934) SENSOR_SVC: Temp        : 30.81 C  (1.440 V, raw 1715)[0m
+[0;32mI (227934) SENSOR_SVC: Turbidity   : OK  1.026 V  raw 1206  [DIRTY][0m
+[0;32mI (227934) SENSOR_SVC: Water level : OK  94%  1.681 V  raw 1993  [FULL][0m
+[0;33mW (227934) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (227934) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.440 | level_pct=94 level_v=1.681 | turb_v=1.026[0m
+[0;32mI (227934) SENSOR_SVC: ================================[0m
+[0;32mI (228734) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (228964) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (228964) SENSOR_SVC: Temp        : 30.81 C  (1.442 V, raw 1718)[0m
+[0;32mI (228964) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1208  [DIRTY][0m
+[0;32mI (228964) SENSOR_SVC: Water level : OK  94%  1.681 V  raw 1993  [FULL][0m
+[0;33mW (228964) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (228964) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.442 | level_pct=94 level_v=1.681 | turb_v=1.029[0m
+[0;32mI (228964) SENSOR_SVC: ================================[0m
+[0;32mI (229994) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (229994) SENSOR_SVC: Temp        : 30.81 C  (1.443 V, raw 1714)[0m
+[0;32mI (229994) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1204  [DIRTY][0m
+[0;32mI (229994) SENSOR_SVC: Water level : OK  94%  1.679 V  raw 1990  [FULL][0m
+[0;33mW (229994) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (229994) SENSOR_SVC: CAL | temp_c=30.81 temp_v=1.443 | level_pct=94 level_v=1.679 | turb_v=1.025[0m
+[0;32mI (229994) SENSOR_SVC: ================================[0m
+[0;32mI (231024) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (231024) SENSOR_SVC: Temp        : 30.80 C  (1.444 V, raw 1715)[0m
+[0;32mI (231024) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1205  [DIRTY][0m
+[0;32mI (231024) SENSOR_SVC: Water level : OK  93%  1.676 V  raw 1987  [FULL][0m
+[0;33mW (231024) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (231024) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.444 | level_pct=93 level_v=1.676 | turb_v=1.025[0m
+[0;32mI (231024) SENSOR_SVC: ================================[0m
+[0;32mI (232054) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (232054) SENSOR_SVC: Temp        : 30.79 C  (1.445 V, raw 1717)[0m
+[0;32mI (232054) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1204  [DIRTY][0m
+[0;32mI (232054) SENSOR_SVC: Water level : OK  92%  1.673 V  raw 1984  [FULL][0m
+[0;33mW (232054) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (232054) SENSOR_SVC: CAL | temp_c=30.79 temp_v=1.445 | level_pct=92 level_v=1.673 | turb_v=1.025[0m
+[0;32mI (232054) SENSOR_SVC: ================================[0m
+[0;32mI (233084) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (233084) SENSOR_SVC: Temp        : 30.78 C  (1.446 V, raw 1714)[0m
+[0;32mI (233084) SENSOR_SVC: Turbidity   : OK  1.031 V  raw 1211  [DIRTY][0m
+[0;32mI (233084) SENSOR_SVC: Water level : OK  91%  1.671 V  raw 1981  [FULL][0m
+[0;33mW (233084) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (233084) SENSOR_SVC: CAL | temp_c=30.78 temp_v=1.446 | level_pct=91 level_v=1.671 | turb_v=1.031[0m
+[0;32mI (233084) SENSOR_SVC: ================================[0m
+[0;32mI (233764) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (234114) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (234114) SENSOR_SVC: Temp        : 30.77 C  (1.446 V, raw 1715)[0m
+[0;32mI (234114) SENSOR_SVC: Turbidity   : OK  1.026 V  raw 1206  [DIRTY][0m
+[0;32mI (234114) SENSOR_SVC: Water level : OK  91%  1.671 V  raw 1981  [FULL][0m
+[0;33mW (234114) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (234114) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.446 | level_pct=91 level_v=1.671 | turb_v=1.026[0m
+[0;32mI (234114) SENSOR_SVC: ================================[0m
+[0;32mI (235144) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (235144) SENSOR_SVC: Temp        : 30.75 C  (1.447 V, raw 1715)[0m
+[0;32mI (235144) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1205  [DIRTY][0m
+[0;32mI (235144) SENSOR_SVC: Water level : OK  91%  1.670 V  raw 1980  [FULL][0m
+[0;33mW (235144) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (235144) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.447 | level_pct=91 level_v=1.670 | turb_v=1.025[0m
+[0;32mI (235144) SENSOR_SVC: ================================[0m
+[0;32mI (236174) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (236174) SENSOR_SVC: Temp        : 30.74 C  (1.447 V, raw 1712)[0m
+[0;32mI (236174) SENSOR_SVC: Turbidity   : OK  1.026 V  raw 1206  [DIRTY][0m
+[0;32mI (236174) SENSOR_SVC: Water level : OK  91%  1.669 V  raw 1978  [FULL][0m
+[0;33mW (236174) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (236174) SENSOR_SVC: CAL | temp_c=30.74 temp_v=1.447 | level_pct=91 level_v=1.669 | turb_v=1.026[0m
+[0;32mI (236174) SENSOR_SVC: ================================[0m
+[0;32mI (237204) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (237204) SENSOR_SVC: Temp        : 30.73 C  (1.447 V, raw 1716)[0m
+[0;32mI (237204) SENSOR_SVC: Turbidity   : OK  1.025 V  raw 1205  [DIRTY][0m
+[0;32mI (237204) SENSOR_SVC: Water level : OK  91%  1.669 V  raw 1977  [FULL][0m
+[0;33mW (237204) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (237204) SENSOR_SVC: CAL | temp_c=30.73 temp_v=1.447 | level_pct=91 level_v=1.669 | turb_v=1.025[0m
+[0;32mI (237204) SENSOR_SVC: ================================[0m
+[0;32mI (238234) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (238234) SENSOR_SVC: Temp        : 30.72 C  (1.448 V, raw 1716)[0m
+[0;32mI (238234) SENSOR_SVC: Turbidity   : OK  1.027 V  raw 1207  [DIRTY][0m
+[0;32mI (238234) SENSOR_SVC: Water level : OK  73%  1.609 V  raw 1907  [FULL][0m
+[0;33mW (238234) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (238234) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.448 | level_pct=73 level_v=1.609 | turb_v=1.027[0m
+[0;32mI (238234) SENSOR_SVC: ================================[0m
+[0;32mI (238814) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (239264) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (239264) SENSOR_SVC: Temp        : 30.71 C  (1.448 V, raw 1716)[0m
+[0;32mI (239264) SENSOR_SVC: Turbidity   : OK  1.018 V  raw 1195  [DIRTY][0m
+[0;32mI (239264) SENSOR_SVC: Water level : OK  77%  1.624 V  raw 1924  [FULL][0m
+[0;33mW (239264) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (239264) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.448 | level_pct=77 level_v=1.624 | turb_v=1.018[0m
+[0;32mI (239264) SENSOR_SVC: ================================[0m
+[0;32mI (240294) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (240294) SENSOR_SVC: Temp        : 30.70 C  (1.448 V, raw 1716)[0m
+[0;32mI (240294) SENSOR_SVC: Turbidity   : OK  0.949 V  raw 1113  [DIRTY][0m
+[0;32mI (240294) SENSOR_SVC: Water level : OK  70%  1.537 V  raw 1820  [MEDIUM][0m
+[0;33mW (240294) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (240294) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.448 | level_pct=70 level_v=1.537 | turb_v=0.949[0m
+[0;32mI (240294) SENSOR_SVC: ================================[0m
+[0;32mI (241324) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (241324) SENSOR_SVC: Temp        : 30.70 C  (1.447 V, raw 1699)[0m
+[0;32mI (241324) SENSOR_SVC: Turbidity   : OK  0.999 V  raw 1172  [DIRTY][0m
+[0;32mI (241324) SENSOR_SVC: Water level : OK  89%  1.662 V  raw 1971  [FULL][0m
+[0;33mW (241324) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (241324) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.447 | level_pct=89 level_v=1.662 | turb_v=0.999[0m
+[0;32mI (241324) SENSOR_SVC: ================================[0m
+[0;32mI (242354) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (242354) SENSOR_SVC: Temp        : 30.71 C  (1.443 V, raw 1682)[0m
+[0;32mI (242354) SENSOR_SVC: Turbidity   : OK  1.031 V  raw 1211  [DIRTY][0m
+[0;32mI (242354) SENSOR_SVC: Water level : OK  89%  1.665 V  raw 1973  [FULL][0m
+[0;33mW (242354) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (242354) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.443 | level_pct=89 level_v=1.665 | turb_v=1.031[0m
+[0;32mI (242354) SENSOR_SVC: ================================[0m
+[0;32mI (243384) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (243384) SENSOR_SVC: Temp        : 30.72 C  (1.444 V, raw 1715)[0m
+[0;32mI (243384) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1209  [DIRTY][0m
+[0;32mI (243384) SENSOR_SVC: Water level : OK  89%  1.664 V  raw 1972  [FULL][0m
+[0;33mW (243384) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (243384) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.444 | level_pct=89 level_v=1.664 | turb_v=1.029[0m
+[0;32mI (243384) SENSOR_SVC: ================================[0m
+[0;32mI (243844) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (244414) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (244414) SENSOR_SVC: Temp        : 30.72 C  (1.445 V, raw 1715)[0m
+[0;32mI (244414) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1208  [DIRTY][0m
+[0;32mI (244414) SENSOR_SVC: Water level : OK  89%  1.664 V  raw 1972  [FULL][0m
+[0;33mW (244414) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (244414) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.445 | level_pct=89 level_v=1.664 | turb_v=1.029[0m
+[0;32mI (244414) SENSOR_SVC: ================================[0m
+[0;32mI (245444) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (245444) SENSOR_SVC: Temp        : 30.72 C  (1.445 V, raw 1716)[0m
+[0;32mI (245444) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1208  [DIRTY][0m
+[0;32mI (245444) SENSOR_SVC: Water level : OK  89%  1.662 V  raw 1970  [FULL][0m
+[0;33mW (245444) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (245444) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.445 | level_pct=89 level_v=1.662 | turb_v=1.029[0m
+[0;32mI (245444) SENSOR_SVC: ================================[0m
+[0;32mI (246474) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (246474) SENSOR_SVC: Temp        : 30.72 C  (1.446 V, raw 1715)[0m
+[0;32mI (246474) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1209  [DIRTY][0m
+[0;32mI (246474) SENSOR_SVC: Water level : OK  87%  1.658 V  raw 1966  [FULL][0m
+[0;33mW (246474) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (246474) SENSOR_SVC: CAL | temp_c=30.72 temp_v=1.446 | level_pct=87 level_v=1.658 | turb_v=1.029[0m
+[0;32mI (246474) SENSOR_SVC: ================================[0m
+[0;32mI (247504) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (247504) SENSOR_SVC: Temp        : 30.71 C  (1.447 V, raw 1719)[0m
+[0;32mI (247504) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1210  [DIRTY][0m
+[0;32mI (247504) SENSOR_SVC: Water level : OK  88%  1.659 V  raw 1967  [FULL][0m
+[0;33mW (247504) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (247504) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.447 | level_pct=88 level_v=1.659 | turb_v=1.029[0m
+[0;32mI (247504) SENSOR_SVC: ================================[0m
+[0;32mI (248534) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (248534) SENSOR_SVC: Temp        : 30.70 C  (1.447 V, raw 1714)[0m
+[0;32mI (248534) SENSOR_SVC: Turbidity   : OK  1.031 V  raw 1211  [DIRTY][0m
+[0;32mI (248534) SENSOR_SVC: Water level : OK  87%  1.656 V  raw 1964  [FULL][0m
+[0;33mW (248534) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (248534) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.447 | level_pct=87 level_v=1.656 | turb_v=1.031[0m
+[0;32mI (248534) SENSOR_SVC: ================================[0m
+[0;32mI (248884) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (249564) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (249564) SENSOR_SVC: Temp        : 30.69 C  (1.448 V, raw 1719)[0m
+[0;32mI (249564) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1209  [DIRTY][0m
+[0;32mI (249564) SENSOR_SVC: Water level : OK  87%  1.658 V  raw 1966  [FULL][0m
+[0;33mW (249564) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (249564) SENSOR_SVC: CAL | temp_c=30.69 temp_v=1.448 | level_pct=87 level_v=1.658 | turb_v=1.029[0m
+[0;32mI (249564) SENSOR_SVC: ================================[0m
+[0;32mI (250594) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (250594) SENSOR_SVC: Temp        : 30.68 C  (1.448 V, raw 1716)[0m
+[0;32mI (250594) SENSOR_SVC: Turbidity   : OK  1.031 V  raw 1211  [DIRTY][0m
+[0;32mI (250594) SENSOR_SVC: Water level : OK  87%  1.658 V  raw 1965  [FULL][0m
+[0;33mW (250594) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (250594) SENSOR_SVC: CAL | temp_c=30.68 temp_v=1.448 | level_pct=87 level_v=1.658 | turb_v=1.031[0m
+[0;32mI (250594) SENSOR_SVC: ================================[0m
+[0;32mI (251624) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (251624) SENSOR_SVC: Temp        : 30.68 C  (1.449 V, raw 1716)[0m
+[0;32mI (251624) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1210  [DIRTY][0m
+[0;32mI (251624) SENSOR_SVC: Water level : OK  87%  1.656 V  raw 1963  [FULL][0m
+[0;33mW (251624) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (251624) SENSOR_SVC: CAL | temp_c=30.68 temp_v=1.449 | level_pct=87 level_v=1.656 | turb_v=1.029[0m
+[0;32mI (251624) SENSOR_SVC: ================================[0m
+[0;32mI (252654) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (252654) SENSOR_SVC: Temp        : 30.67 C  (1.448 V, raw 1713)[0m
+[0;32mI (252654) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1210  [DIRTY][0m
+[0;32mI (252654) SENSOR_SVC: Water level : OK  87%  1.656 V  raw 1962  [FULL][0m
+[0;33mW (252654) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (252654) SENSOR_SVC: CAL | temp_c=30.67 temp_v=1.448 | level_pct=87 level_v=1.656 | turb_v=1.029[0m
+[0;32mI (252654) SENSOR_SVC: ================================[0m
+[0;32mI (253684) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (253684) SENSOR_SVC: Temp        : 30.66 C  (1.449 V, raw 1714)[0m
+[0;32mI (253684) SENSOR_SVC: Turbidity   : OK  1.029 V  raw 1210  [DIRTY][0m
+[0;32mI (253684) SENSOR_SVC: Water level : OK  76%  1.619 V  raw 1918  [FULL][0m
+[0;33mW (253684) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (253684) SENSOR_SVC: CAL | temp_c=30.66 temp_v=1.449 | level_pct=76 level_v=1.619 | turb_v=1.029[0m
+[0;32mI (253684) SENSOR_SVC: ================================[0m
+[0;32mI (254014) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (254714) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (254714) SENSOR_SVC: Temp        : 30.66 C  (1.449 V, raw 1718)[0m
+[0;32mI (254714) SENSOR_SVC: Turbidity   : OK  1.034 V  raw 1213  [DIRTY][0m
+[0;32mI (254714) SENSOR_SVC: Water level : OK  71%  1.604 V  raw 1899  [FULL][0m
+[0;33mW (254714) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (254714) SENSOR_SVC: CAL | temp_c=30.66 temp_v=1.449 | level_pct=71 level_v=1.604 | turb_v=1.034[0m
+[0;32mI (254714) SENSOR_SVC: ================================[0m
+[0;32mI (255744) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (255744) SENSOR_SVC: Temp        : 30.65 C  (1.449 V, raw 1716)[0m
+[0;32mI (255744) SENSOR_SVC: Turbidity   : OK  0.978 V  raw 1148  [DIRTY][0m
+[0;32mI (255744) SENSOR_SVC: Water level : OK  87%  1.656 V  raw 1963  [FULL][0m
+[0;33mW (255744) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (255744) SENSOR_SVC: CAL | temp_c=30.65 temp_v=1.449 | level_pct=87 level_v=1.656 | turb_v=0.978[0m
+[0;32mI (255744) SENSOR_SVC: ================================[0m
+[0;32mI (256774) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (256774) SENSOR_SVC: Temp        : 30.64 C  (1.449 V, raw 1715)[0m
+[0;32mI (256774) SENSOR_SVC: Turbidity   : OK  0.988 V  raw 1159  [DIRTY][0m
+[0;32mI (256774) SENSOR_SVC: Water level : OK  86%  1.655 V  raw 1961  [FULL][0m
+[0;33mW (256774) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (256774) SENSOR_SVC: CAL | temp_c=30.64 temp_v=1.449 | level_pct=86 level_v=1.655 | turb_v=0.988[0m
+[0;32mI (256774) SENSOR_SVC: ================================[0m
+[0;32mI (257804) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (257804) SENSOR_SVC: Temp        : 30.66 C  (1.445 V, raw 1678)[0m
+[0;32mI (257804) SENSOR_SVC: Turbidity   : OK  1.041 V  raw 1223  [DIRTY][0m
+[0;32mI (257804) SENSOR_SVC: Water level : OK  87%  1.656 V  raw 1962  [FULL][0m
+[0;33mW (257804) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (257804) SENSOR_SVC: CAL | temp_c=30.66 temp_v=1.445 | level_pct=87 level_v=1.656 | turb_v=1.041[0m
+[0;32mI (257804) SENSOR_SVC: ================================[0m
+[0;32mI (258834) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (258834) SENSOR_SVC: Temp        : 30.68 C  (1.442 V, raw 1690)[0m
+[0;32mI (258834) SENSOR_SVC: Turbidity   : OK  1.032 V  raw 1212  [DIRTY][0m
+[0;32mI (258834) SENSOR_SVC: Water level : OK  86%  1.653 V  raw 1960  [FULL][0m
+[0;33mW (258834) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (258834) SENSOR_SVC: CAL | temp_c=30.68 temp_v=1.442 | level_pct=86 level_v=1.653 | turb_v=1.032[0m
+[0;32mI (258834) SENSOR_SVC: ================================[0m
+[0;32mI (259044) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (259864) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (259864) SENSOR_SVC: Temp        : 30.69 C  (1.444 V, raw 1719)[0m
+[0;32mI (259864) SENSOR_SVC: Turbidity   : OK  1.031 V  raw 1211  [DIRTY][0m
+[0;32mI (259864) SENSOR_SVC: Water level : OK  86%  1.653 V  raw 1959  [FULL][0m
+[0;33mW (259864) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (259864) SENSOR_SVC: CAL | temp_c=30.69 temp_v=1.444 | level_pct=86 level_v=1.653 | turb_v=1.031[0m
+[0;32mI (259864) SENSOR_SVC: ================================[0m
+[0;32mI (260894) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (260894) SENSOR_SVC: Temp        : 30.70 C  (1.445 V, raw 1717)[0m
+[0;32mI (260894) SENSOR_SVC: Turbidity   : OK  1.034 V  raw 1215  [DIRTY][0m
+[0;32mI (260894) SENSOR_SVC: Water level : OK  86%  1.653 V  raw 1960  [FULL][0m
+[0;33mW (260894) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (260894) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.445 | level_pct=86 level_v=1.653 | turb_v=1.034[0m
+[0;32mI (260894) SENSOR_SVC: ================================[0m
+[0;32mI (261924) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (261924) SENSOR_SVC: Temp        : 30.70 C  (1.446 V, raw 1716)[0m
+[0;32mI (261924) SENSOR_SVC: Turbidity   : OK  1.034 V  raw 1213  [DIRTY][0m
+[0;32mI (261924) SENSOR_SVC: Water level : OK  86%  1.652 V  raw 1956  [FULL][0m
+[0;33mW (261924) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (261924) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.446 | level_pct=86 level_v=1.652 | turb_v=1.034[0m
+[0;32mI (261924) SENSOR_SVC: ================================[0m
+[0;32mI (262954) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (262954) SENSOR_SVC: Temp        : 30.70 C  (1.446 V, raw 1716)[0m
+[0;32mI (262954) SENSOR_SVC: Turbidity   : OK  1.035 V  raw 1216  [DIRTY][0m
+[0;32mI (262954) SENSOR_SVC: Water level : OK  86%  1.653 V  raw 1959  [FULL][0m
+[0;33mW (262954) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (262954) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.446 | level_pct=86 level_v=1.653 | turb_v=1.035[0m
+[0;32mI (262954) SENSOR_SVC: ================================[0m
+[0;32mI (263984) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (263984) SENSOR_SVC: Temp        : 30.70 C  (1.447 V, raw 1714)[0m
+[0;32mI (263984) SENSOR_SVC: Turbidity   : OK  1.034 V  raw 1213  [DIRTY][0m
+[0;32mI (263984) SENSOR_SVC: Water level : OK  85%  1.651 V  raw 1958  [FULL][0m
+[0;33mW (263984) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (263984) SENSOR_SVC: CAL | temp_c=30.70 temp_v=1.447 | level_pct=85 level_v=1.651 | turb_v=1.034[0m
+[0;32mI (263984) SENSOR_SVC: ================================[0m
+[0;32mI (264064) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (265014) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (265014) SENSOR_SVC: Temp        : 30.69 C  (1.447 V, raw 1716)[0m
+[0;32mI (265014) SENSOR_SVC: Turbidity   : OK  1.035 V  raw 1216  [DIRTY][0m
+[0;32mI (265014) SENSOR_SVC: Water level : OK  86%  1.652 V  raw 1957  [FULL][0m
+[0;33mW (265014) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (265014) SENSOR_SVC: CAL | temp_c=30.69 temp_v=1.447 | level_pct=86 level_v=1.652 | turb_v=1.035[0m
+[0;32mI (265014) SENSOR_SVC: ================================[0m
+[0;32mI (266044) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (266044) SENSOR_SVC: Temp        : 30.68 C  (1.448 V, raw 1717)[0m
+[0;32mI (266044) SENSOR_SVC: Turbidity   : OK  1.034 V  raw 1214  [DIRTY][0m
+[0;32mI (266044) SENSOR_SVC: Water level : OK  86%  1.652 V  raw 1956  [FULL][0m
+[0;33mW (266044) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (266044) SENSOR_SVC: CAL | temp_c=30.68 temp_v=1.448 | level_pct=86 level_v=1.652 | turb_v=1.034[0m
+[0;32mI (266044) SENSOR_SVC: ================================[0m
+[0;32mI (267074) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (267074) SENSOR_SVC: Temp        : 30.67 C  (1.449 V, raw 1717)[0m
+[0;32mI (267074) SENSOR_SVC: Turbidity   : OK  1.035 V  raw 1216  [DIRTY][0m
+[0;32mI (267074) SENSOR_SVC: Water level : OK  86%  1.652 V  raw 1957  [FULL][0m
+[0;33mW (267074) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (267074) SENSOR_SVC: CAL | temp_c=30.67 temp_v=1.449 | level_pct=86 level_v=1.652 | turb_v=1.035[0m
+[0;32mI (267074) SENSOR_SVC: ================================[0m
+[0;32mI (268104) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (268104) SENSOR_SVC: Temp        : 30.67 C  (1.449 V, raw 1718)[0m
+[0;32mI (268104) SENSOR_SVC: Turbidity   : OK  1.035 V  raw 1217  [DIRTY][0m
+[0;32mI (268104) SENSOR_SVC: Water level : OK  85%  1.651 V  raw 1958  [FULL][0m
+[0;33mW (268104) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (268104) SENSOR_SVC: CAL | temp_c=30.67 temp_v=1.449 | level_pct=85 level_v=1.651 | turb_v=1.035[0m
+[0;32mI (268104) SENSOR_SVC: ================================[0m
+[0;32mI (269094) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (269134) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (269134) SENSOR_SVC: Temp        : 30.71 C  (1.438 V, raw 1626)[0m
+[0;32mI (269134) SENSOR_SVC: Turbidity   : OK  0.938 V  raw 1099  [DIRTY][0m
+[0;32mI (269134) SENSOR_SVC: Water level : OK  70%  1.527 V  raw 1808  [MEDIUM][0m
+[0;33mW (269134) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (269134) SENSOR_SVC: CAL | temp_c=30.71 temp_v=1.438 | level_pct=70 level_v=1.527 | turb_v=0.938[0m
+[0;32mI (269134) SENSOR_SVC: ================================[0m
+[0;32mI (270164) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (270164) SENSOR_SVC: Temp        : 30.73 C  (1.440 V, raw 1716)[0m
+[0;32mI (270164) SENSOR_SVC: Turbidity   : OK  1.035 V  raw 1216  [DIRTY][0m
+[0;32mI (270164) SENSOR_SVC: Water level : OK  70%  1.593 V  raw 1888  [MEDIUM][0m
+[0;33mW (270164) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (270164) SENSOR_SVC: CAL | temp_c=30.73 temp_v=1.440 | level_pct=70 level_v=1.593 | turb_v=1.035[0m
+[0;32mI (270164) SENSOR_SVC: ================================[0m
+[0;32mI (271194) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (271194) SENSOR_SVC: Temp        : 30.75 C  (1.442 V, raw 1717)[0m
+[0;32mI (271194) SENSOR_SVC: Turbidity   : OK  1.012 V  raw 1189  [DIRTY][0m
+[0;32mI (271194) SENSOR_SVC: Water level : OK  77%  1.622 V  raw 1921  [FULL][0m
+[0;33mW (271194) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (271194) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.442 | level_pct=77 level_v=1.622 | turb_v=1.012[0m
+[0;32mI (271194) SENSOR_SVC: ================================[0m
+[0;32mI (272224) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (272224) SENSOR_SVC: Temp        : 30.75 C  (1.443 V, raw 1715)[0m
+[0;32mI (272224) SENSOR_SVC: Turbidity   : OK  0.989 V  raw 1161  [DIRTY][0m
+[0;32mI (272224) SENSOR_SVC: Water level : OK  85%  1.651 V  raw 1958  [FULL][0m
+[0;33mW (272224) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (272224) SENSOR_SVC: CAL | temp_c=30.75 temp_v=1.443 | level_pct=85 level_v=1.651 | turb_v=0.989[0m
+[0;32mI (272224) SENSOR_SVC: ================================[0m
+[0;32mI (273254) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (273254) SENSOR_SVC: Temp        : 30.77 C  (1.440 V, raw 1686)[0m
+[0;32mI (273254) SENSOR_SVC: Turbidity   : OK  1.035 V  raw 1218  [DIRTY][0m
+[0;32mI (273254) SENSOR_SVC: Water level : OK  85%  1.650 V  raw 1955  [FULL][0m
+[0;33mW (273254) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (273254) SENSOR_SVC: CAL | temp_c=30.77 temp_v=1.440 | level_pct=85 level_v=1.650 | turb_v=1.035[0m
+[0;32mI (273254) SENSOR_SVC: ================================[0m
+[0;32mI (274124) AQ_HTTP: Posted 1153 bytes → http://192.168.1.5:3000/api/ingest (200)[0m
+[0;32mI (274284) SENSOR_SVC: ======== CurveUp_Smartaquaculture_System ========[0m
+[0;32mI (274284) SENSOR_SVC: Temp        : 30.80 C  (1.437 V, raw 1677)[0m
+[0;32mI (274284) SENSOR_SVC: Turbidity   : OK  1.042 V  raw 1225  [DIRTY][0m
+[0;32mI (274284) SENSOR_SVC: Water level : OK  86%  1.653 V  raw 1959  [FULL][0m
+[0;33mW (274284) SENSOR_SVC: ALERTS (1): [{"code":"TEMP_HIGH","message":"Water too warm"}][0m
+[0;32mI (274284) SENSOR_SVC: CAL | temp_c=30.80 temp_v=1.437 | level_pct=86 level_v=1.653 | turb_v=1.042[0m
+[0;32mI (274284) SENSOR_SVC: ================================[0m
